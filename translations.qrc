@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>translations/testmmp2018p1_de.qm</file>
+    </qresource>
+</RCC>

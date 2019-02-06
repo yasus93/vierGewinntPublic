@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>textures/black_disc.jpg</file>
+        <file>textures/earthmap1k.jpg</file>
+        <file>textures/muehlestein.jpg</file>
+        <file>textures/white_disc.jpg</file>
+        <file>textures/blackmuehlestein.jpg</file>
+        <file>textures/dice.png</file>
+    </qresource>
+</RCC>
