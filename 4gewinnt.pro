@@ -33,7 +33,6 @@ HEADERS += \
     src/shaderdebugger.h \
     src/myglitem.h \
         src/glbody.h \
-    src/glcube.h \
     src/gldisc.h \
     src/gldisc.h \
     src/glmouseray.h
@@ -47,7 +46,6 @@ SOURCES += \
     src/shaderdebugger.cpp \
     src/myglitem.cpp \
         src/glbody.cpp \
-    src/glcube.cpp \
     src/gldisc.cpp \
     src/glmouseray.cpp
 
