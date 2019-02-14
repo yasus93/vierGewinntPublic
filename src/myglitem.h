@@ -35,6 +35,8 @@ public:
 
 
 public slots:
+    void insertDisc(int x, int y);
+    void doMouseClick(int x, int y);
 
 protected:
 

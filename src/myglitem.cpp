@@ -27,11 +27,25 @@ MyGlItem::MyGlItem() : GLItem()
         m_mouseRay = nullptr;
 }
 
+void MyGlItem::insertDisc(int x, int y)
+{
+    qDebug()<<x << y << endl;
 
+    whiteDiscs.append(new GLDisc(QPoint(x, y), 0.125f));
+
+
+}
+
+void MyGlItem::doMouseClick(int x, int y)
+{
+    qDebug()<< x << y << endl;
+}
 
 void MyGlItem::paintOnTopOfQmlScene()
 {
   m_blender->draw(m_renderer, false);
+  for (int i = 0; i < whiteDiscs.size(); i++)
+      whiteDiscs[i]->draw(m_renderer);
 }
 
 
