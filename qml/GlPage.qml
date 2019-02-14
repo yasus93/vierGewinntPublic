@@ -3,11 +3,6 @@ import GlComponents 1.0
 
 
 GlPageForm {
-    buttonRight.onClicked: myGlItem.toggleMove();
-    buttonLeft.onClicked: myGlItem.toggleUp();
-
-    mouseArea.onClicked:
-       myGlItem.onMouseClicked(mouse.x, mouse.y);
 
 }
 

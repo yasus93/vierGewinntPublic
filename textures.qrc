@@ -6,5 +6,7 @@
         <file>textures/white_disc.jpg</file>
         <file>textures/blackmuehlestein.jpg</file>
         <file>textures/dice.png</file>
+        <file>textures/TexturesCom_Plastic0074_S.jpg</file>
+        <file>textures/TexturesCom_Fiberglass0027_S.jpg</file>
     </qresource>
 </RCC>

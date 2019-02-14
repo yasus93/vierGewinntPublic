@@ -34,12 +34,9 @@ HEADERS += \
     src/myglitem.h \
         src/glbody.h \
     src/glcube.h \
-    src/glsphere.h \
     src/gldisc.h \
     src/gldisc.h \
-    src/glchessboard.h \
-    src/glmouseray.h \
-    src/spielfeld.h
+    src/glmouseray.h
 
 SOURCES += \
         src/main.cpp \
@@ -51,17 +48,15 @@ SOURCES += \
     src/myglitem.cpp \
         src/glbody.cpp \
     src/glcube.cpp \
-    src/glsphere.cpp \
     src/gldisc.cpp \
-    src/glchessboard.cpp \
-    src/glmouseray.cpp \
-    src/spielfeld.cpp
+    src/glmouseray.cpp
 
 
 RESOURCES += qml.qrc \
     translations.qrc \
     shaders.qrc \
-    textures.qrc
+    textures.qrc \
+    obj.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

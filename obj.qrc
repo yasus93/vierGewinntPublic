@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>obj/spielfeld.mtl</file>
+        <file>obj/spielfeld.obj</file>
+        <file>obj/spielfeld.dat</file>
+    </qresource>
+</RCC>

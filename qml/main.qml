@@ -11,29 +11,17 @@ ApplicationWindow {
     SwipeView {
         id: swipeView
         anchors.fill: parent
-        currentIndex: tabBar.currentIndex
 
         GlPage {
-            //myGlItem.viewportX: mapToItem(swipeView, x, y + height).x
+            // @disable-check M18
             myGlItem.viewportY: applicationWindow.height - mapToItem(swipeView, x, y+ height).y
         }
 
 
     }
-
-
-    footer: TabBar {
-        id: tabBar
-        currentIndex: swipeView.currentIndex
-
-        TabButton {
-            id: button1
-            text: qsTr("Page 1")
-        }
-        TabButton {
-            id: button2
-            text: qsTr("Page 2")
-        }
-    }
-
 }
+
+/*##^## Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+ ##^##*/
