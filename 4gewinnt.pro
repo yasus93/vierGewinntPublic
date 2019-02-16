@@ -35,7 +35,9 @@ HEADERS += \
         src/glbody.h \
     src/gldisc.h \
     src/gldisc.h \
-    src/glmouseray.h
+    src/glmouseray.h \
+    src/board.h
+
 
 SOURCES += \
         src/main.cpp \
@@ -47,7 +49,8 @@ SOURCES += \
     src/myglitem.cpp \
         src/glbody.cpp \
     src/gldisc.cpp \
-    src/glmouseray.cpp
+    src/glmouseray.cpp \
+    src/board.cpp
 
 
 RESOURCES += qml.qrc \

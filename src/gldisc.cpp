@@ -1,6 +1,7 @@
 #include "gldisc.h"
 
 #include <math.h>
+#include "myglitem.h"
 
 GLDisc::GLDisc(const QPoint &fieldCoord, float discRadius, const GLColorRgba &color, const QString textureFile, double height, int slices)
     :GLBody("Disc", discRadius, color, textureFile)
@@ -21,7 +22,7 @@ void GLDisc::makeSurface(QVector<GLPoint> *pointContainer, QVector<IndexType> *i
     if(m_isKing)
         height *= 2.0;
     QVector3D northPole = v_Y * height;
-    QVector3D vertex = v_Z * m_discRadius;
+    QVector3D vertex;// = v_Z * m_discRadius;
     QVector3D normal;
     QVector3D texCoord;
     QMatrix4x4 longitudeMatrix;
@@ -104,6 +105,9 @@ void GLDisc::makeSurface(QVector<GLPoint> *pointContainer, QVector<IndexType> *i
     m_indices->append(iSouthPole); //finally add south pole
 
     m_nextIndex = m_indices->size();
+
+    rotateModelPoints(v_XYZ, v_Z, 90.0f);
+    //move(v_Z);
 }
 
 

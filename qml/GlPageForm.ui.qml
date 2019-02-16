@@ -26,83 +26,65 @@ Item {
             RoundButton {
                 id: roundButton6
                 x: 451
-                y: 55
+                y: 32
                 width: 50
                 height: 50
                 text: "+"
-                anchors.left: roundButton5.right
-                anchors.leftMargin: 3
             }
 
             RoundButton {
                 id: roundButton5
                 x: 398
-                y: 55
+                y: 32
                 width: 50
                 height: 50
                 text: "+"
-                anchors.left: roundButton4.right
-                anchors.leftMargin: 3
             }
 
             RoundButton {
                 id: roundButton4
                 x: 345
-                y: 55
+                y: 32
                 width: 50
                 height: 50
                 text: "+"
-                anchors.left: roundButton3.right
-                anchors.leftMargin: 3
             }
 
             RoundButton {
                 id: roundButton3
                 x: 292
-                y: 55
+                y: 32
                 width: 50
                 height: 50
                 text: "+"
-                anchors.left: roundButton2.right
-                anchors.leftMargin: 3
             }
 
             RoundButton {
                 id: roundButton2
                 x: 239
-                y: 55
+                y: 32
                 width: 50
                 height: 50
                 text: "+"
-                anchors.left: roundButton1.right
-                anchors.leftMargin: 3
             }
 
             RoundButton {
                 id: roundButton1
                 x: 186
-                y: 55
+                y: 32
                 width: 50
                 height: 50
                 text: "+"
-                anchors.left: roundButton0.right
-                anchors.leftMargin: 3
             }
 
             RoundButton {
                 id: roundButton0
-                x: 133
-                y: 55
+                x: 136
+                y: 32
                 width: 50
                 height: 50
                 text: "+"
             }
-
-
-
-
-
-
         }
     }
 }
