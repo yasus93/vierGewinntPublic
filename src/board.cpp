@@ -4,7 +4,7 @@
 
 
 //#define DEBUG_BOARD
-
+// dies ist ein testr kommentar
 Board::Board()
     :GLBody("Board")
 {
