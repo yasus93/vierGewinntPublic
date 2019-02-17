@@ -79,6 +79,9 @@
   * valid model painting matrix settings.
   */
 class GLESRenderer : public QObject
+        #ifdef USE_QOPENGL_FUNCTIONS
+        , public QOpenGLFunctions
+        #endif
 {
     Q_OBJECT
 public:
@@ -301,7 +304,7 @@ public:
       * Set size of points drawn with GL_POINTS.
       * Defaults to 2.0.
       */
-    void setPointSize(int newVal);
+    void setPointSize(float newVal);
     /**
      * @brief setMaskCenter Set center of fragment shader mask
      * @param newVal New center in viewport coordinates
@@ -316,7 +319,7 @@ public:
     /**
       * Returns pointSize;
       */
-    int pointSize(){return m_pointSize;}
+    float pointSize(){return m_pointSize;}
 
     /**
       * Pushes mvMatrix.
@@ -336,7 +339,7 @@ public:
     /**
       * Rotates mvMatrix by angle around axis
       */
-    void rotate(GLfloat angle, const QVector3D & axis);    
+    void rotate(GLfloat angle, const QVector3D & axis);
     /**
       * Rotates mvMatrix by angle around axis (x,y,z)
       */
@@ -383,7 +386,7 @@ public:
       * Enables 4D Vertex or color arrays and sets start adresses of arrays
       * Type may be: VERTEX_LOCATION, COLOR_LOCATION
       */
-    bool activateAttributeArray (AttributeLocation location, const QVector4D * values, int stride = 0 );
+    bool activateAttributeArray (AttributeLocation location, const GLColorRgba * values, int stride = 0 );
     /**
       * To be used with arrays (e.g. QVector<GLPoint>) of GLPoint objects.
       * Enables 3D Vertex, normal, color or texCoord buffer
@@ -464,7 +467,7 @@ protected:
     float m_shininess;
 
     //texturing
-    int m_pointSize;
+    float m_pointSize;
     //masking
     float m_maskDiameter;
     QPoint m_maskCenter;

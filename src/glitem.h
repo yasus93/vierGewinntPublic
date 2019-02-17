@@ -25,6 +25,9 @@
  *
  */
 class GLItem : public QQuickItem
+        #ifdef USE_QOPENGL_FUNCTIONS
+        , protected QOpenGLFunctions
+        #endif
 {
     Q_OBJECT
 
@@ -80,7 +83,7 @@ public:
 
 
 signals:
-    
+
     void vertexShaderFilenameChanged(QString arg);
     void fragmentShaderFilenameChanged(QString arg);
     void movementActivatedChanged();
@@ -103,6 +106,9 @@ public slots:
      */
     void paintAfter();
 
+    /**
+     * @brief toggleMove Togles the movement flag
+     */
     void toggleMove();
 
     /** Mouse event handler to be called from QML
@@ -144,18 +150,19 @@ protected slots:
      */
     void onTimerTimeout();
     /**
+     * @brief deleteRenderer
+     * Delete renderer unloads shader program and deletes renderer.
+     */
+    void deleteRenderer();
+    /**
      * @brief synchronizeThreads
      * Render thread is sleeping when this function is called.
      * Copy geometry modifications from GuiThread owned variables here.
      */
     void synchronizeThreads();
-    /**
-     * @brief deleteRenderer
-     * Delete renderer unloads shader program and deletes renderer.
-     */
-    void deleteRenderer();
 
 protected:
+
     /**
      * @brief doSynchronizeThreads Copy data from GUI-thread to render-thread and vice versa.
      * Virtual function to be overridden by subclasses

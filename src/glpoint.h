@@ -22,7 +22,7 @@ class GLPoint {
     QVector3D * vertexPointer  ();  // Returns address of vertex coordinate
     QVector3D * normalPointer  ();  // Returns address of normal coordinate
     QVector3D * texCoordPointer();  // Returns address of texture coordinate
-    QVector4D * colorPointer ();  // Returns address of color
+    GLColorRgba * colorPointer ();  // Returns address of color
 
     //offset values to be used with QOpenGLShaderProgram::setAttributeBuffer
     static int vertexOffset();
@@ -33,7 +33,7 @@ class GLPoint {
     const QVector3D & vertex()const{return m_vertex;}
     const QVector3D & normal()const{return m_normal;}
     const QVector3D & texCoord()const{return m_texCoord;}
-    const QVector4D & color()const{return m_color;}
+    const GLColorRgba & color()const{return m_color;}
 
     void move( QVector3D vMove );
     void moveTo( QVector3D vMove );
@@ -62,8 +62,8 @@ inline QVector3D * GLPoint::texCoordPointer() {
     return & m_texCoord;
 } /* ----- end of method texCoordPointer ----- */
 
-inline QVector4D *GLPoint::colorPointer() {
-    return (QVector4D *)& m_color;
+inline GLColorRgba *GLPoint::colorPointer() {
+    return & m_color;
 } /* ----- end of method colorPointer ----- */
 
 inline void GLPoint::move( QVector3D vMove ) {

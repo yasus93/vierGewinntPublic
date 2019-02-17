@@ -146,6 +146,9 @@ void GLItem::paintAfter()
 void GLItem::initializeRenderer()
 {
     qDebug() <<"GlItem::initializeRenderer called.";
+#ifdef USE_QOPENGL_FUNCTIONS
+    QOpenGLFunctions::initializeOpenGLFunctions();
+#endif
     //Renderer lives in Render Thread, GLItem lives in GUI Thread,
     // therefore GLItem can not be parent of Renderer and Renderer MUST be created here without a parent
     if(!m_renderer)
@@ -184,7 +187,7 @@ void GLItem::toggleMove()
 
 void GLItem::mousePressed(int x, int y)
 {
-    qDebug() << "GlItem::mousePressed at x:" << x << " y: " << y;    
+    qDebug() << "GlItem::mousePressed at x:" << x << " y: " << y;
 }
 
 void GLItem::mousePositionChanged(int x, int y)
@@ -229,7 +232,7 @@ void GLItem::setupView(bool clearBuffers)
     if(clearBuffers)
     {
 #ifndef GLES
-        glClearDepth(1.0);
+ //       glClearDepth(1.0);
 #endif
         glClearColor(m_backgroundColor.red(), m_backgroundColor.green(),
                      m_backgroundColor.blue(), m_backgroundColor.alpha());
@@ -239,7 +242,7 @@ void GLItem::setupView(bool clearBuffers)
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     //   glPolygonMode(GL_FRONT, GL_FILL);
-    //   glPolygonMode(GL_BACK, GL_LINES);
+    //   glPolygonMode(GL_BACK, GL_LINE);
 }
 
 bool GLItem::setupRenderer()
@@ -268,7 +271,7 @@ bool GLItem::setupRenderer()
                           m_up);//up
     //setup light before turning
     m_renderer->setLightDirection(m_lightDirection);
-    m_renderer->setLightingEnabled(true);
+    m_renderer->setLightingEnabled(m_lightingEnabled);
     //now turn
     m_renderer->transform(m_cameraTransform);
     m_renderer->rotate(m_renderThreadRotation, QVector3D(0.0,1.0,0.0));
@@ -290,8 +293,8 @@ void GLItem::handleWindowChanged(QQuickWindow *win)
         // Since this call is executed on the rendering thread it must be
         // a Qt::DirectConnection
         if(m_activatePaintBeforeQml)
-           connect(win, SIGNAL(beforeRendering()),
-                   this, SLOT(paintBefore()), Qt::DirectConnection);
+           connect(win, &QQuickWindow::beforeRendering,
+                   this, &GLItem::paintBefore, Qt::DirectConnection);
         if(m_activatePaintAfterQml)
         connect(win, SIGNAL(afterRendering()),
                 this, SLOT(paintAfter()), Qt::DirectConnection);
@@ -310,10 +313,8 @@ void GLItem::onTimerTimeout()
 {
     //qDebug() << "GlItem::onTimerTimeout() called";
     doTimerTimeout();
-    m_guiThreadRotation += 2.0;
     if (window())
         window()->update();
-    update();
 }
 
 void GLItem::doTimerTimeout(){

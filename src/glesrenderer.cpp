@@ -52,7 +52,7 @@ GLESRenderer::GLESRenderer(QObject *parent,
     m_maskActive = false;
 
     m_lightDirection = QVector3D(1.0,1.0,1.0); //position of directional light
-    m_pointSize = 4;
+    m_pointSize = 4.0f;
     m_shininess = 200.0;
     m_ambientAndDiffuseColor = cl_White;
     m_ambientLightBrightness = 0.2f;
@@ -298,6 +298,8 @@ bool GLESRenderer::mouseIntersection(QVector3D * intersection, QVector3D normal,
     QVector3D v = pFar - pNear; //vector from near to far clipping plane
     m15 = d + QVector3D::dotProduct(normal, pNear);
     m0 = QVector3D::dotProduct( normal, v);
+    if(m0 == 0.0f)
+        return false;
     float lambda = -m15  / m0;
     if(lambda > 1.0f || lambda < 0.0f) //we have no intersection in frustum
         return false;
@@ -411,12 +413,12 @@ void GLESRenderer::setLightDirection(const QVector3D & newVal)
 /**
   * Set size of points drawn with GL_POINTS.
   */
-void GLESRenderer::setPointSize(int newVal)
+void GLESRenderer::setPointSize(float newVal)
 {
     m_pointSize = newVal;
     if(m_bound && (m_location_uPointSize != -1))
      m_renderProgram->setUniformValue(m_location_uPointSize, m_pointSize);
-#ifndef GLES
+#ifndef USE_QOPENGL_FUNCTIONS
    glPointSize(m_pointSize); //set point size independent of vertex shader
 #endif
 }
@@ -507,6 +509,9 @@ bool GLESRenderer::initialize()
 {
     if(m_initialized)
         return true;
+#ifdef USE_QOPENGL_FUNCTIONS
+    QOpenGLFunctions::initializeOpenGLFunctions();
+#endif
     //Setup shaders and program
     m_vShader = new QOpenGLShader(QOpenGLShader::Vertex,this); //vertex shader
     m_vShader->compileSourceFile(m_vShaderFileName);
@@ -631,7 +636,7 @@ bool GLESRenderer::bind()
     if(m_location_uPointSize != -1)
         m_renderProgram->setUniformValue(m_location_uPointSize, m_pointSize);
 #ifndef GLES
-    glPointSize(m_pointSize); //set point size independent of vertex shader
+    //glPointSize(m_pointSize); //set point size independent of vertex shader
 #endif
     if(m_location_uMaskDiameter != -1)
        m_renderProgram->setUniformValue(m_location_uMaskDiameter, m_maskDiameter * m_maskDiameter);
@@ -662,7 +667,7 @@ bool GLESRenderer::activateAttributeArray (AttributeLocation arrayLocation, cons
   * Enables Vertex, normal, color or texCoord arrays and sets start adresses of arrays
   * arrayLocation may be: VERTEX_LOCATION, NORMAL_LOCATION, COLOR_LOCATION, TEXCOORD_LOCATION
   */
-bool GLESRenderer::activateAttributeArray (AttributeLocation arrayLocation, const QVector4D *values, int stride )
+bool GLESRenderer::activateAttributeArray (AttributeLocation arrayLocation, const GLColorRgba *values, int stride )
 {
     return activateAttributeArray(arrayLocation,reinterpret_cast<const float*>(values), 4, stride);
 }

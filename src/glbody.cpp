@@ -45,18 +45,7 @@ GLBody::GLBody(QString name, const QVector3D offset)
     m_name = name;
     m_modelOffset = offset;
 }
-void GLBody::invalidateSurface()
-{
-    if(!m_ownIndexContainer || ! m_ownIndexContainer)
-        throw "GLBody::invalidateSurface() called without owned containers.";
-    m_indices->clear();
-    m_points->clear();
-    m_firstIndex = 0;
-    m_nextIndex = 0;
-    m_firstPoint = 0;
-    m_nextPoint = 0;
-    m_surfaceIsValid = false;
-}
+
 void GLBody::init(){
     m_surfaceIsValid = false;
     m_color = cl_White;
@@ -123,7 +112,7 @@ void GLBody::activateAttributeArrays(GLESRenderer *renderer)
 /** Destructor
  */
 GLBody::~GLBody()
-{      
+{
     deleteTextureObjects();
     if(m_ownPointsContainer)
       delete m_points;
@@ -136,6 +125,9 @@ GLBody::~GLBody()
   */
 void GLBody::makeSurface(QVector<GLPoint> *pointContainer, QVector<IndexType> * indexContainer)
 {
+#ifdef USE_QOPENGL_FUNCTIONS
+    QOpenGLFunctions::initializeOpenGLFunctions();
+#endif
     if(pointContainer == nullptr)
     {
         m_points = new QVector<GLPoint>();
@@ -319,7 +311,7 @@ void GLBody::draw(GLESRenderer * renderer, bool useBuffers){
 #ifdef GLES
       glDrawArrays(GL_POINTS, m_firstPoint, m_nextPoint - m_firstPoint);
 #else
-      int oldPointSize = renderer->pointSize();
+      float oldPointSize = renderer->pointSize();
       renderer->setPointSize(5);
       glDrawArrays(GL_POINTS, m_firstPoint, m_nextPoint - m_firstPoint);
       renderer->setPointSize(oldPointSize);
@@ -343,8 +335,8 @@ bool GLBody::createTextureObjects(GLenum minfilter, GLenum magfilter, GLenum wra
   QImage  image;
   deleteTextureObjects();
 
-  QString textureFileName;
-  foreach(textureFileName, m_textureFilenames)
+ // QString textureFileName;
+  for(QString textureFileName: m_textureFilenames)
   {
      // qDebug() << m_name + " Loading Texture:" + textureFileName;
       if (image.load(textureFileName)){
@@ -364,8 +356,8 @@ bool GLBody::createTextureObjects(GLenum minfilter, GLenum magfilter, GLenum wra
           return false;
         }
         m_textures.append(texture);
+        m_activeTextureIndex = m_textureIds.size();
         m_textureIds.append(texture->textureId());
-        m_activeTextureIndex = m_textureIds.size() -1;
 //        m_textureIds.append(textureId);
 
 //        glBindTexture(GL_TEXTURE_2D, m_textureIds[m_activeTextureIndex]); // Bind texture object to OpenGL.
@@ -397,7 +389,7 @@ bool GLBody::createTextureObjects(GLenum minfilter, GLenum magfilter, GLenum wra
 //        glBindTexture(GL_TEXTURE_2D, 0); // finally remove texture from OpenGL machine
       }
       else{ //loading failed
-        qDebug() << m_name + "Texture loading failed";
+        qDebug() << m_name + " Texture loading failed";
         return false;
       }
   }
@@ -608,7 +600,7 @@ bool GLBody::calculateIntersection(const QVector3D &p1, const QVector3D &p2, con
     m.setColumn(0, rightSide); //replace the a-Column with right side of equation
     *a = static_cast<float>(m.determinant() / denominator);
     m = denominatorMatrix;
-    m.setColumn(1,rightSide); //replace the a-Column with right side of equation
+    m.setColumn(1,rightSide); //replace the b-Column with right side of equation
     * b = static_cast<float>( m.determinant() / denominator);
     if(intersection != nullptr)
         * intersection = p1 + (*a) * p12 + (*b) * p13;

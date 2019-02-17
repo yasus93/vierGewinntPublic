@@ -17,15 +17,10 @@
 #define GLDEFINES_H
 
 #include <QVector3D>
-#include <GL/gl.h>
 #include "glcolorrgba.h"
+#include "GL/gl.h"
 
-/**
- * @brief IndexType The type to be used for indices. Most mobile devices support 2 bytes unsigned intergers only.
- * However, desktop machines may use 4 bytes or 8 bytes unsigned integers.
- */
-typedef GLushort IndexType;
-
+#define IndexType GLushort
 
 //Predefined vectors
 

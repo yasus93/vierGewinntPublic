@@ -21,6 +21,7 @@
 
 #include <QVector>
 #include <QOpenGLTexture>
+#include <QOpenGLFunctions>
 
 #include "glesrenderer.h"
 #include "glpoint.h"
@@ -36,7 +37,11 @@
   * containers. Only in this case, the destructor will delete the containers.
   * Overwrite draw() if you do need special drawing procedures.
   */
-class GLBody{
+class GLBody
+        #ifdef USE_QOPENGL_FUNCTIONS
+        : protected QOpenGLFunctions
+        #endif
+{
     static uint BINARY_FORMAT_VERSION;
     static constexpr float fZero =  0.0;
     static constexpr float fOne = 1.0;
@@ -68,9 +73,6 @@ public:
       * Created containers will be deleted by destructor.
       */
     virtual void makeSurface(QVector<GLPoint> * pointContainer, QVector<IndexType> *indexContainer);
-
-
-     void invalidateSurface();
 
      /**
       * @brief pointsSize Convenience function to avoid multiple casting
@@ -354,7 +356,7 @@ protected:
      */
     GLushort m_nextPoint;
 
-   /** The array with the indices. May be left empty. 
+   /** The array with the indices. May be left empty.
     */
     QVector <GLushort> * m_indices;
 

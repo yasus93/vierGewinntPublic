@@ -41,7 +41,7 @@ void MyGlItem::insertDisc(int x, int buttonNumber)
         break;
     }
 
-    GLDisc *insert = new GLDisc(QPoint(x, buttonNumber), 0.75f, GLColorRgba::clRed, "", 0.5f, 30);
+    GLDisc *insert = new GLDisc("", QPoint(x, buttonNumber), 0.75f, GLColorRgba::clRed, "", 0.5f, 30);
     insert->setCenter(field->fieldToPosition(QPoint(buttonNumber, position)));
     insert->makeSurface();
     insert->rotateModelPoints(v_XYZ, v_X, 180.0f);
@@ -65,7 +65,7 @@ void MyGlItem::paintOnTopOfQmlScene()
       whiteDiscs[i]->draw(m_renderer);
   }
 
-  //field->draw(m_renderer, false);
+  field->draw(m_renderer, false);
 }
 
 
