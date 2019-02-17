@@ -16,8 +16,8 @@ private:
     QOpenGLBuffer *m_vertexBuffer;
     QOpenGLBuffer *m_indexBuffer;
 
-    QList<GLDisc *> whiteDiscs;
-    QList<GLDisc *> blackDiscs;
+    QList<GLDisc *> redDiscs;
+    QList<GLDisc *> yellowDiscs;
     GLBody *m_blender;
     Board *field;
 
@@ -28,6 +28,12 @@ private:
     int counter5 = 0;
     int counter6 = 0;
     int counter7 = 0;
+
+    int totalDiscs = 0;
+
+    int currentTheme = 2;
+
+    GLColorRgba color;
 
 
 public:
@@ -41,8 +47,10 @@ public:
 
 
 public slots:
-    void insertDisc(int x, int y);
+    void insertDisc(int buttonNumber);
     void doMouseClick(int x, int y);
+    void newGame();
+    void changeTheme(int theme);
 
 protected:
 

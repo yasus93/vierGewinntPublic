@@ -8,5 +8,7 @@
         <file>textures/dice.png</file>
         <file>textures/TexturesCom_Plastic0074_S.jpg</file>
         <file>textures/TexturesCom_Fiberglass0027_S.jpg</file>
+        <file>textures/TexturesCom_FabricPlain0030_S.jpg</file>
+        <file>textures/TexturesCom_PaperCloseup0017_M.jpg</file>
     </qresource>
 </RCC>

@@ -1,5 +1,5 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.11
+import QtQuick.Controls 2.4
 import GlComponents 1.0
 
 Item {
@@ -23,71 +23,69 @@ Item {
             z: 1
             anchors.fill: parent
 
-            RoundButton {
-                id: roundButton6
-                x: 451
-                y: 32
-                width: 50
-                height: 50
-                text: "+"
-            }
+            Row {
+                id: row
+                x: 162
+                y: 51
+                width: 317
+                height: 46
 
-            RoundButton {
-                id: roundButton5
-                x: 398
-                y: 32
-                width: 50
-                height: 50
-                text: "+"
-            }
+                RoundButton {
+                    id: roundButton0
+                    width: 45
+                    height: 45
+                    text: "+"
+                }
 
-            RoundButton {
-                id: roundButton4
-                x: 345
-                y: 32
-                width: 50
-                height: 50
-                text: "+"
-            }
+                RoundButton {
+                    id: roundButton1
+                    width: 45
+                    height: 45
+                    text: "+"
+                }
 
-            RoundButton {
-                id: roundButton3
-                x: 292
-                y: 32
-                width: 50
-                height: 50
-                text: "+"
-            }
+                RoundButton {
+                    id: roundButton2
+                    width: 45
+                    height: 45
+                    text: "+"
+                }
 
-            RoundButton {
-                id: roundButton2
-                x: 239
-                y: 32
-                width: 50
-                height: 50
-                text: "+"
-            }
+                RoundButton {
+                    id: roundButton3
+                    width: 45
+                    height: 45
+                    text: "+"
+                }
 
-            RoundButton {
-                id: roundButton1
-                x: 186
-                y: 32
-                width: 50
-                height: 50
-                text: "+"
-            }
+                RoundButton {
+                    id: roundButton4
+                    width: 45
+                    height: 45
+                    text: "+"
+                }
 
-            RoundButton {
-                id: roundButton0
-                x: 136
-                y: 32
-                width: 50
-                height: 50
-                text: "+"
+                RoundButton {
+                    id: roundButton5
+                    width: 45
+                    height: 45
+                    text: "+"
+                }
+
+                RoundButton {
+                    id: roundButton6
+                    width: 45
+                    height: 45
+                    text: "+"
+                }
             }
         }
     }
 }
+
+
+
+
 
 
 
