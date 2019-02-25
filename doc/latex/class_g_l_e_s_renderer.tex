@@ -1,0 +1,1621 @@
+\hypertarget{class_g_l_e_s_renderer}{}\section{G\+L\+E\+S\+Renderer Class Reference}
+\label{class_g_l_e_s_renderer}\index{GLESRenderer@{GLESRenderer}}
+
+
+A render program that can be used as a simple replacement for the Open\+GL fixed function pipeline.  
+
+
+
+
+{\ttfamily \#include $<$glesrenderer.\+h$>$}
+
+Inheritance diagram for G\+L\+E\+S\+Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_l_e_s_renderer}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} \{ \newline
+\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a01a2d548e2a6b32401c8140d8d2d4edb}{I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}, 
+\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a9a193465ebcf7cb50c52579e5faccfa1}{V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}, 
+\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a5b0069ee1cbe3a7f59c894fea0bb87f4}{N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}, 
+\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a12d6a9758e29fa479c6f2b3fd2204802}{C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}, 
+\newline
+\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a664e56a457a0171c04883330689c283f}{T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_l_e_s_renderer_a0c5bf4702ee731dde0377a08b5e15ae2}{G\+L\+E\+S\+Renderer}} (Q\+Object $\ast$parent, const Q\+String \&v\+Shader\+Filename=\char`\"{}\+:/src/vshader.\+vsh\char`\"{}, const Q\+String \&f\+Shader\+Filename=\char`\"{}\+:/src/fshader.\+fsh\char`\"{})
+\item 
+virtual \mbox{\hyperlink{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}{$\sim$\+G\+L\+E\+S\+Renderer}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}{G\+L\+E\+S\+Renderer\+::$\sim$\+G\+L\+E\+S\+Renderer}} We need to delete the shaders here. They can not be added to the child list, because they live in render thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Initialization, binding and releasing}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_g_l_e_s_renderer_a0bb1617bc39236ccbf430cd282f127f2}{initialize}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_g_l_e_s_renderer_a41d040c7fa439552abf339b3883b02f4}{bind}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a860d9102e98cd4394dc91c56e61c512b}{release}} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Unproject, project and mouse interaction functions}\par
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_a8be3d2a634d0fe1e13fb7b97673eefab}{un\+Project\+Viewport\+Point}} (const Q\+Vector3D \&v\+Win)
+\item 
+Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_a36440b34ef23691928cb033a55c9c6f9}{viewport\+To\+Clip}} (const Q\+Vector3D \&v)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_ae600d289f94594374cdbd8c031cb0c86}{calculate\+Mouse\+Points}} (Q\+Vector3D $\ast$near\+Point, Q\+Vector3D $\ast$far\+Point, const Q\+Point \&mouse\+Pos)
+\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_a6f31b6893897549f3762a88a8bf135f8}{distance\+To\+Mouse\+Click}} (Q\+Vector3D p, const Q\+Point \&mouse\+Pos)
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a2c8f6b6ff0df6acafc6cbd7a82678a17}{mouse\+Intersection}} (Q\+Vector3D $\ast$intersection, Q\+Vector3D normal, float d, const Q\+Point \&mouse\+Pos)
+\end{DoxyCompactItemize}
+\end{Indent}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a8242d0b241a14c5850867ec00819c014}{set\+Mv\+Matrix}} (const Q\+Matrix4x4 new\+Val)
+\item 
+const Q\+Matrix4x4 \& \mbox{\hyperlink{class_g_l_e_s_renderer_af6f079ccbe2e37b90018dde13ad36b94}{get\+Mv\+Matrix}} ()
+\item 
+const Q\+Matrix3x3 \& \mbox{\hyperlink{class_g_l_e_s_renderer_a0dfc680c7a7b2aea8439f88a892858fe}{get\+Normal\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a180fe52b28553039f83b07157b962c3e}{set\+Look\+At}} (const Q\+Vector3D \&eye, const Q\+Vector3D \&center, const Q\+Vector3D \&up)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_ad439b83c368872dfd4439136d9af4d6d}{set\+P\+Matrix}} (const Q\+Matrix4x4 new\+Val)
+\item 
+const Q\+Matrix4x4 \& \mbox{\hyperlink{class_g_l_e_s_renderer_a57700c29516d33449e65e7243eaf2aac}{get\+P\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_afff0eca251e49d50c83277a2fe3ad5af}{set\+Perspective}} (G\+Lfloat fovy, G\+Lfloat aspect, G\+Lfloat near\+Clip, G\+Lfloat far\+Clip)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a7f0488a9867d384110718ca6ef9a70af}{set\+Ortho}} (float left, float right, float bottom, float top, float near\+Plane, float far\+Plane)
+\begin{DoxyCompactList}\small\item\em set\+Ortho Set p\+Matrix to an orthogonal projection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a9715cb674cb2fb4ae0cf13052f063336}{set\+Viewport}} (int x, int y, int w, int h)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_aadd9caa2f116226fa3d896bbad437e90}{read\+G\+L\+Viewport\+Settings}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_afce69d0a59a823b4470037bd785d0694}{set\+Ambient\+And\+Diffuse\+Color}} (const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} new\+Val)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a0173737627f25d5a0586a57569c211d2}{set\+Ambient\+Light\+Brightness}} (float new\+Val)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a1ab28a7a363508c57024fbbd67c30481}{set\+Specular\+Color}} (const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} new\+Val)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a75fdf201c7a27ab2e053e2a5d37e4ac4}{set\+Shininess}} (float new\+Val)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_ae6e3531d53ffdc334688eec3feaf9e77}{set\+Lighting\+Enabled}} (bool new\+Val)
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a72a9b248926c08a45dfea70b8f0e22ca}{is\+Lighting\+Enabled}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a990ae5bda053d007a710e7e9956facf1}{set\+Color\+Array\+Enabled}} (bool new\+Val)
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a79ef99aaf1e080612cad7ce4e77580bd}{is\+Color\+Array\+Enabled}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a83f1e3ddcb613eea7e74fa6ce4289350}{set\+Texture\+Enabled}} (bool new\+Val)
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_afedd8e9ef1c5804d070f3c79baa15439}{is\+Texture\+Enabled}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a957d299ae6eafc6604b5de598f525c6d}{set\+Mask\+Active}} (bool new\+Val)
+\begin{DoxyCompactList}\small\item\em set\+Mask\+Active Set the fragment shader mask flag \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a256990132d3f0ceff02a369db1361c2c}{is\+Mask\+Active}} ()
+\begin{DoxyCompactList}\small\item\em is\+Mask\+Active \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a4f755a8549d3ecbb2a40cabe56974c5f}{set\+Light\+Direction}} (const Q\+Vector3D \&new\+Val)
+\item 
+const Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_a12a75a5ea065e69ad3476344e59f5909}{light\+Direction}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a2ea9d299d160c0757f75e883164f6e21}{set\+Point\+Size}} (float new\+Val)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_aa41f49d92c3514ce90a354cd2127d1c5}{set\+Mask\+Center}} (const Q\+Point \&new\+Val)
+\begin{DoxyCompactList}\small\item\em set\+Mask\+Center Set center of fragment shader mask \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a07c9bfdc4f16745e9b09529e21184910}{set\+Mask\+Diameter}} (float new\+Val)
+\begin{DoxyCompactList}\small\item\em set\+Mask\+Diameter Set diameter of fragment shader mask \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_a2ba82f565d0a34259614448407cdad11}{point\+Size}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a712dddd10f14f80a003a347ff1aa1666}{push\+Mv\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a93ddfbce8f107b0cbc41b2854855202d}{pop\+Mv\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a252caaa926c2e86312b219454492ffe0}{translate}} (const Q\+Vector3D \&v)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a45f1e6f0154b7887289fd8a3aa22908f}{translate}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a9e034d2d95eedc35a56f8db1688df163}{rotate}} (G\+Lfloat angle, const Q\+Vector3D \&axis)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a4e51b730376db41ff15b4a976b258c6e}{rotate}} (float angle, float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a43e69a0a8c38adf1faae474c33fb7bb8}{zoom}} (float zoom\+Factor)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a8d8a2bac71c26f834b7ce7983204e870}{transform}} (const Q\+Matrix4x4 \&transformation)
+\begin{DoxyCompactList}\small\item\em transform Multiplies mv\+Matrix with transformation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a5a523cfef1b63258e863af159c04c235}{add\+Transformation}} (const Q\+Matrix4x4 additional\+Transformation)
+\begin{DoxyCompactList}\small\item\em add\+Transformation Multiplies additional\+Transformation to mv\+Matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_a4bd22f2f738b185f3b6c3e381c58feca}{scale}} (const Q\+Vector3D \&v)
+\end{DoxyCompactItemize}
+
+\begin{Indent}\textbf{ Attribute setters}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a8529c317862c57c027acce876bad17bb}{activate\+Attribute\+Array}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location, const Q\+Vector2D $\ast$values, int stride=0)
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a102377bf45b15bb52324214d2e9b6f14}{activate\+Attribute\+Array}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location, const Q\+Vector3D $\ast$values, int stride=0)
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_ada229880a48efdbb3daaa375b701ace0}{activate\+Attribute\+Array}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location, const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} $\ast$values, int stride=0)
+\item 
+void \mbox{\hyperlink{class_g_l_e_s_renderer_ad0bc53b13af77050b43f7a6ba5f97ea1}{activate\+Attribute\+Buffer}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location)
+\item 
+virtual void \mbox{\hyperlink{class_g_l_e_s_renderer_a0978cd1fe3baab589b7bfbcde6554c15}{disable\+Attribute\+Arrays}} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Debugging}\par
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_a5d591173ee2492417476253eb2e41986}{model\+To\+Clip}} (const Q\+Vector3D \&v)
+\item 
+Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_a531ca73b72e3a00a667b9f8237735724}{clip\+To\+Viewport}} (const Q\+Vector3D \&v)
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_ae18e97568cc61118fdcb6f9ca0b6480f}{activate\+Attribute\+Array}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location, const float $\ast$values, int tuple\+Size, int stride=0)
+\begin{DoxyCompactList}\small\item\em activate\+Attribute\+Array Enables Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays location may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a2c936870131300b9ed86cf9073747637}{m\+\_\+initialized}}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_ab4227a6b3394b7392c9a7001fc306ad1}{m\+\_\+bound}}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a89a023d2cabec874691841f5ff140bc8}{m\+\_\+lighting\+Enabled}}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a71b59ce0e9ae03eba0ed065bae8ecff7}{m\+\_\+color\+Array\+Enabled}}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a61680a3953bfb6b22e7131a518b1a5e2}{m\+\_\+texture\+Enabled}}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a9c58c18b9b58fb4f49bb1fd79f4a2f51}{m\+\_\+inverted\+Mvp\+Matrix\+Valid}}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a8e58a3bbfb5ba75c48cc35b06711131c}{m\+\_\+mask\+Active}}
+\item 
+Q\+Matrix4x4 \mbox{\hyperlink{class_g_l_e_s_renderer_a878a3ee8fe04d1a56659c78ba5e95f4b}{m\+\_\+mvp\+Matrix}}
+\item 
+Q\+Matrix4x4 \mbox{\hyperlink{class_g_l_e_s_renderer_af08d271c05f553df400b67685435cb0c}{m\+\_\+inverted\+Mvp\+Matrix}}
+\item 
+Q\+Stack$<$ Q\+Matrix4x4 $>$ \mbox{\hyperlink{class_g_l_e_s_renderer_a5675ffb62f73dc7ebff3e4aea59db56e}{m\+\_\+mv\+Matrix\+Stack}}
+\item 
+Q\+Matrix4x4 \mbox{\hyperlink{class_g_l_e_s_renderer_a2f8a5b98999a5ee14551a39e5f005389}{m\+\_\+mv\+Matrix}}
+\item 
+Q\+Matrix4x4 \mbox{\hyperlink{class_g_l_e_s_renderer_a2fe2ba5157fa87a9eca8eb15f8097fb5}{m\+\_\+p\+Matrix}}
+\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_abd7cabc787ad5c787b54ed2d47412df8}{m\+\_\+fovy}}
+\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_a719e99de6bb7e5af3a5fcae041fdefda}{m\+\_\+aspect}}
+\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_ab29bf2e72c2d91883b1ad3f3e8351940}{m\+\_\+near\+Clip}}
+\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_a6ecd1dee12a4592f35d097e14f90933b}{m\+\_\+far\+Clip}}
+\item 
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a78662dcb0fedf7710a57345d3d684b85}{m\+\_\+\+Ortho\+Mode}}
+\item 
+Q\+Matrix3x3 \mbox{\hyperlink{class_g_l_e_s_renderer_a76ff9b2803ac2a897d9df0cf587601ed}{m\+\_\+normal\+Matrix}}
+\item 
+Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_a7347241a0f6482d69479d10848c70238}{m\+\_\+light\+Direction}}
+\item 
+Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_ae3feaa98657e57bbc795a845dfafe1fe}{m\+\_\+half\+Plane\+Vector}}
+\item 
+\mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} \mbox{\hyperlink{class_g_l_e_s_renderer_af4b3fcfa029b28bfdd9d2b7bb9202796}{m\+\_\+ambient\+And\+Diffuse\+Color}}
+\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_ad40448fd0cbb01b078a759e5f8d9debc}{m\+\_\+ambient\+Light\+Brightness}}
+\item 
+\mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} \mbox{\hyperlink{class_g_l_e_s_renderer_a58ff6c2e940d9cb7fb8bdf9e676f69cd}{m\+\_\+specular\+Color}}
+\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_a5cb19e8d00b558a84f3776d51f0aca9c}{m\+\_\+shininess}}
+\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_a8571248c1e8858ccd260d91497e13354}{m\+\_\+point\+Size}}
+\item 
+float \mbox{\hyperlink{class_g_l_e_s_renderer_a8657f5ff8c5f663cd043731e9753e70a}{m\+\_\+mask\+Diameter}}
+\item 
+Q\+Point \mbox{\hyperlink{class_g_l_e_s_renderer_a4251b608f7c887b2bcfcb421b4a793c5}{m\+\_\+mask\+Center}}
+\item 
+Q\+String \mbox{\hyperlink{class_g_l_e_s_renderer_a9f9222c1a54ff9b01edb609bb570151a}{m\+\_\+v\+Shader\+File\+Name}}
+\item 
+Q\+String \mbox{\hyperlink{class_g_l_e_s_renderer_ac876ef67f2795f17e0f1d1e43cb686b4}{m\+\_\+f\+Shader\+File\+Name}}
+\item 
+Q\+Open\+G\+L\+Shader $\ast$ \mbox{\hyperlink{class_g_l_e_s_renderer_a41916fc04d753007a9340065ab08762e}{m\+\_\+v\+Shader}}
+\item 
+Q\+Open\+G\+L\+Shader $\ast$ \mbox{\hyperlink{class_g_l_e_s_renderer_a63dd17ddf099e24a26a9d7cdeab664fa}{m\+\_\+f\+Shader}}
+\item 
+Q\+Open\+G\+L\+Shader\+Program $\ast$ \mbox{\hyperlink{class_g_l_e_s_renderer_a49b1f32fad69d86fb7522d1a3f1e8d4f}{m\+\_\+render\+Program}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_ab03a79822dd105e1a0e5eecb65ee492b}{m\+\_\+location\+\_\+a\+Vertex}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a5bf9f36f33237a7fe2706f60c341dec9}{m\+\_\+location\+\_\+a\+Color}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_adca575c93185a1beb32bf54235a7766f}{m\+\_\+location\+\_\+a\+Normal}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_af5b18a94719f0b93d32be7cd9262fcfb}{m\+\_\+location\+\_\+a\+Tex\+Coord}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_aafa0944ec42f35eb2ebf08fe0e850ad7}{m\+\_\+location\+\_\+u\+Color\+Array\+Enabled}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a8d61c896b68041ae2439d21ed6981f28}{m\+\_\+location\+\_\+u\+Lighting\+Enabled}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_aec01e0adb9416c451d958f925a64d329}{m\+\_\+location\+\_\+u\+Normal\+Matrix}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a51a95f6a35efdde4a6e103ecae334322}{m\+\_\+location\+\_\+u\+Mvp\+Matrix}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a4125a33e9cea4fbc0e7e23edb4b4de43}{m\+\_\+location\+\_\+u\+Ambient\+And\+Diffuse\+Color}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a0dc79f50f3eea91e32316a6ecd8a9754}{m\+\_\+location\+\_\+u\+Ambient\+Light\+Brightness}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a0945edb3cd12c3228e405519d9cebe08}{m\+\_\+location\+\_\+u\+Specular\+Color}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_af1152640d14a616c9930161402da5eb3}{m\+\_\+location\+\_\+u\+Shininess}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_aba8a7f233b51b258542adce7114a93da}{m\+\_\+location\+\_\+u\+Light\+Direction}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a8a4088b65277a3efa4810454c00e6a16}{m\+\_\+location\+\_\+u\+Half\+Plane\+Vector}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a3cab0140a32534203dc8070058647d02}{m\+\_\+location\+\_\+u\+Point\+Size}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_ac2f2a0039e1b58fbd7d5abd3c43640bc}{m\+\_\+location\+\_\+u\+Texture\+Sampler}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a82f6728d7361a42c33f0e88be7a329a2}{m\+\_\+location\+\_\+u\+Texture\+Enabled}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a60785985120438561f095a5d0bb0a0e6}{m\+\_\+location\+\_\+u\+Mask\+Diameter}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_aa5865237289b4b166ccdcee4fafeefa7}{m\+\_\+location\+\_\+u\+Mask\+Center}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_ac7d1efb2e83cebe39608a9816856da64}{m\+\_\+location\+\_\+u\+Mask\+Active}}
+\item 
+Q\+List$<$ int $>$ \mbox{\hyperlink{class_g_l_e_s_renderer_a923229687ee02d0364a7e472fa1ed578}{m\+\_\+active\+Attribute\+Locations}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a437c4d81da1b944458b4abde903c23ce}{m\+\_\+viewportX}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a0e81b88aa0c613e99dc6be1737d83c93}{m\+\_\+viewportY}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_af839e0f722a97a026d7517de19acd352}{m\+\_\+viewportW}}
+\item 
+int \mbox{\hyperlink{class_g_l_e_s_renderer_a07da628f9769b11914946d71b71a4665}{m\+\_\+viewportH}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A render program that can be used as a simple replacement for the Open\+GL fixed function pipeline. 
+
+\begin{DoxyAuthor}{Author}
+Walter Roth, 2014
+\end{DoxyAuthor}
+\mbox{\hyperlink{class_g_l_e_s_renderer}{G\+L\+E\+S\+Renderer}} supports vertex, colors, normals, tex\+Coords, textures and matrix manipulation. It owns a modelview and a projection matrix which can be used like in the old days of Open\+GL 1. The vertex shader program needs to stick to the following variable names\+: attribute highp vec4 a\+\_\+\+Vertex; attribute highp vec4 a\+\_\+\+Color; attribute highp vec3 a\+\_\+\+Normal; attribute highp vec2 a\+\_\+\+Tex\+Coord;
+
+uniform bool u\+\_\+\+Color\+Array\+Enabled uniform bool u\+\_\+\+Lighting\+Enabled; uniform highp mat4 u\+\_\+\+Mvp\+Matrix; uniform highp mat3 u\+\_\+\+Normal\+Matrix; uniform highp vec3 u\+\_\+\+Light\+Direction; uniform highp vec4 u\+\_\+\+Ambient\+And\+Diffuse\+Color; uniform highp vec4 u\+\_\+\+Specular\+Color; uniform highp float u\+\_\+\+Shininess; uniform mediump float int u\+\_\+\+Point\+Size;
+
+The fragment shader texture variable must have the following name\+: uniform sampler2d s\+\_\+\+Texture;
+
+These names are used to determine the locations of the varables in the shaders. If you need more variables, subclass \mbox{\hyperlink{class_g_l_e_s_renderer}{G\+L\+E\+S\+Renderer}} and add new variable(s) to location\+\_\+\+X\+XX variables. Extend virtual intialize(), \mbox{\hyperlink{class_g_l_e_s_renderer_a41d040c7fa439552abf339b3883b02f4}{bind()}} and \mbox{\hyperlink{class_g_l_e_s_renderer_a0978cd1fe3baab589b7bfbcde6554c15}{disable\+Attribute\+Arrays()}} functions to support the new variable(s).
+
+The shader source should be in a separate file (e.\+g. added to the resources). Example shaders vshader1 and fshader1 emulate a simple fixed-\/function lighted Open\+GL 1 scene.
+
+Call initialize, after a valid Open\+GL context has been made current. Setup viewing with set\+Viewport, set\+Look\+At and set\+Perspective. Viewport coordinates must be given as G\+L-\/viewport coordinates, where lower left is (0,0). Call bind to bind the program and set the uniform values you need. After this, call activate\+Attribute\+Location to enable the attribute arrays. To change attribute arrays, call disable\+Attribute\+Arrays and then again activate\+Attribute\+Locations. Finally call release.
+
+\mbox{\hyperlink{class_g_l_e_s_renderer}{G\+L\+E\+S\+Renderer}} contains functions for projecting points from modelspace to screen and unprojecting points from screen to model space. These functions use the current matrix settings. Therefore, you have to (re)set the matrices to the values that are used to paint the model, before you call the project and unproject functions.
+
+For convenient mouse interaction, \mbox{\hyperlink{class_g_l_e_s_renderer}{G\+L\+E\+S\+Renderer}} supplies the \mbox{\hyperlink{class_g_l_e_s_renderer_ae600d289f94594374cdbd8c031cb0c86}{calculate\+Mouse\+Points()}}, \mbox{\hyperlink{class_g_l_e_s_renderer_a6f31b6893897549f3762a88a8bf135f8}{distance\+To\+Mouse\+Click()}} and \mbox{\hyperlink{class_g_l_e_s_renderer_a2c8f6b6ff0df6acafc6cbd7a82678a17}{mouse\+Intersection()}} functions. These functions use the unproject functions and therefore do also need valid model painting matrix settings. 
+
+Definition at line 81 of file glesrenderer.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}} 
+\index{GLESRenderer@{GLESRenderer}!AttributeLocation@{AttributeLocation}}
+\index{AttributeLocation@{AttributeLocation}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{AttributeLocation}{AttributeLocation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{G\+L\+E\+S\+Renderer\+::\+Attribute\+Location}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_LOCATION@{INVALID\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!INVALID\_LOCATION@{INVALID\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a01a2d548e2a6b32401c8140d8d2d4edb}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a01a2d548e2a6b32401c8140d8d2d4edb}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERTEX\_LOCATION@{VERTEX\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!VERTEX\_LOCATION@{VERTEX\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a9a193465ebcf7cb50c52579e5faccfa1}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a9a193465ebcf7cb50c52579e5faccfa1}} 
+V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NORMAL\_LOCATION@{NORMAL\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!NORMAL\_LOCATION@{NORMAL\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a5b0069ee1cbe3a7f59c894fea0bb87f4}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a5b0069ee1cbe3a7f59c894fea0bb87f4}} 
+N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COLOR\_LOCATION@{COLOR\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!COLOR\_LOCATION@{COLOR\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a12d6a9758e29fa479c6f2b3fd2204802}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a12d6a9758e29fa479c6f2b3fd2204802}} 
+C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEXCOORD\_LOCATION@{TEXCOORD\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!TEXCOORD\_LOCATION@{TEXCOORD\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a664e56a457a0171c04883330689c283f}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a664e56a457a0171c04883330689c283f}} 
+T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 88 of file glesrenderer.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0c5bf4702ee731dde0377a08b5e15ae2}\label{class_g_l_e_s_renderer_a0c5bf4702ee731dde0377a08b5e15ae2}} 
+\index{GLESRenderer@{GLESRenderer}!GLESRenderer@{GLESRenderer}}
+\index{GLESRenderer@{GLESRenderer}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{GLESRenderer()}{GLESRenderer()}}
+{\footnotesize\ttfamily G\+L\+E\+S\+Renderer\+::\+G\+L\+E\+S\+Renderer (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent,  }\item[{const Q\+String \&}]{v\+Shader\+Filename = {\ttfamily \char`\"{}\+:/src/vshader.vsh\char`\"{}},  }\item[{const Q\+String \&}]{f\+Shader\+Filename = {\ttfamily \char`\"{}\+:/src/fshader.fsh\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 37 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}\label{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}} 
+\index{GLESRenderer@{GLESRenderer}!````~GLESRenderer@{$\sim$GLESRenderer}}
+\index{````~GLESRenderer@{$\sim$GLESRenderer}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{$\sim$GLESRenderer()}{~GLESRenderer()}}
+{\footnotesize\ttfamily G\+L\+E\+S\+Renderer\+::$\sim$\+G\+L\+E\+S\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}{G\+L\+E\+S\+Renderer\+::$\sim$\+G\+L\+E\+S\+Renderer}} We need to delete the shaders here. They can not be added to the child list, because they live in render thread. 
+
+
+
+Definition at line 108 of file glesrenderer.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8529c317862c57c027acce876bad17bb}\label{class_g_l_e_s_renderer_a8529c317862c57c027acce876bad17bb}} 
+\index{GLESRenderer@{GLESRenderer}!activateAttributeArray@{activateAttributeArray}}
+\index{activateAttributeArray@{activateAttributeArray}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{activateAttributeArray()}{activateAttributeArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}}}]{array\+Location,  }\item[{const Q\+Vector2D $\ast$}]{values,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Enables 2D Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays Type may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON
+
+Enables Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays array\+Location may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON 
+
+Definition at line 654 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a102377bf45b15bb52324214d2e9b6f14}\label{class_g_l_e_s_renderer_a102377bf45b15bb52324214d2e9b6f14}} 
+\index{GLESRenderer@{GLESRenderer}!activateAttributeArray@{activateAttributeArray}}
+\index{activateAttributeArray@{activateAttributeArray}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{activateAttributeArray()}{activateAttributeArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}}}]{array\+Location,  }\item[{const Q\+Vector3D $\ast$}]{values,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Enables 3D Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays Type may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON
+
+Enables Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays array\+Location may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON 
+
+Definition at line 662 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ada229880a48efdbb3daaa375b701ace0}\label{class_g_l_e_s_renderer_ada229880a48efdbb3daaa375b701ace0}} 
+\index{GLESRenderer@{GLESRenderer}!activateAttributeArray@{activateAttributeArray}}
+\index{activateAttributeArray@{activateAttributeArray}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{activateAttributeArray()}{activateAttributeArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}}}]{array\+Location,  }\item[{const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} $\ast$}]{values,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Enables 4D Vertex or color arrays and sets start adresses of arrays Type may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON
+
+Enables Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays array\+Location may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON 
+
+Definition at line 670 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ae18e97568cc61118fdcb6f9ca0b6480f}\label{class_g_l_e_s_renderer_ae18e97568cc61118fdcb6f9ca0b6480f}} 
+\index{GLESRenderer@{GLESRenderer}!activateAttributeArray@{activateAttributeArray}}
+\index{activateAttributeArray@{activateAttributeArray}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{activateAttributeArray()}{activateAttributeArray()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}}}]{array\+Location,  }\item[{const float $\ast$}]{values,  }\item[{int}]{tuple\+Size,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+activate\+Attribute\+Array Enables Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays location may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+{\em values} & Address of first number \\
+\hline
+{\em tuple\+Size} & Numbers per vertex \\
+\hline
+{\em stride} & Distance to next tuple \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Enables Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays array\+Location may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON 
+
+Definition at line 679 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ad0bc53b13af77050b43f7a6ba5f97ea1}\label{class_g_l_e_s_renderer_ad0bc53b13af77050b43f7a6ba5f97ea1}} 
+\index{GLESRenderer@{GLESRenderer}!activateAttributeBuffer@{activateAttributeBuffer}}
+\index{activateAttributeBuffer@{activateAttributeBuffer}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{activateAttributeBuffer()}{activateAttributeBuffer()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{G\+L\+E\+S\+Renderer\+::\+Attribute\+Location}}}]{buffer\+Location }\end{DoxyParamCaption})}
+
+To be used with arrays (e.\+g. Q\+Vector$<$\+G\+L\+Point$>$) of \mbox{\hyperlink{class_g_l_point}{G\+L\+Point}} objects. Enables 3D Vertex, normal, color or tex\+Coord buffer location may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON tuple\+Size is set to 3 for V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON, to 4 for C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON 
+
+Definition at line 701 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a5a523cfef1b63258e863af159c04c235}\label{class_g_l_e_s_renderer_a5a523cfef1b63258e863af159c04c235}} 
+\index{GLESRenderer@{GLESRenderer}!addTransformation@{addTransformation}}
+\index{addTransformation@{addTransformation}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{addTransformation()}{addTransformation()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::add\+Transformation (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4}]{additional\+Transformation }\end{DoxyParamCaption})}
+
+
+
+add\+Transformation Multiplies additional\+Transformation to mv\+Matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em additional\+Transformation} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 466 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a41d040c7fa439552abf339b3883b02f4}\label{class_g_l_e_s_renderer_a41d040c7fa439552abf339b3883b02f4}} 
+\index{GLESRenderer@{GLESRenderer}!bind@{bind}}
+\index{bind@{bind}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Bind program and transfer attribute and uniform data to the shaders. Calls initialize, if not alraedy initialized. Returns false, if binding failed.
+
+Bind program and transfer attribute and uniform data to the shaders. Calls initialize, if not already initialized. 
+
+Definition at line 592 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ae600d289f94594374cdbd8c031cb0c86}\label{class_g_l_e_s_renderer_ae600d289f94594374cdbd8c031cb0c86}} 
+\index{GLESRenderer@{GLESRenderer}!calculateMousePoints@{calculateMousePoints}}
+\index{calculateMousePoints@{calculateMousePoints}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{calculateMousePoints()}{calculateMousePoints()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::calculate\+Mouse\+Points (\begin{DoxyParamCaption}\item[{Q\+Vector3D $\ast$}]{near\+Point,  }\item[{Q\+Vector3D $\ast$}]{far\+Point,  }\item[{const Q\+Point \&}]{mouse\+Pos }\end{DoxyParamCaption})}
+
+Returns the points on near and far clipping plane, that correspond to the mouseX and mouseY coordinates of a mouse click. mouseX and mouseY are coordinates as delivered by Q\+Mouse\+Event or Q\+Declarative\+Mouse\+Event. 
+
+Definition at line 259 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a531ca73b72e3a00a667b9f8237735724}\label{class_g_l_e_s_renderer_a531ca73b72e3a00a667b9f8237735724}} 
+\index{GLESRenderer@{GLESRenderer}!clipToViewport@{clipToViewport}}
+\index{clipToViewport@{clipToViewport}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{clipToViewport()}{clipToViewport()}}
+{\footnotesize\ttfamily Q\+Vector3D G\+L\+E\+S\+Renderer\+::clip\+To\+Viewport (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{v }\end{DoxyParamCaption})}
+
+Performs viewport transform. Mainly for debugging. 
+
+Definition at line 769 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0978cd1fe3baab589b7bfbcde6554c15}\label{class_g_l_e_s_renderer_a0978cd1fe3baab589b7bfbcde6554c15}} 
+\index{GLESRenderer@{GLESRenderer}!disableAttributeArrays@{disableAttributeArrays}}
+\index{disableAttributeArrays@{disableAttributeArrays}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{disableAttributeArrays()}{disableAttributeArrays()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::disable\+Attribute\+Arrays (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Disables all enabled attribute arrays. To be called after rendering an object.
+
+Disables all enabled attribute arrays. 
+
+Definition at line 723 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a6f31b6893897549f3762a88a8bf135f8}\label{class_g_l_e_s_renderer_a6f31b6893897549f3762a88a8bf135f8}} 
+\index{GLESRenderer@{GLESRenderer}!distanceToMouseClick@{distanceToMouseClick}}
+\index{distanceToMouseClick@{distanceToMouseClick}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{distanceToMouseClick()}{distanceToMouseClick()}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::distance\+To\+Mouse\+Click (\begin{DoxyParamCaption}\item[{Q\+Vector3D}]{p,  }\item[{const Q\+Point \&}]{mouse\+Pos }\end{DoxyParamCaption})}
+
+Calculate the distance of the \char`\"{}mouse ray line\char`\"{} to point p in model space. mouseX, mouseY are the coordinates of the mouse click as delivered by Q\+Mouse\+Event. Returns distance. 
+
+Definition at line 273 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af6f079ccbe2e37b90018dde13ad36b94}\label{class_g_l_e_s_renderer_af6f079ccbe2e37b90018dde13ad36b94}} 
+\index{GLESRenderer@{GLESRenderer}!getMvMatrix@{getMvMatrix}}
+\index{getMvMatrix@{getMvMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{getMvMatrix()}{getMvMatrix()}}
+{\footnotesize\ttfamily const Q\+Matrix4x4\& G\+L\+E\+S\+Renderer\+::get\+Mv\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter for debugging. 
+
+Definition at line 188 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0dfc680c7a7b2aea8439f88a892858fe}\label{class_g_l_e_s_renderer_a0dfc680c7a7b2aea8439f88a892858fe}} 
+\index{GLESRenderer@{GLESRenderer}!getNormalMatrix@{getNormalMatrix}}
+\index{getNormalMatrix@{getNormalMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{getNormalMatrix()}{getNormalMatrix()}}
+{\footnotesize\ttfamily const Q\+Matrix3x3\& G\+L\+E\+S\+Renderer\+::get\+Normal\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter for debugging. 
+
+Definition at line 192 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a57700c29516d33449e65e7243eaf2aac}\label{class_g_l_e_s_renderer_a57700c29516d33449e65e7243eaf2aac}} 
+\index{GLESRenderer@{GLESRenderer}!getPMatrix@{getPMatrix}}
+\index{getPMatrix@{getPMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{getPMatrix()}{getPMatrix()}}
+{\footnotesize\ttfamily const Q\+Matrix4x4\& G\+L\+E\+S\+Renderer\+::get\+P\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter for debugging. 
+
+Definition at line 207 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0bb1617bc39236ccbf430cd282f127f2}\label{class_g_l_e_s_renderer_a0bb1617bc39236ccbf430cd282f127f2}} 
+\index{GLESRenderer@{GLESRenderer}!initialize@{initialize}}
+\index{initialize@{initialize}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Compile shaders, get attribute and uniform locations of shaders. This function needs an active Open\+GL context. Returns false, if initialization failed.
+
+Compile shaders, get attribute and uniform locations. This function needs an active Open\+GL context. 
+
+Definition at line 508 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a79ef99aaf1e080612cad7ce4e77580bd}\label{class_g_l_e_s_renderer_a79ef99aaf1e080612cad7ce4e77580bd}} 
+\index{GLESRenderer@{GLESRenderer}!isColorArrayEnabled@{isColorArrayEnabled}}
+\index{isColorArrayEnabled@{isColorArrayEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{isColorArrayEnabled()}{isColorArrayEnabled()}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::is\+Color\+Array\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns lighting flag. 
+
+Definition at line 273 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a72a9b248926c08a45dfea70b8f0e22ca}\label{class_g_l_e_s_renderer_a72a9b248926c08a45dfea70b8f0e22ca}} 
+\index{GLESRenderer@{GLESRenderer}!isLightingEnabled@{isLightingEnabled}}
+\index{isLightingEnabled@{isLightingEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{isLightingEnabled()}{isLightingEnabled()}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::is\+Lighting\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns lighting flag. 
+
+Definition at line 264 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a256990132d3f0ceff02a369db1361c2c}\label{class_g_l_e_s_renderer_a256990132d3f0ceff02a369db1361c2c}} 
+\index{GLESRenderer@{GLESRenderer}!isMaskActive@{isMaskActive}}
+\index{isMaskActive@{isMaskActive}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{isMaskActive()}{isMaskActive()}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::is\+Mask\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+is\+Mask\+Active 
+
+\begin{DoxyReturn}{Returns}
+Returns mask flag. 
+\end{DoxyReturn}
+
+
+Definition at line 292 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_afedd8e9ef1c5804d070f3c79baa15439}\label{class_g_l_e_s_renderer_afedd8e9ef1c5804d070f3c79baa15439}} 
+\index{GLESRenderer@{GLESRenderer}!isTextureEnabled@{isTextureEnabled}}
+\index{isTextureEnabled@{isTextureEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{isTextureEnabled()}{isTextureEnabled()}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::is\+Texture\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns texture flag; 
+
+Definition at line 282 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a12a75a5ea065e69ad3476344e59f5909}\label{class_g_l_e_s_renderer_a12a75a5ea065e69ad3476344e59f5909}} 
+\index{GLESRenderer@{GLESRenderer}!lightDirection@{lightDirection}}
+\index{lightDirection@{lightDirection}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{lightDirection()}{lightDirection()}}
+{\footnotesize\ttfamily const Q\+Vector3D G\+L\+E\+S\+Renderer\+::light\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter. 
+
+Definition at line 301 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a5d591173ee2492417476253eb2e41986}\label{class_g_l_e_s_renderer_a5d591173ee2492417476253eb2e41986}} 
+\index{GLESRenderer@{GLESRenderer}!modelToClip@{modelToClip}}
+\index{modelToClip@{modelToClip}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{modelToClip()}{modelToClip()}}
+{\footnotesize\ttfamily Q\+Vector3D G\+L\+E\+S\+Renderer\+::model\+To\+Clip (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{v }\end{DoxyParamCaption})}
+
+Multiplies current mvp matrix with v. Mainly for debugging. 
+
+Definition at line 758 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a2c8f6b6ff0df6acafc6cbd7a82678a17}\label{class_g_l_e_s_renderer_a2c8f6b6ff0df6acafc6cbd7a82678a17}} 
+\index{GLESRenderer@{GLESRenderer}!mouseIntersection@{mouseIntersection}}
+\index{mouseIntersection@{mouseIntersection}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{mouseIntersection()}{mouseIntersection()}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::mouse\+Intersection (\begin{DoxyParamCaption}\item[{Q\+Vector3D $\ast$}]{intersection,  }\item[{Q\+Vector3D}]{normal,  }\item[{float}]{d,  }\item[{const Q\+Point \&}]{mouse\+Pos }\end{DoxyParamCaption})}
+
+Calculates intersection of \char`\"{}mouse ray line\char`\"{} with the plane defined by normal and d. mouseX, mouseY are the coordinates of the mouse click as delivered by Q\+Mouse\+Event. Returns true, if intersection is in the visible frustum, else returns false. If return value is true, {\itshape intersection is the intersection of the mouse ray line with the plane normal}(x,y,z) + d = 0. If return value is false, $\ast$intersection is not modified. 
+
+Definition at line 293 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a2ba82f565d0a34259614448407cdad11}\label{class_g_l_e_s_renderer_a2ba82f565d0a34259614448407cdad11}} 
+\index{GLESRenderer@{GLESRenderer}!pointSize@{pointSize}}
+\index{pointSize@{pointSize}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{pointSize()}{pointSize()}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::point\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns point\+Size; 
+
+Definition at line 322 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a93ddfbce8f107b0cbc41b2854855202d}\label{class_g_l_e_s_renderer_a93ddfbce8f107b0cbc41b2854855202d}} 
+\index{GLESRenderer@{GLESRenderer}!popMvMatrix@{popMvMatrix}}
+\index{popMvMatrix@{popMvMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{popMvMatrix()}{popMvMatrix()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::pop\+Mv\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Pops mv\+Matrix from stack and updates normal\+Matrix and mvp\+Matrix. 
+
+Definition at line 443 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a712dddd10f14f80a003a347ff1aa1666}\label{class_g_l_e_s_renderer_a712dddd10f14f80a003a347ff1aa1666}} 
+\index{GLESRenderer@{GLESRenderer}!pushMvMatrix@{pushMvMatrix}}
+\index{pushMvMatrix@{pushMvMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{pushMvMatrix()}{pushMvMatrix()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::push\+Mv\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pushes mv\+Matrix. 
+
+Definition at line 327 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aadd9caa2f116226fa3d896bbad437e90}\label{class_g_l_e_s_renderer_aadd9caa2f116226fa3d896bbad437e90}} 
+\index{GLESRenderer@{GLESRenderer}!readGLViewportSettings@{readGLViewportSettings}}
+\index{readGLViewportSettings@{readGLViewportSettings}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{readGLViewportSettings()}{readGLViewportSettings()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::read\+G\+L\+Viewport\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the present viewport settings from GL engine
+
+get the present settings from GL engine 
+
+Definition at line 745 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a860d9102e98cd4394dc91c56e61c512b}\label{class_g_l_e_s_renderer_a860d9102e98cd4394dc91c56e61c512b}} 
+\index{GLESRenderer@{GLESRenderer}!release@{release}}
+\index{release@{release}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Releases program. To be called, when all rendering is finished. Calls disable\+Attribute\+Arrays and releases program.
+
+Releases program. To be called, when all rendering is finished. 
+
+Definition at line 733 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a9e034d2d95eedc35a56f8db1688df163}\label{class_g_l_e_s_renderer_a9e034d2d95eedc35a56f8db1688df163}} 
+\index{GLESRenderer@{GLESRenderer}!rotate@{rotate}}
+\index{rotate@{rotate}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::rotate (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{angle,  }\item[{const Q\+Vector3D \&}]{axis }\end{DoxyParamCaption})}
+
+Rotates mv\+Matrix by angle around axis 
+
+Definition at line 460 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a4e51b730376db41ff15b4a976b258c6e}\label{class_g_l_e_s_renderer_a4e51b730376db41ff15b4a976b258c6e}} 
+\index{GLESRenderer@{GLESRenderer}!rotate@{rotate}}
+\index{rotate@{rotate}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+Rotates mv\+Matrix by angle around axis (x,y,z) 
+
+Definition at line 480 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a4bd22f2f738b185f3b6c3e381c58feca}\label{class_g_l_e_s_renderer_a4bd22f2f738b185f3b6c3e381c58feca}} 
+\index{GLESRenderer@{GLESRenderer}!scale@{scale}}
+\index{scale@{scale}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::scale (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{v }\end{DoxyParamCaption})}
+
+Scales mv\+Matrix. 
+
+Definition at line 474 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_afce69d0a59a823b4470037bd785d0694}\label{class_g_l_e_s_renderer_afce69d0a59a823b4470037bd785d0694}} 
+\index{GLESRenderer@{GLESRenderer}!setAmbientAndDiffuseColor@{setAmbientAndDiffuseColor}}
+\index{setAmbientAndDiffuseColor@{setAmbientAndDiffuseColor}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setAmbientAndDiffuseColor()}{setAmbientAndDiffuseColor()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Ambient\+And\+Diffuse\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}}}]{new\+Val }\end{DoxyParamCaption})}
+
+Set the color for ambient and diffuse lighting (or no lighting). Alternatively use a color array and color attribute. Defaults to white.
+
+Set the color for ambient and diffuse lighting (or no lighting). Alternatively use a color array and color attribute. 
+
+Definition at line 314 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0173737627f25d5a0586a57569c211d2}\label{class_g_l_e_s_renderer_a0173737627f25d5a0586a57569c211d2}} 
+\index{GLESRenderer@{GLESRenderer}!setAmbientLightBrightness@{setAmbientLightBrightness}}
+\index{setAmbientLightBrightness@{setAmbientLightBrightness}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setAmbientLightBrightness()}{setAmbientLightBrightness()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Ambient\+Light\+Brightness (\begin{DoxyParamCaption}\item[{float}]{new\+Val }\end{DoxyParamCaption})}
+
+Set the dimming factor for ambient light. Defaults to 0.\+2. 
+
+Definition at line 325 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a990ae5bda053d007a710e7e9956facf1}\label{class_g_l_e_s_renderer_a990ae5bda053d007a710e7e9956facf1}} 
+\index{GLESRenderer@{GLESRenderer}!setColorArrayEnabled@{setColorArrayEnabled}}
+\index{setColorArrayEnabled@{setColorArrayEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setColorArrayEnabled()}{setColorArrayEnabled()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Color\+Array\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{new\+Val }\end{DoxyParamCaption})}
+
+Enable / disable color array. Defaults to false.
+
+Enable / disable color array. 
+
+Definition at line 367 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a4f755a8549d3ecbb2a40cabe56974c5f}\label{class_g_l_e_s_renderer_a4f755a8549d3ecbb2a40cabe56974c5f}} 
+\index{GLESRenderer@{GLESRenderer}!setLightDirection@{setLightDirection}}
+\index{setLightDirection@{setLightDirection}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setLightDirection()}{setLightDirection()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Light\+Direction (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{new\+Val }\end{DoxyParamCaption})}
+
+Set light direction. Defaults to (1.\+0, 1.\+0, 1.\+0)
+
+Set light direction. 
+
+Definition at line 394 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ae6e3531d53ffdc334688eec3feaf9e77}\label{class_g_l_e_s_renderer_ae6e3531d53ffdc334688eec3feaf9e77}} 
+\index{GLESRenderer@{GLESRenderer}!setLightingEnabled@{setLightingEnabled}}
+\index{setLightingEnabled@{setLightingEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setLightingEnabled()}{setLightingEnabled()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Lighting\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{new\+Val }\end{DoxyParamCaption})}
+
+Enable / disable lighting. Defaults to false.
+
+Enable / disable lighting. 
+
+Definition at line 357 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a180fe52b28553039f83b07157b962c3e}\label{class_g_l_e_s_renderer_a180fe52b28553039f83b07157b962c3e}} 
+\index{GLESRenderer@{GLESRenderer}!setLookAt@{setLookAt}}
+\index{setLookAt@{setLookAt}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setLookAt()}{setLookAt()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Look\+At (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{eye,  }\item[{const Q\+Vector3D \&}]{center,  }\item[{const Q\+Vector3D \&}]{up }\end{DoxyParamCaption})}
+
+Sets mv\+Matrix to a look\+At transformation. Call set\+P\+Matrix or set\+Perspective first. 
+
+Definition at line 143 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a957d299ae6eafc6604b5de598f525c6d}\label{class_g_l_e_s_renderer_a957d299ae6eafc6604b5de598f525c6d}} 
+\index{GLESRenderer@{GLESRenderer}!setMaskActive@{setMaskActive}}
+\index{setMaskActive@{setMaskActive}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setMaskActive()}{setMaskActive()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Mask\+Active (\begin{DoxyParamCaption}\item[{bool}]{new\+Val }\end{DoxyParamCaption})}
+
+
+
+set\+Mask\+Active Set the fragment shader mask flag 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Val} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 384 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aa41f49d92c3514ce90a354cd2127d1c5}\label{class_g_l_e_s_renderer_aa41f49d92c3514ce90a354cd2127d1c5}} 
+\index{GLESRenderer@{GLESRenderer}!setMaskCenter@{setMaskCenter}}
+\index{setMaskCenter@{setMaskCenter}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setMaskCenter()}{setMaskCenter()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Mask\+Center (\begin{DoxyParamCaption}\item[{const Q\+Point \&}]{new\+Val }\end{DoxyParamCaption})}
+
+
+
+set\+Mask\+Center Set center of fragment shader mask 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Val} & New center in viewport coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 426 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a07c9bfdc4f16745e9b09529e21184910}\label{class_g_l_e_s_renderer_a07c9bfdc4f16745e9b09529e21184910}} 
+\index{GLESRenderer@{GLESRenderer}!setMaskDiameter@{setMaskDiameter}}
+\index{setMaskDiameter@{setMaskDiameter}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setMaskDiameter()}{setMaskDiameter()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Mask\+Diameter (\begin{DoxyParamCaption}\item[{float}]{new\+Val }\end{DoxyParamCaption})}
+
+
+
+set\+Mask\+Diameter Set diameter of fragment shader mask 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Val} & New diameter in pixels. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 433 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8242d0b241a14c5850867ec00819c014}\label{class_g_l_e_s_renderer_a8242d0b241a14c5850867ec00819c014}} 
+\index{GLESRenderer@{GLESRenderer}!setMvMatrix@{setMvMatrix}}
+\index{setMvMatrix@{setMvMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setMvMatrix()}{setMvMatrix()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Mv\+Matrix (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4}]{new\+Val }\end{DoxyParamCaption})}
+
+Getters and setters for uniforms\+Set modelview matrix. Updates mvp\+Matrix and normal\+Matrix too. Call set\+P\+Matrix or set\+Perspective first.
+
+Set modelview matrix. Updates mvp\+Matrix and normal\+Matrix too. Call set\+P\+Matrix first. 
+
+Definition at line 120 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a7f0488a9867d384110718ca6ef9a70af}\label{class_g_l_e_s_renderer_a7f0488a9867d384110718ca6ef9a70af}} 
+\index{GLESRenderer@{GLESRenderer}!setOrtho@{setOrtho}}
+\index{setOrtho@{setOrtho}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setOrtho()}{setOrtho()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Ortho (\begin{DoxyParamCaption}\item[{float}]{left,  }\item[{float}]{right,  }\item[{float}]{bottom,  }\item[{float}]{top,  }\item[{float}]{near\+Plane,  }\item[{float}]{far\+Plane }\end{DoxyParamCaption})}
+
+
+
+set\+Ortho Set p\+Matrix to an orthogonal projection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & \\
+\hline
+{\em right} & \\
+\hline
+{\em bottom} & \\
+\hline
+{\em top} & \\
+\hline
+{\em near\+Plane} & \\
+\hline
+{\em far\+Plane} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_afff0eca251e49d50c83277a2fe3ad5af}\label{class_g_l_e_s_renderer_afff0eca251e49d50c83277a2fe3ad5af}} 
+\index{GLESRenderer@{GLESRenderer}!setPerspective@{setPerspective}}
+\index{setPerspective@{setPerspective}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setPerspective()}{setPerspective()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Perspective (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{fovy,  }\item[{G\+Lfloat}]{aspect,  }\item[{G\+Lfloat}]{near\+Clip,  }\item[{G\+Lfloat}]{far\+Clip }\end{DoxyParamCaption})}
+
+Setup projection matrix. Call set\+Mv\+Matrix after this. 
+
+Definition at line 165 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ad439b83c368872dfd4439136d9af4d6d}\label{class_g_l_e_s_renderer_ad439b83c368872dfd4439136d9af4d6d}} 
+\index{GLESRenderer@{GLESRenderer}!setPMatrix@{setPMatrix}}
+\index{setPMatrix@{setPMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setPMatrix()}{setPMatrix()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+P\+Matrix (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4}]{new\+Val }\end{DoxyParamCaption})}
+
+Set projection matrix. Call set\+Mv\+Matrix after this. 
+
+Definition at line 154 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a2ea9d299d160c0757f75e883164f6e21}\label{class_g_l_e_s_renderer_a2ea9d299d160c0757f75e883164f6e21}} 
+\index{GLESRenderer@{GLESRenderer}!setPointSize@{setPointSize}}
+\index{setPointSize@{setPointSize}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setPointSize()}{setPointSize()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Point\+Size (\begin{DoxyParamCaption}\item[{float}]{new\+Val }\end{DoxyParamCaption})}
+
+Set size of points drawn with G\+L\+\_\+\+P\+O\+I\+N\+TS. Defaults to 2.\+0.
+
+Set size of points drawn with G\+L\+\_\+\+P\+O\+I\+N\+TS. 
+
+Definition at line 416 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a75fdf201c7a27ab2e053e2a5d37e4ac4}\label{class_g_l_e_s_renderer_a75fdf201c7a27ab2e053e2a5d37e4ac4}} 
+\index{GLESRenderer@{GLESRenderer}!setShininess@{setShininess}}
+\index{setShininess@{setShininess}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setShininess()}{setShininess()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Shininess (\begin{DoxyParamCaption}\item[{float}]{new\+Val }\end{DoxyParamCaption})}
+
+Set the shininess (exponent) for specular lighting. Defaults to 200.
+
+Set the shininess for specular lighting. 
+
+Definition at line 347 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a1ab28a7a363508c57024fbbd67c30481}\label{class_g_l_e_s_renderer_a1ab28a7a363508c57024fbbd67c30481}} 
+\index{GLESRenderer@{GLESRenderer}!setSpecularColor@{setSpecularColor}}
+\index{setSpecularColor@{setSpecularColor}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setSpecularColor()}{setSpecularColor()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Specular\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}}}]{new\+Val }\end{DoxyParamCaption})}
+
+Set the color for specular lighting. Defaults to white.
+
+Set the color for specular lighting. 
+
+Definition at line 335 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a83f1e3ddcb613eea7e74fa6ce4289350}\label{class_g_l_e_s_renderer_a83f1e3ddcb613eea7e74fa6ce4289350}} 
+\index{GLESRenderer@{GLESRenderer}!setTextureEnabled@{setTextureEnabled}}
+\index{setTextureEnabled@{setTextureEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setTextureEnabled()}{setTextureEnabled()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Texture\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{new\+Val }\end{DoxyParamCaption})}
+
+Set the texture flag. Defaults to false.
+
+Set the texture flag. 
+
+Definition at line 377 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a9715cb674cb2fb4ae0cf13052f063336}\label{class_g_l_e_s_renderer_a9715cb674cb2fb4ae0cf13052f063336}} 
+\index{GLESRenderer@{GLESRenderer}!setViewport@{setViewport}}
+\index{setViewport@{setViewport}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{setViewport()}{setViewport()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::set\+Viewport (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+Set viewport Viewport coordinates must be given as G\+L-\/viewport coordinates, where lower left is (0,0).
+
+Set viewport 
+
+Definition at line 200 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8d8a2bac71c26f834b7ce7983204e870}\label{class_g_l_e_s_renderer_a8d8a2bac71c26f834b7ce7983204e870}} 
+\index{GLESRenderer@{GLESRenderer}!transform@{transform}}
+\index{transform@{transform}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::transform (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{transformation }\end{DoxyParamCaption})}
+
+
+
+transform Multiplies mv\+Matrix with transformation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transformation} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 493 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a252caaa926c2e86312b219454492ffe0}\label{class_g_l_e_s_renderer_a252caaa926c2e86312b219454492ffe0}} 
+\index{GLESRenderer@{GLESRenderer}!translate@{translate}}
+\index{translate@{translate}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::translate (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{v }\end{DoxyParamCaption})}
+
+Translates mv\+Matrix by v 
+
+Definition at line 451 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a45f1e6f0154b7887289fd8a3aa22908f}\label{class_g_l_e_s_renderer_a45f1e6f0154b7887289fd8a3aa22908f}} 
+\index{GLESRenderer@{GLESRenderer}!translate@{translate}}
+\index{translate@{translate}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::translate (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Definition at line 498 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8be3d2a634d0fe1e13fb7b97673eefab}\label{class_g_l_e_s_renderer_a8be3d2a634d0fe1e13fb7b97673eefab}} 
+\index{GLESRenderer@{GLESRenderer}!unProjectViewportPoint@{unProjectViewportPoint}}
+\index{unProjectViewportPoint@{unProjectViewportPoint}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{unProjectViewportPoint()}{unProjectViewportPoint()}}
+{\footnotesize\ttfamily Q\+Vector3D G\+L\+E\+S\+Renderer\+::un\+Project\+Viewport\+Point (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{v\+Win }\end{DoxyParamCaption})}
+
+Uses viewport and matrix settings to reverse the vertex transformation chain. v\+Win x,y and z are the coordinates in window coordinates. Lower left of viewport is winX = 0, winY = 0. Use winZ = 0.\+0 for a point on near clipping plane and winZ = 1.\+0 for a point on far clipping plane. This function assumes, that the vertex shader computes gl\+\_\+positon as v $\ast$ mvp\+Matrix. Use a custom shader reverse function, if this is not true. Returns coordinate in object space.
+
+Uses viewport and matrix settings to reverse the vertex transformation chain. WinX, winY, winZ are the coordinates in window coordinates. Lower left of viewport is winX = 0, winY = 0. Use winZ = 0.\+0 for a point on near clipping plane and winZ = 1.\+0 for a point on far clipping plane. This function assumes, that the vertex shader computes gl\+\_\+positon as v $\ast$ mvp\+Matrix. Use a custom shader reverse function, if this is not true. Returns coordinate in object space. 
+
+Definition at line 217 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a36440b34ef23691928cb033a55c9c6f9}\label{class_g_l_e_s_renderer_a36440b34ef23691928cb033a55c9c6f9}} 
+\index{GLESRenderer@{GLESRenderer}!viewportToClip@{viewportToClip}}
+\index{viewportToClip@{viewportToClip}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{viewportToClip()}{viewportToClip()}}
+{\footnotesize\ttfamily Q\+Vector3D G\+L\+E\+S\+Renderer\+::viewport\+To\+Clip (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{v\+Win }\end{DoxyParamCaption})}
+
+Performs inverse viewport transform. 
+
+Definition at line 235 of file glesrenderer.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a43e69a0a8c38adf1faae474c33fb7bb8}\label{class_g_l_e_s_renderer_a43e69a0a8c38adf1faae474c33fb7bb8}} 
+\index{GLESRenderer@{GLESRenderer}!zoom@{zoom}}
+\index{zoom@{zoom}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{zoom()}{zoom()}}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::zoom (\begin{DoxyParamCaption}\item[{float}]{zoom\+Factor }\end{DoxyParamCaption})}
+
+
+
+Definition at line 485 of file glesrenderer.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a923229687ee02d0364a7e472fa1ed578}\label{class_g_l_e_s_renderer_a923229687ee02d0364a7e472fa1ed578}} 
+\index{GLESRenderer@{GLESRenderer}!m\_activeAttributeLocations@{m\_activeAttributeLocations}}
+\index{m\_activeAttributeLocations@{m\_activeAttributeLocations}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_activeAttributeLocations}{m\_activeAttributeLocations}}
+{\footnotesize\ttfamily Q\+List$<$int$>$ G\+L\+E\+S\+Renderer\+::m\+\_\+active\+Attribute\+Locations\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 505 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af4b3fcfa029b28bfdd9d2b7bb9202796}\label{class_g_l_e_s_renderer_af4b3fcfa029b28bfdd9d2b7bb9202796}} 
+\index{GLESRenderer@{GLESRenderer}!m\_ambientAndDiffuseColor@{m\_ambientAndDiffuseColor}}
+\index{m\_ambientAndDiffuseColor@{m\_ambientAndDiffuseColor}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_ambientAndDiffuseColor}{m\_ambientAndDiffuseColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} G\+L\+E\+S\+Renderer\+::m\+\_\+ambient\+And\+Diffuse\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 464 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ad40448fd0cbb01b078a759e5f8d9debc}\label{class_g_l_e_s_renderer_ad40448fd0cbb01b078a759e5f8d9debc}} 
+\index{GLESRenderer@{GLESRenderer}!m\_ambientLightBrightness@{m\_ambientLightBrightness}}
+\index{m\_ambientLightBrightness@{m\_ambientLightBrightness}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_ambientLightBrightness}{m\_ambientLightBrightness}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+ambient\+Light\+Brightness\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 465 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a719e99de6bb7e5af3a5fcae041fdefda}\label{class_g_l_e_s_renderer_a719e99de6bb7e5af3a5fcae041fdefda}} 
+\index{GLESRenderer@{GLESRenderer}!m\_aspect@{m\_aspect}}
+\index{m\_aspect@{m\_aspect}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_aspect}{m\_aspect}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+aspect\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 455 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ab4227a6b3394b7392c9a7001fc306ad1}\label{class_g_l_e_s_renderer_ab4227a6b3394b7392c9a7001fc306ad1}} 
+\index{GLESRenderer@{GLESRenderer}!m\_bound@{m\_bound}}
+\index{m\_bound@{m\_bound}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_bound}{m\_bound}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+bound\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 436 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a71b59ce0e9ae03eba0ed065bae8ecff7}\label{class_g_l_e_s_renderer_a71b59ce0e9ae03eba0ed065bae8ecff7}} 
+\index{GLESRenderer@{GLESRenderer}!m\_colorArrayEnabled@{m\_colorArrayEnabled}}
+\index{m\_colorArrayEnabled@{m\_colorArrayEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_colorArrayEnabled}{m\_colorArrayEnabled}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+color\+Array\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 441 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a6ecd1dee12a4592f35d097e14f90933b}\label{class_g_l_e_s_renderer_a6ecd1dee12a4592f35d097e14f90933b}} 
+\index{GLESRenderer@{GLESRenderer}!m\_farClip@{m\_farClip}}
+\index{m\_farClip@{m\_farClip}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_farClip}{m\_farClip}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+far\+Clip\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 457 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_abd7cabc787ad5c787b54ed2d47412df8}\label{class_g_l_e_s_renderer_abd7cabc787ad5c787b54ed2d47412df8}} 
+\index{GLESRenderer@{GLESRenderer}!m\_fovy@{m\_fovy}}
+\index{m\_fovy@{m\_fovy}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_fovy}{m\_fovy}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+fovy\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 454 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a63dd17ddf099e24a26a9d7cdeab664fa}\label{class_g_l_e_s_renderer_a63dd17ddf099e24a26a9d7cdeab664fa}} 
+\index{GLESRenderer@{GLESRenderer}!m\_fShader@{m\_fShader}}
+\index{m\_fShader@{m\_fShader}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_fShader}{m\_fShader}}
+{\footnotesize\ttfamily Q\+Open\+G\+L\+Shader$\ast$ G\+L\+E\+S\+Renderer\+::m\+\_\+f\+Shader\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 479 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ac876ef67f2795f17e0f1d1e43cb686b4}\label{class_g_l_e_s_renderer_ac876ef67f2795f17e0f1d1e43cb686b4}} 
+\index{GLESRenderer@{GLESRenderer}!m\_fShaderFileName@{m\_fShaderFileName}}
+\index{m\_fShaderFileName@{m\_fShaderFileName}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_fShaderFileName}{m\_fShaderFileName}}
+{\footnotesize\ttfamily Q\+String G\+L\+E\+S\+Renderer\+::m\+\_\+f\+Shader\+File\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 477 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ae3feaa98657e57bbc795a845dfafe1fe}\label{class_g_l_e_s_renderer_ae3feaa98657e57bbc795a845dfafe1fe}} 
+\index{GLESRenderer@{GLESRenderer}!m\_halfPlaneVector@{m\_halfPlaneVector}}
+\index{m\_halfPlaneVector@{m\_halfPlaneVector}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_halfPlaneVector}{m\_halfPlaneVector}}
+{\footnotesize\ttfamily Q\+Vector3D G\+L\+E\+S\+Renderer\+::m\+\_\+half\+Plane\+Vector\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 463 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a2c936870131300b9ed86cf9073747637}\label{class_g_l_e_s_renderer_a2c936870131300b9ed86cf9073747637}} 
+\index{GLESRenderer@{GLESRenderer}!m\_initialized@{m\_initialized}}
+\index{m\_initialized@{m\_initialized}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_initialized}{m\_initialized}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+initialized\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 435 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af08d271c05f553df400b67685435cb0c}\label{class_g_l_e_s_renderer_af08d271c05f553df400b67685435cb0c}} 
+\index{GLESRenderer@{GLESRenderer}!m\_invertedMvpMatrix@{m\_invertedMvpMatrix}}
+\index{m\_invertedMvpMatrix@{m\_invertedMvpMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_invertedMvpMatrix}{m\_invertedMvpMatrix}}
+{\footnotesize\ttfamily Q\+Matrix4x4 G\+L\+E\+S\+Renderer\+::m\+\_\+inverted\+Mvp\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 450 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a9c58c18b9b58fb4f49bb1fd79f4a2f51}\label{class_g_l_e_s_renderer_a9c58c18b9b58fb4f49bb1fd79f4a2f51}} 
+\index{GLESRenderer@{GLESRenderer}!m\_invertedMvpMatrixValid@{m\_invertedMvpMatrixValid}}
+\index{m\_invertedMvpMatrixValid@{m\_invertedMvpMatrixValid}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_invertedMvpMatrixValid}{m\_invertedMvpMatrixValid}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+inverted\+Mvp\+Matrix\+Valid\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 443 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a7347241a0f6482d69479d10848c70238}\label{class_g_l_e_s_renderer_a7347241a0f6482d69479d10848c70238}} 
+\index{GLESRenderer@{GLESRenderer}!m\_lightDirection@{m\_lightDirection}}
+\index{m\_lightDirection@{m\_lightDirection}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_lightDirection}{m\_lightDirection}}
+{\footnotesize\ttfamily Q\+Vector3D G\+L\+E\+S\+Renderer\+::m\+\_\+light\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 462 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a89a023d2cabec874691841f5ff140bc8}\label{class_g_l_e_s_renderer_a89a023d2cabec874691841f5ff140bc8}} 
+\index{GLESRenderer@{GLESRenderer}!m\_lightingEnabled@{m\_lightingEnabled}}
+\index{m\_lightingEnabled@{m\_lightingEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_lightingEnabled}{m\_lightingEnabled}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+lighting\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 440 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a5bf9f36f33237a7fe2706f60c341dec9}\label{class_g_l_e_s_renderer_a5bf9f36f33237a7fe2706f60c341dec9}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_aColor@{m\_location\_aColor}}
+\index{m\_location\_aColor@{m\_location\_aColor}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_aColor}{m\_location\_aColor}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+a\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 484 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_adca575c93185a1beb32bf54235a7766f}\label{class_g_l_e_s_renderer_adca575c93185a1beb32bf54235a7766f}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_aNormal@{m\_location\_aNormal}}
+\index{m\_location\_aNormal@{m\_location\_aNormal}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_aNormal}{m\_location\_aNormal}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+a\+Normal\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 485 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af5b18a94719f0b93d32be7cd9262fcfb}\label{class_g_l_e_s_renderer_af5b18a94719f0b93d32be7cd9262fcfb}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_aTexCoord@{m\_location\_aTexCoord}}
+\index{m\_location\_aTexCoord@{m\_location\_aTexCoord}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_aTexCoord}{m\_location\_aTexCoord}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+a\+Tex\+Coord\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 486 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ab03a79822dd105e1a0e5eecb65ee492b}\label{class_g_l_e_s_renderer_ab03a79822dd105e1a0e5eecb65ee492b}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_aVertex@{m\_location\_aVertex}}
+\index{m\_location\_aVertex@{m\_location\_aVertex}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_aVertex}{m\_location\_aVertex}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+a\+Vertex\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 483 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a4125a33e9cea4fbc0e7e23edb4b4de43}\label{class_g_l_e_s_renderer_a4125a33e9cea4fbc0e7e23edb4b4de43}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uAmbientAndDiffuseColor@{m\_location\_uAmbientAndDiffuseColor}}
+\index{m\_location\_uAmbientAndDiffuseColor@{m\_location\_uAmbientAndDiffuseColor}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uAmbientAndDiffuseColor}{m\_location\_uAmbientAndDiffuseColor}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Ambient\+And\+Diffuse\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 491 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0dc79f50f3eea91e32316a6ecd8a9754}\label{class_g_l_e_s_renderer_a0dc79f50f3eea91e32316a6ecd8a9754}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uAmbientLightBrightness@{m\_location\_uAmbientLightBrightness}}
+\index{m\_location\_uAmbientLightBrightness@{m\_location\_uAmbientLightBrightness}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uAmbientLightBrightness}{m\_location\_uAmbientLightBrightness}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Ambient\+Light\+Brightness\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 492 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aafa0944ec42f35eb2ebf08fe0e850ad7}\label{class_g_l_e_s_renderer_aafa0944ec42f35eb2ebf08fe0e850ad7}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uColorArrayEnabled@{m\_location\_uColorArrayEnabled}}
+\index{m\_location\_uColorArrayEnabled@{m\_location\_uColorArrayEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uColorArrayEnabled}{m\_location\_uColorArrayEnabled}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Color\+Array\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 487 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8a4088b65277a3efa4810454c00e6a16}\label{class_g_l_e_s_renderer_a8a4088b65277a3efa4810454c00e6a16}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uHalfPlaneVector@{m\_location\_uHalfPlaneVector}}
+\index{m\_location\_uHalfPlaneVector@{m\_location\_uHalfPlaneVector}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uHalfPlaneVector}{m\_location\_uHalfPlaneVector}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Half\+Plane\+Vector\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 496 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aba8a7f233b51b258542adce7114a93da}\label{class_g_l_e_s_renderer_aba8a7f233b51b258542adce7114a93da}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uLightDirection@{m\_location\_uLightDirection}}
+\index{m\_location\_uLightDirection@{m\_location\_uLightDirection}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uLightDirection}{m\_location\_uLightDirection}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Light\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 495 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8d61c896b68041ae2439d21ed6981f28}\label{class_g_l_e_s_renderer_a8d61c896b68041ae2439d21ed6981f28}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uLightingEnabled@{m\_location\_uLightingEnabled}}
+\index{m\_location\_uLightingEnabled@{m\_location\_uLightingEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uLightingEnabled}{m\_location\_uLightingEnabled}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Lighting\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 488 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ac7d1efb2e83cebe39608a9816856da64}\label{class_g_l_e_s_renderer_ac7d1efb2e83cebe39608a9816856da64}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uMaskActive@{m\_location\_uMaskActive}}
+\index{m\_location\_uMaskActive@{m\_location\_uMaskActive}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uMaskActive}{m\_location\_uMaskActive}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Mask\+Active\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 502 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aa5865237289b4b166ccdcee4fafeefa7}\label{class_g_l_e_s_renderer_aa5865237289b4b166ccdcee4fafeefa7}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uMaskCenter@{m\_location\_uMaskCenter}}
+\index{m\_location\_uMaskCenter@{m\_location\_uMaskCenter}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uMaskCenter}{m\_location\_uMaskCenter}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Mask\+Center\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 501 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a60785985120438561f095a5d0bb0a0e6}\label{class_g_l_e_s_renderer_a60785985120438561f095a5d0bb0a0e6}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uMaskDiameter@{m\_location\_uMaskDiameter}}
+\index{m\_location\_uMaskDiameter@{m\_location\_uMaskDiameter}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uMaskDiameter}{m\_location\_uMaskDiameter}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Mask\+Diameter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 500 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a51a95f6a35efdde4a6e103ecae334322}\label{class_g_l_e_s_renderer_a51a95f6a35efdde4a6e103ecae334322}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uMvpMatrix@{m\_location\_uMvpMatrix}}
+\index{m\_location\_uMvpMatrix@{m\_location\_uMvpMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uMvpMatrix}{m\_location\_uMvpMatrix}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Mvp\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 490 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aec01e0adb9416c451d958f925a64d329}\label{class_g_l_e_s_renderer_aec01e0adb9416c451d958f925a64d329}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uNormalMatrix@{m\_location\_uNormalMatrix}}
+\index{m\_location\_uNormalMatrix@{m\_location\_uNormalMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uNormalMatrix}{m\_location\_uNormalMatrix}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Normal\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 489 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a3cab0140a32534203dc8070058647d02}\label{class_g_l_e_s_renderer_a3cab0140a32534203dc8070058647d02}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uPointSize@{m\_location\_uPointSize}}
+\index{m\_location\_uPointSize@{m\_location\_uPointSize}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uPointSize}{m\_location\_uPointSize}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Point\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 497 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af1152640d14a616c9930161402da5eb3}\label{class_g_l_e_s_renderer_af1152640d14a616c9930161402da5eb3}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uShininess@{m\_location\_uShininess}}
+\index{m\_location\_uShininess@{m\_location\_uShininess}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uShininess}{m\_location\_uShininess}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Shininess\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 494 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0945edb3cd12c3228e405519d9cebe08}\label{class_g_l_e_s_renderer_a0945edb3cd12c3228e405519d9cebe08}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uSpecularColor@{m\_location\_uSpecularColor}}
+\index{m\_location\_uSpecularColor@{m\_location\_uSpecularColor}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uSpecularColor}{m\_location\_uSpecularColor}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Specular\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 493 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a82f6728d7361a42c33f0e88be7a329a2}\label{class_g_l_e_s_renderer_a82f6728d7361a42c33f0e88be7a329a2}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uTextureEnabled@{m\_location\_uTextureEnabled}}
+\index{m\_location\_uTextureEnabled@{m\_location\_uTextureEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uTextureEnabled}{m\_location\_uTextureEnabled}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Texture\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 499 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ac2f2a0039e1b58fbd7d5abd3c43640bc}\label{class_g_l_e_s_renderer_ac2f2a0039e1b58fbd7d5abd3c43640bc}} 
+\index{GLESRenderer@{GLESRenderer}!m\_location\_uTextureSampler@{m\_location\_uTextureSampler}}
+\index{m\_location\_uTextureSampler@{m\_location\_uTextureSampler}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_location\_uTextureSampler}{m\_location\_uTextureSampler}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Texture\+Sampler\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 498 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8e58a3bbfb5ba75c48cc35b06711131c}\label{class_g_l_e_s_renderer_a8e58a3bbfb5ba75c48cc35b06711131c}} 
+\index{GLESRenderer@{GLESRenderer}!m\_maskActive@{m\_maskActive}}
+\index{m\_maskActive@{m\_maskActive}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_maskActive}{m\_maskActive}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+mask\+Active\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 444 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a4251b608f7c887b2bcfcb421b4a793c5}\label{class_g_l_e_s_renderer_a4251b608f7c887b2bcfcb421b4a793c5}} 
+\index{GLESRenderer@{GLESRenderer}!m\_maskCenter@{m\_maskCenter}}
+\index{m\_maskCenter@{m\_maskCenter}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_maskCenter}{m\_maskCenter}}
+{\footnotesize\ttfamily Q\+Point G\+L\+E\+S\+Renderer\+::m\+\_\+mask\+Center\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 473 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8657f5ff8c5f663cd043731e9753e70a}\label{class_g_l_e_s_renderer_a8657f5ff8c5f663cd043731e9753e70a}} 
+\index{GLESRenderer@{GLESRenderer}!m\_maskDiameter@{m\_maskDiameter}}
+\index{m\_maskDiameter@{m\_maskDiameter}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_maskDiameter}{m\_maskDiameter}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+mask\+Diameter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 472 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a2f8a5b98999a5ee14551a39e5f005389}\label{class_g_l_e_s_renderer_a2f8a5b98999a5ee14551a39e5f005389}} 
+\index{GLESRenderer@{GLESRenderer}!m\_mvMatrix@{m\_mvMatrix}}
+\index{m\_mvMatrix@{m\_mvMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_mvMatrix}{m\_mvMatrix}}
+{\footnotesize\ttfamily Q\+Matrix4x4 G\+L\+E\+S\+Renderer\+::m\+\_\+mv\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 452 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a5675ffb62f73dc7ebff3e4aea59db56e}\label{class_g_l_e_s_renderer_a5675ffb62f73dc7ebff3e4aea59db56e}} 
+\index{GLESRenderer@{GLESRenderer}!m\_mvMatrixStack@{m\_mvMatrixStack}}
+\index{m\_mvMatrixStack@{m\_mvMatrixStack}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_mvMatrixStack}{m\_mvMatrixStack}}
+{\footnotesize\ttfamily Q\+Stack$<$Q\+Matrix4x4$>$ G\+L\+E\+S\+Renderer\+::m\+\_\+mv\+Matrix\+Stack\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 451 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a878a3ee8fe04d1a56659c78ba5e95f4b}\label{class_g_l_e_s_renderer_a878a3ee8fe04d1a56659c78ba5e95f4b}} 
+\index{GLESRenderer@{GLESRenderer}!m\_mvpMatrix@{m\_mvpMatrix}}
+\index{m\_mvpMatrix@{m\_mvpMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_mvpMatrix}{m\_mvpMatrix}}
+{\footnotesize\ttfamily Q\+Matrix4x4 G\+L\+E\+S\+Renderer\+::m\+\_\+mvp\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 447 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ab29bf2e72c2d91883b1ad3f3e8351940}\label{class_g_l_e_s_renderer_ab29bf2e72c2d91883b1ad3f3e8351940}} 
+\index{GLESRenderer@{GLESRenderer}!m\_nearClip@{m\_nearClip}}
+\index{m\_nearClip@{m\_nearClip}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_nearClip}{m\_nearClip}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+near\+Clip\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 456 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a76ff9b2803ac2a897d9df0cf587601ed}\label{class_g_l_e_s_renderer_a76ff9b2803ac2a897d9df0cf587601ed}} 
+\index{GLESRenderer@{GLESRenderer}!m\_normalMatrix@{m\_normalMatrix}}
+\index{m\_normalMatrix@{m\_normalMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_normalMatrix}{m\_normalMatrix}}
+{\footnotesize\ttfamily Q\+Matrix3x3 G\+L\+E\+S\+Renderer\+::m\+\_\+normal\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 459 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a78662dcb0fedf7710a57345d3d684b85}\label{class_g_l_e_s_renderer_a78662dcb0fedf7710a57345d3d684b85}} 
+\index{GLESRenderer@{GLESRenderer}!m\_OrthoMode@{m\_OrthoMode}}
+\index{m\_OrthoMode@{m\_OrthoMode}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_OrthoMode}{m\_OrthoMode}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+\+Ortho\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 458 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a2fe2ba5157fa87a9eca8eb15f8097fb5}\label{class_g_l_e_s_renderer_a2fe2ba5157fa87a9eca8eb15f8097fb5}} 
+\index{GLESRenderer@{GLESRenderer}!m\_pMatrix@{m\_pMatrix}}
+\index{m\_pMatrix@{m\_pMatrix}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_pMatrix}{m\_pMatrix}}
+{\footnotesize\ttfamily Q\+Matrix4x4 G\+L\+E\+S\+Renderer\+::m\+\_\+p\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 453 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8571248c1e8858ccd260d91497e13354}\label{class_g_l_e_s_renderer_a8571248c1e8858ccd260d91497e13354}} 
+\index{GLESRenderer@{GLESRenderer}!m\_pointSize@{m\_pointSize}}
+\index{m\_pointSize@{m\_pointSize}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_pointSize}{m\_pointSize}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+point\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 470 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a49b1f32fad69d86fb7522d1a3f1e8d4f}\label{class_g_l_e_s_renderer_a49b1f32fad69d86fb7522d1a3f1e8d4f}} 
+\index{GLESRenderer@{GLESRenderer}!m\_renderProgram@{m\_renderProgram}}
+\index{m\_renderProgram@{m\_renderProgram}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_renderProgram}{m\_renderProgram}}
+{\footnotesize\ttfamily Q\+Open\+G\+L\+Shader\+Program$\ast$ G\+L\+E\+S\+Renderer\+::m\+\_\+render\+Program\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 480 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a5cb19e8d00b558a84f3776d51f0aca9c}\label{class_g_l_e_s_renderer_a5cb19e8d00b558a84f3776d51f0aca9c}} 
+\index{GLESRenderer@{GLESRenderer}!m\_shininess@{m\_shininess}}
+\index{m\_shininess@{m\_shininess}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_shininess}{m\_shininess}}
+{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+shininess\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 467 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a58ff6c2e940d9cb7fb8bdf9e676f69cd}\label{class_g_l_e_s_renderer_a58ff6c2e940d9cb7fb8bdf9e676f69cd}} 
+\index{GLESRenderer@{GLESRenderer}!m\_specularColor@{m\_specularColor}}
+\index{m\_specularColor@{m\_specularColor}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_specularColor}{m\_specularColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} G\+L\+E\+S\+Renderer\+::m\+\_\+specular\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 466 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a61680a3953bfb6b22e7131a518b1a5e2}\label{class_g_l_e_s_renderer_a61680a3953bfb6b22e7131a518b1a5e2}} 
+\index{GLESRenderer@{GLESRenderer}!m\_textureEnabled@{m\_textureEnabled}}
+\index{m\_textureEnabled@{m\_textureEnabled}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_textureEnabled}{m\_textureEnabled}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+texture\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 442 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a07da628f9769b11914946d71b71a4665}\label{class_g_l_e_s_renderer_a07da628f9769b11914946d71b71a4665}} 
+\index{GLESRenderer@{GLESRenderer}!m\_viewportH@{m\_viewportH}}
+\index{m\_viewportH@{m\_viewportH}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_viewportH}{m\_viewportH}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+viewportH\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 510 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af839e0f722a97a026d7517de19acd352}\label{class_g_l_e_s_renderer_af839e0f722a97a026d7517de19acd352}} 
+\index{GLESRenderer@{GLESRenderer}!m\_viewportW@{m\_viewportW}}
+\index{m\_viewportW@{m\_viewportW}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_viewportW}{m\_viewportW}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+viewportW\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 509 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a437c4d81da1b944458b4abde903c23ce}\label{class_g_l_e_s_renderer_a437c4d81da1b944458b4abde903c23ce}} 
+\index{GLESRenderer@{GLESRenderer}!m\_viewportX@{m\_viewportX}}
+\index{m\_viewportX@{m\_viewportX}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_viewportX}{m\_viewportX}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+viewportX\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 507 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0e81b88aa0c613e99dc6be1737d83c93}\label{class_g_l_e_s_renderer_a0e81b88aa0c613e99dc6be1737d83c93}} 
+\index{GLESRenderer@{GLESRenderer}!m\_viewportY@{m\_viewportY}}
+\index{m\_viewportY@{m\_viewportY}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_viewportY}{m\_viewportY}}
+{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+viewportY\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 508 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a41916fc04d753007a9340065ab08762e}\label{class_g_l_e_s_renderer_a41916fc04d753007a9340065ab08762e}} 
+\index{GLESRenderer@{GLESRenderer}!m\_vShader@{m\_vShader}}
+\index{m\_vShader@{m\_vShader}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_vShader}{m\_vShader}}
+{\footnotesize\ttfamily Q\+Open\+G\+L\+Shader$\ast$ G\+L\+E\+S\+Renderer\+::m\+\_\+v\+Shader\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 478 of file glesrenderer.\+h.
+
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a9f9222c1a54ff9b01edb609bb570151a}\label{class_g_l_e_s_renderer_a9f9222c1a54ff9b01edb609bb570151a}} 
+\index{GLESRenderer@{GLESRenderer}!m\_vShaderFileName@{m\_vShaderFileName}}
+\index{m\_vShaderFileName@{m\_vShaderFileName}!GLESRenderer@{GLESRenderer}}
+\subsubsection{\texorpdfstring{m\_vShaderFileName}{m\_vShaderFileName}}
+{\footnotesize\ttfamily Q\+String G\+L\+E\+S\+Renderer\+::m\+\_\+v\+Shader\+File\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 476 of file glesrenderer.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/svwei/\+Documents/workspace\+\_\+qt/4gewinnt/src/\mbox{\hyperlink{glesrenderer_8h}{glesrenderer.\+h}}\item 
+C\+:/\+Users/svwei/\+Documents/workspace\+\_\+qt/4gewinnt/src/\mbox{\hyperlink{glesrenderer_8cpp}{glesrenderer.\+cpp}}\end{DoxyCompactItemize}

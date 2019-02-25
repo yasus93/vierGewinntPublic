@@ -1,0 +1,34 @@
+.TH "C:/Users/svwei/Documents/workspace_qt/4gewinnt/src/glitem.h" 3 "Mon Feb 25 2019" "4Gewinnt" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/svwei/Documents/workspace_qt/4gewinnt/src/glitem.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QQuickItem>\fP
+.br
+\fC#include <QOpenGLShaderProgram>\fP
+.br
+\fC#include <QMatrix4x4>\fP
+.br
+\fC#include <QVector>\fP
+.br
+\fC#include <QTimer>\fP
+.br
+\fC#include 'glpoint\&.h'\fP
+.br
+\fC#include 'glesrenderer\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBGLItem\fP"
+.br
+.RI "The GlItem class is a 3D-scene item designed for use in QML SceneGraphs\&. It should be subclassed according to your requirements, registered with qmlRegisterType and used as a component in QML files\&. The default constructor will use src/vshader\&.vsh and src/fshader\&.fsh as shaders\&. Fell free to use shaders of your own\&. Refer to the \fBGLESRenderer\fP class for shader requirements\&. Geometry data should be put into m_points and m_vertices containers for maximum performance\&. Use paintUnderQml or paintOnTopOfQml to paint a 3D scene under or on top of the QML elements of the QML SceneGraph\&. For debugging geometries, call toggleMove to let the scene rotate around m_rotationAxis\&. Warning: Updating geometry data must be carried out in synchronizeThreads, because drawing will be performed on the rendering thread\&. The rendering thread is waiting when synchronizeThreads is called\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 4Gewinnt from the source code\&.

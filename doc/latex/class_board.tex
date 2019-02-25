@@ -1,0 +1,186 @@
+\hypertarget{class_board}{}\section{Board Class Reference}
+\label{class_board}\index{Board@{Board}}
+
+
+{\ttfamily \#include $<$board.\+h$>$}
+
+Inheritance diagram for Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_board}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{Board}} ()
+\item 
+Q\+Vector3D \mbox{\hyperlink{class_board_a15ff6efe6bd967a60f6b12ce59e5c27a}{field\+To\+Position}} (Q\+Point field)
+\item 
+void \mbox{\hyperlink{class_board_a4a8568ce7d13db61b01e6bf14e7b12fd}{make\+Surface}} (Q\+Vector$<$ \mbox{\hyperlink{class_g_l_point}{G\+L\+Point}} $>$ $\ast$point\+Container=nullptr, Q\+Vector$<$ \mbox{\hyperlink{gldefines_8h_af3c748960f29c42e5b7f1dc449ab66ff}{Index\+Type}} $>$ $\ast$index\+Container=nullptr)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector3D \mbox{\hyperlink{class_board_ae13a36a59b726081033e3ffc158bb82a}{m\+\_\+normal}}
+\item 
+Q\+Vector3D $\ast$ \mbox{\hyperlink{class_board_ae2bd12894ff7340b865a463d600a2a49}{b\+\_\+first\+Point}}
+\item 
+Q\+Vector3D $\ast$ \mbox{\hyperlink{class_board_a24c40fa17f5e2e5ea5ffff433630c874}{b\+\_\+second\+Point}}
+\item 
+Q\+Vector3D $\ast$ \mbox{\hyperlink{class_board_a72cd2eef896165b445acfb5ea6c28de7}{b\+\_\+third\+Point}}
+\item 
+Q\+List$<$ Q\+Vector3D $>$ \mbox{\hyperlink{class_board_ab2d91193b052d9d05af44e62648cff41}{column\+Points}}
+\item 
+float \mbox{\hyperlink{class_board_acc78f2a614333d03e59d3008b841f164}{deltaX}}
+\item 
+float \mbox{\hyperlink{class_board_a44ba33a6896a37b3c18175b20fd6f3f6}{deltaY}}
+\item 
+float \mbox{\hyperlink{class_board_a86cfe659af51a4619e2b73bdbc1a9d1f}{deltaZ}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A chess board with 8X8 fields in the x-\/z plane. Only the white fields are drawn, black fields are transparent. The raise\+Disc function makes a disc \char`\"{}jump\char`\"{} over the respective field. The field\+To\+Position function returns the 3D-\/coordinates of the field in model space. is\+On\+Board returns true, when position is \char`\"{}on\char`\"{} the board. 
+
+Definition at line 15 of file board.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_board_a9ee491d4fea680cf69b033374a9fdfcb}\label{class_board_a9ee491d4fea680cf69b033374a9fdfcb}} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file board.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_board_a15ff6efe6bd967a60f6b12ce59e5c27a}\label{class_board_a15ff6efe6bd967a60f6b12ce59e5c27a}} 
+\index{Board@{Board}!fieldToPosition@{fieldToPosition}}
+\index{fieldToPosition@{fieldToPosition}!Board@{Board}}
+\subsubsection{\texorpdfstring{fieldToPosition()}{fieldToPosition()}}
+{\footnotesize\ttfamily Q\+Vector3D Board\+::field\+To\+Position (\begin{DoxyParamCaption}\item[{Q\+Point}]{field }\end{DoxyParamCaption})}
+
+Returns 3D position of field center. Field coordinates are from 0 to 7 
+
+Definition at line 24 of file board.\+cpp.
+
+\mbox{\Hypertarget{class_board_a4a8568ce7d13db61b01e6bf14e7b12fd}\label{class_board_a4a8568ce7d13db61b01e6bf14e7b12fd}} 
+\index{Board@{Board}!makeSurface@{makeSurface}}
+\index{makeSurface@{makeSurface}!Board@{Board}}
+\subsubsection{\texorpdfstring{makeSurface()}{makeSurface()}}
+{\footnotesize\ttfamily void Board\+::make\+Surface (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ \mbox{\hyperlink{class_g_l_point}{G\+L\+Point}} $>$ $\ast$}]{point\+Container = {\ttfamily nullptr},  }\item[{Q\+Vector$<$ \mbox{\hyperlink{gldefines_8h_af3c748960f29c42e5b7f1dc449ab66ff}{Index\+Type}} $>$ $\ast$}]{index\+Container = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates the surface. Should be called, when a GL engine is already running. To be overwritten by subclasses. G\+L\+E\+S\+Body\+::create\+Surface should be called at the beginning of overriding functions. It will create the point\+Container, if none is supplied Is called automatically by draw, if required. M\+U\+ST N\+OT be called without a working GL engine.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+Container} & The container for the geometry data. If nullptr, a new one is created. \\
+\hline
+{\em index\+Container} & The container for the index data. If nullptr, a new one is created. Created containers will be deleted by destructor.\\
+\hline
+\end{DoxyParams}
+Creates the surface. Should be called, when a GL engine is already running. Is called automatically by draw, if required. 
+
+Reimplemented from \mbox{\hyperlink{class_g_l_body_a73e51b159f343d0bda87f50df382b7db}{G\+L\+Body}}.
+
+
+
+Definition at line 31 of file board.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_board_ae2bd12894ff7340b865a463d600a2a49}\label{class_board_ae2bd12894ff7340b865a463d600a2a49}} 
+\index{Board@{Board}!b\_firstPoint@{b\_firstPoint}}
+\index{b\_firstPoint@{b\_firstPoint}!Board@{Board}}
+\subsubsection{\texorpdfstring{b\_firstPoint}{b\_firstPoint}}
+{\footnotesize\ttfamily Q\+Vector3D$\ast$ Board\+::b\+\_\+first\+Point\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 32 of file board.\+h.
+
+\mbox{\Hypertarget{class_board_a24c40fa17f5e2e5ea5ffff433630c874}\label{class_board_a24c40fa17f5e2e5ea5ffff433630c874}} 
+\index{Board@{Board}!b\_secondPoint@{b\_secondPoint}}
+\index{b\_secondPoint@{b\_secondPoint}!Board@{Board}}
+\subsubsection{\texorpdfstring{b\_secondPoint}{b\_secondPoint}}
+{\footnotesize\ttfamily Q\+Vector3D$\ast$ Board\+::b\+\_\+second\+Point\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 33 of file board.\+h.
+
+\mbox{\Hypertarget{class_board_a72cd2eef896165b445acfb5ea6c28de7}\label{class_board_a72cd2eef896165b445acfb5ea6c28de7}} 
+\index{Board@{Board}!b\_thirdPoint@{b\_thirdPoint}}
+\index{b\_thirdPoint@{b\_thirdPoint}!Board@{Board}}
+\subsubsection{\texorpdfstring{b\_thirdPoint}{b\_thirdPoint}}
+{\footnotesize\ttfamily Q\+Vector3D$\ast$ Board\+::b\+\_\+third\+Point\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 34 of file board.\+h.
+
+\mbox{\Hypertarget{class_board_ab2d91193b052d9d05af44e62648cff41}\label{class_board_ab2d91193b052d9d05af44e62648cff41}} 
+\index{Board@{Board}!columnPoints@{columnPoints}}
+\index{columnPoints@{columnPoints}!Board@{Board}}
+\subsubsection{\texorpdfstring{columnPoints}{columnPoints}}
+{\footnotesize\ttfamily Q\+List$<$Q\+Vector3D$>$ Board\+::column\+Points\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 36 of file board.\+h.
+
+\mbox{\Hypertarget{class_board_acc78f2a614333d03e59d3008b841f164}\label{class_board_acc78f2a614333d03e59d3008b841f164}} 
+\index{Board@{Board}!deltaX@{deltaX}}
+\index{deltaX@{deltaX}!Board@{Board}}
+\subsubsection{\texorpdfstring{deltaX}{deltaX}}
+{\footnotesize\ttfamily float Board\+::deltaX\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file board.\+h.
+
+\mbox{\Hypertarget{class_board_a44ba33a6896a37b3c18175b20fd6f3f6}\label{class_board_a44ba33a6896a37b3c18175b20fd6f3f6}} 
+\index{Board@{Board}!deltaY@{deltaY}}
+\index{deltaY@{deltaY}!Board@{Board}}
+\subsubsection{\texorpdfstring{deltaY}{deltaY}}
+{\footnotesize\ttfamily float Board\+::deltaY\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 39 of file board.\+h.
+
+\mbox{\Hypertarget{class_board_a86cfe659af51a4619e2b73bdbc1a9d1f}\label{class_board_a86cfe659af51a4619e2b73bdbc1a9d1f}} 
+\index{Board@{Board}!deltaZ@{deltaZ}}
+\index{deltaZ@{deltaZ}!Board@{Board}}
+\subsubsection{\texorpdfstring{deltaZ}{deltaZ}}
+{\footnotesize\ttfamily float Board\+::deltaZ\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 40 of file board.\+h.
+
+\mbox{\Hypertarget{class_board_ae13a36a59b726081033e3ffc158bb82a}\label{class_board_ae13a36a59b726081033e3ffc158bb82a}} 
+\index{Board@{Board}!m\_normal@{m\_normal}}
+\index{m\_normal@{m\_normal}!Board@{Board}}
+\subsubsection{\texorpdfstring{m\_normal}{m\_normal}}
+{\footnotesize\ttfamily Q\+Vector3D Board\+::m\+\_\+normal\hspace{0.3cm}{\ttfamily [protected]}}
+
+The normal on the chessboard plane 
+
+Definition at line 30 of file board.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/svwei/\+Documents/workspace\+\_\+qt/4gewinnt/src/\mbox{\hyperlink{board_8h}{board.\+h}}\item 
+C\+:/\+Users/svwei/\+Documents/workspace\+\_\+qt/4gewinnt/src/\mbox{\hyperlink{board_8cpp}{board.\+cpp}}\end{DoxyCompactItemize}

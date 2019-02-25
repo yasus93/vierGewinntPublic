@@ -1,0 +1,172 @@
+.TH "MyGlItem" 3 "Mon Feb 25 2019" "4Gewinnt" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MyGlItem
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <myglitem\&.h>\fP
+.PP
+Inherits \fBGLItem\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBinsertDisc\fP (int buttonNumber)"
+.br
+.ti -1c
+.RI "void \fBdoMouseClick\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBnewGame\fP (QString player1, QString player2)"
+.br
+.ti -1c
+.RI "void \fBchangeTheme\fP (int theme)"
+.br
+.ti -1c
+.RI "void \fBtimerSlot\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBplayerChanged\fP (QString next)"
+.br
+.ti -1c
+.RI "void \fBcolorChanged\fP (QString color)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMyGlItem\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetupGeometry\fP () override"
+.br
+.RI "setupGeometry Put the geometric data into the points array and set m_geometryIsValid flag\&. MUST be overridden in subclasses\&. GlItem::setupGeometry() does nothing\&. "
+.ti -1c
+.RI "void \fBpaintUnderQmlScene\fP () override"
+.br
+.RI "paintUnderQmlScene Virtual function for painting under a QML scene\&. This function is called by paintBefore after calling createGeometries and initializing and binding the renderer\&. Overwrite in subclasses for painting geometries in m_points with the renderer\&. "
+.ti -1c
+.RI "void \fBpaintOnTopOfQmlScene\fP () override"
+.br
+.RI "paintUnderQmlScene Virtual function for painting on top of a QML scene\&. This function is called by paintAfter after calling createGeometries and initializing and binding the renderer\&. Overwrite in subclasses for painting geometries in m_points with the renderer\&. "
+.ti -1c
+.RI "Q_INVOKABLE QString \fBnextPlayer\fP () const"
+.br
+.ti -1c
+.RI "Q_INVOKABLE QString \fBnextColor\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNextPlayer\fP (const QString next)"
+.br
+.ti -1c
+.RI "void \fBsetNextColor\fP (const QString color)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "QString \fBnextPlayer\fP"
+.br
+.ti -1c
+.RI "QString \fBnextColor\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file myglitem\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MyGlItem::MyGlItem ()"
+
+.PP
+Definition at line 9 of file myglitem\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MyGlItem::changeTheme (int theme)\fC [slot]\fP"
+
+.PP
+Definition at line 81 of file myglitem\&.cpp\&.
+.SS "void MyGlItem::colorChanged (QString color)\fC [signal]\fP"
+
+.SS "void MyGlItem::doMouseClick (int x, int y)\fC [slot]\fP"
+
+.PP
+Definition at line 239 of file myglitem\&.cpp\&.
+.SS "void MyGlItem::insertDisc (int buttonNumber)\fC [slot]\fP"
+
+.PP
+Definition at line 136 of file myglitem\&.cpp\&.
+.SS "void MyGlItem::newGame (QString player1, QString player2)\fC [slot]\fP"
+
+.PP
+Definition at line 48 of file myglitem\&.cpp\&.
+.SS "Q_INVOKABLE QString MyGlItem::nextColor () const\fC [inline]\fP"
+
+.PP
+Definition at line 57 of file myglitem\&.h\&.
+.SS "Q_INVOKABLE QString MyGlItem::nextPlayer () const\fC [inline]\fP"
+
+.PP
+Definition at line 56 of file myglitem\&.h\&.
+.SS "void MyGlItem::paintOnTopOfQmlScene ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+paintUnderQmlScene Virtual function for painting on top of a QML scene\&. This function is called by paintAfter after calling createGeometries and initializing and binding the renderer\&. Overwrite in subclasses for painting geometries in m_points with the renderer\&. 
+.PP
+Reimplemented from \fBGLItem\fP\&.
+.PP
+Definition at line 244 of file myglitem\&.cpp\&.
+.SS "void MyGlItem::paintUnderQmlScene ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+paintUnderQmlScene Virtual function for painting under a QML scene\&. This function is called by paintBefore after calling createGeometries and initializing and binding the renderer\&. Overwrite in subclasses for painting geometries in m_points with the renderer\&. 
+.PP
+Reimplemented from \fBGLItem\fP\&.
+.PP
+Definition at line 257 of file myglitem\&.cpp\&.
+.SS "void MyGlItem::playerChanged (QString next)\fC [signal]\fP"
+
+.SS "void MyGlItem::setNextColor (const QString color)\fC [inline]\fP"
+
+.PP
+Definition at line 60 of file myglitem\&.h\&.
+.SS "void MyGlItem::setNextPlayer (const QString next)\fC [inline]\fP"
+
+.PP
+Definition at line 59 of file myglitem\&.h\&.
+.SS "void MyGlItem::setupGeometry ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+setupGeometry Put the geometric data into the points array and set m_geometryIsValid flag\&. MUST be overridden in subclasses\&. GlItem::setupGeometry() does nothing\&. 
+.PP
+Reimplemented from \fBGLItem\fP\&.
+.PP
+Definition at line 262 of file myglitem\&.cpp\&.
+.SS "void MyGlItem::timerSlot ()\fC [slot]\fP"
+
+.PP
+Definition at line 41 of file myglitem\&.cpp\&.
+.SH "Property Documentation"
+.PP 
+.SS "QString MyGlItem::nextColor\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 15 of file myglitem\&.h\&.
+.SS "QString MyGlItem::nextPlayer\fC [read]\fP, \fC [write]\fP"
+
+.PP
+Definition at line 14 of file myglitem\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 4Gewinnt from the source code\&.

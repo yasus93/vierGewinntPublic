@@ -1,0 +1,163 @@
+.TH "GLPoint" 3 "Mon Feb 25 2019" "4Gewinnt" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GLPoint \- The \fBGLPoint\fP class A Point containing data for a surface point\&. This class is used in binary read and write functions\&. DO NOT add virtual methods, DO NOT change order of declarations\&. xxxPointer methods return the addresses needed by OpenGL attribute functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <glpoint\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGLPoint\fP (const QVector3D &\fBvertex\fP=QVector3D(0\&.0, 0\&.0, 0\&.0), const QVector3D &\fBnormal\fP=QVector3D(0\&.0, 1\&.0, 0\&.0), const QVector3D &\fBtexCoord\fP=QVector3D(0\&.0, 0\&.0, 0\&.0), const \fBGLColorRgba\fP &\fBcolor\fP=\fBGLColorRgba\fP(1\&.0, 1\&.0, 1\&.0, 1\&.0))"
+.br
+.ti -1c
+.RI "\fB~GLPoint\fP ()"
+.br
+.ti -1c
+.RI "QVector3D * \fBvertexPointer\fP ()"
+.br
+.ti -1c
+.RI "QVector3D * \fBnormalPointer\fP ()"
+.br
+.ti -1c
+.RI "QVector3D * \fBtexCoordPointer\fP ()"
+.br
+.ti -1c
+.RI "\fBGLColorRgba\fP * \fBcolorPointer\fP ()"
+.br
+.ti -1c
+.RI "const QVector3D & \fBvertex\fP () const"
+.br
+.ti -1c
+.RI "const QVector3D & \fBnormal\fP () const"
+.br
+.ti -1c
+.RI "const QVector3D & \fBtexCoord\fP () const"
+.br
+.ti -1c
+.RI "const \fBGLColorRgba\fP & \fBcolor\fP () const"
+.br
+.ti -1c
+.RI "void \fBmove\fP (QVector3D vMove)"
+.br
+.ti -1c
+.RI "void \fBmoveTo\fP (QVector3D vMove)"
+.br
+.ti -1c
+.RI "void \fBtransform\fP (const QMatrix4x4 &vertexMatrix, const QMatrix4x4 &normalMatrix)"
+.br
+.RI "transform Multiply vertex with vertexMatrix and normal with normalMatrix\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBvertexOffset\fP ()"
+.br
+.ti -1c
+.RI "static int \fBnormalOffset\fP ()"
+.br
+.ti -1c
+.RI "static int \fBtexCoordOffset\fP ()"
+.br
+.ti -1c
+.RI "static int \fBcolorOffset\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBGLPoint\fP class A Point containing data for a surface point\&. This class is used in binary read and write functions\&. DO NOT add virtual methods, DO NOT change order of declarations\&. xxxPointer methods return the addresses needed by OpenGL attribute functions\&. 
+.PP
+Definition at line 14 of file glpoint\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GLPoint::GLPoint (const QVector3D & vertex = \fCQVector3D (0\&.0, 0\&.0, 0\&.0)\fP, const QVector3D & normal = \fCQVector3D (0\&.0, 1\&.0, 0\&.0)\fP, const QVector3D & texCoord = \fCQVector3D (0\&.0, 0\&.0, 0\&.0)\fP, const \fBGLColorRgba\fP & color = \fC\fBGLColorRgba\fP(1\&.0, 1\&.0, 1\&.0, 1\&.0)\fP)"
+
+.PP
+Definition at line 3 of file glpoint\&.cpp\&.
+.SS "GLPoint::~GLPoint ()"
+
+.PP
+Definition at line 11 of file glpoint\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBGLColorRgba\fP& GLPoint::color () const\fC [inline]\fP"
+
+.PP
+Definition at line 36 of file glpoint\&.h\&.
+.SS "int GLPoint::colorOffset ()\fC [static]\fP"
+
+.PP
+Definition at line 30 of file glpoint\&.cpp\&.
+.SS "\fBGLColorRgba\fP * GLPoint::colorPointer ()\fC [inline]\fP"
+
+.PP
+Definition at line 65 of file glpoint\&.h\&.
+.SS "void GLPoint::move (QVector3D vMove)\fC [inline]\fP"
+
+.PP
+Definition at line 69 of file glpoint\&.h\&.
+.SS "void GLPoint::moveTo (QVector3D vMove)"
+
+.PP
+Definition at line 35 of file glpoint\&.cpp\&.
+.SS "const QVector3D& GLPoint::normal () const\fC [inline]\fP"
+
+.PP
+Definition at line 34 of file glpoint\&.h\&.
+.SS "int GLPoint::normalOffset ()\fC [static]\fP"
+
+.PP
+Definition at line 20 of file glpoint\&.cpp\&.
+.SS "QVector3D * GLPoint::normalPointer ()\fC [inline]\fP"
+
+.PP
+Definition at line 57 of file glpoint\&.h\&.
+.SS "const QVector3D& GLPoint::texCoord () const\fC [inline]\fP"
+
+.PP
+Definition at line 35 of file glpoint\&.h\&.
+.SS "int GLPoint::texCoordOffset ()\fC [static]\fP"
+
+.PP
+Definition at line 25 of file glpoint\&.cpp\&.
+.SS "QVector3D * GLPoint::texCoordPointer ()\fC [inline]\fP"
+
+.PP
+Definition at line 61 of file glpoint\&.h\&.
+.SS "void GLPoint::transform (const QMatrix4x4 & vertexMatrix, const QMatrix4x4 & normalMatrix)"
+
+.PP
+transform Multiply vertex with vertexMatrix and normal with normalMatrix\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvertexMatrix\fP 
+.br
+\fInormalMatrix\fP 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file glpoint\&.cpp\&.
+.SS "const QVector3D& GLPoint::vertex () const\fC [inline]\fP"
+
+.PP
+Definition at line 33 of file glpoint\&.h\&.
+.SS "int GLPoint::vertexOffset ()\fC [static]\fP"
+
+.PP
+Definition at line 15 of file glpoint\&.cpp\&.
+.SS "QVector3D * GLPoint::vertexPointer ()\fC [inline]\fP"
+
+.PP
+Definition at line 53 of file glpoint\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 4Gewinnt from the source code\&.

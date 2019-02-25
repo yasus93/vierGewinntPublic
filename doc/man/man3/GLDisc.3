@@ -1,0 +1,81 @@
+.TH "GLDisc" 3 "Mon Feb 25 2019" "4Gewinnt" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GLDisc
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <gldisc\&.h>\fP
+.PP
+Inherits \fBGLBody\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGLDisc\fP (const QString &\fBname\fP, int steps, const QPoint &fieldCoord, float \fBm_radius\fP=1\&.0, const \fBGLColorRgba\fP &\fBm_color\fP=\fBGLColorRgba::clBlue\fP, const QString m_textureFile='', float height=0\&.5, \fBIndexType\fP slices=36)"
+.br
+.ti -1c
+.RI "void \fBmakeSurface\fP (QVector< \fBGLPoint\fP > *pointContainer=nullptr, QVector< GLushort > *indexContainer=nullptr) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (\fBGLESRenderer\fP *renderer, bool useBuffers) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "float \fBgetHeight\fP ()"
+.br
+.ti -1c
+.RI "QPoint \fBgetFieldCoord\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFieldCoord\fP (const QPoint &FieldCoord)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file gldisc\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GLDisc::GLDisc (const QString & name, int steps, const QPoint & fieldCoord, float m_radius = \fC1\&.0\fP, const \fBGLColorRgba\fP & m_color = \fC\fBGLColorRgba::clBlue\fP\fP, const QString m_textureFile = \fC''\fP, float height = \fC0\&.5\fP, \fBIndexType\fP slices = \fC36\fP)"
+
+.PP
+Definition at line 4 of file gldisc\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void GLDisc::draw (\fBGLESRenderer\fP * renderer, bool useBuffers)\fC [virtual]\fP"
+Draws the surface and calls makeSurface if required\&. Needs an active (made current) GL-Context\&. 
+.PP
+Reimplemented from \fBGLBody\fP\&.
+.PP
+Definition at line 109 of file gldisc\&.cpp\&.
+.SS "QPoint GLDisc::getFieldCoord () const"
+
+.PP
+Definition at line 122 of file gldisc\&.cpp\&.
+.SS "float GLDisc::getHeight ()\fC [inline]\fP"
+
+.PP
+Definition at line 22 of file gldisc\&.h\&.
+.SS "void GLDisc::makeSurface (QVector< \fBGLPoint\fP > * pointContainer = \fCnullptr\fP, QVector< GLushort > * indexContainer = \fCnullptr\fP)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpointContainer\fP The container for the geometry data\&. If NULL, a new one is created\&. 
+.br
+\fIindexContainer\fP The container for the index data\&. If NULL, a new one is created\&. Created containers will be deleted by destructor\&. 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file gldisc\&.cpp\&.
+.SS "void GLDisc::setFieldCoord (const QPoint & FieldCoord)"
+
+.PP
+Definition at line 127 of file gldisc\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 4Gewinnt from the source code\&.

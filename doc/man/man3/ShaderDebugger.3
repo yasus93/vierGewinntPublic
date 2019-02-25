@@ -1,0 +1,131 @@
+.TH "ShaderDebugger" 3 "Mon Feb 25 2019" "4Gewinnt" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ShaderDebugger \- A simple debugging tool for uniforms passed to a shader\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <shaderdebugger\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBShaderDebugger\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsetEnabled\fP (bool newVal)"
+.br
+.ti -1c
+.RI "static void \fBdebugUniforms\fP (int programId)"
+.br
+.ti -1c
+.RI "static void \fBdebugMatrix4x4\fP (const QMatrix4x4 &m, const QString &caption='QMatrix4x4')"
+.br
+.RI "debugMatrix4x4 Send debug output to stderr\&. "
+.ti -1c
+.RI "static void \fBdebugMatrix3x3\fP (const QMatrix3x3 &m, const QString &caption='QMatrix3x3')"
+.br
+.RI "debugMatrix3x3 Send debug output to stderr\&. "
+.ti -1c
+.RI "static void \fBdebugVector4D\fP (const QVector4D &v, const QString &caption='QVector4D')"
+.br
+.RI "debugVector4D Send debug output to stderr\&. "
+.ti -1c
+.RI "static void \fBdebugVector3D\fP (const QVector3D &v, const QString &caption='QVector3D')"
+.br
+.RI "debugVector4D Send debug output to stderr\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A simple debugging tool for uniforms passed to a shader\&. 
+
+There is no way to get the values of variables inside a shader, therefore you have to look at the variables, before they are passed to the shader\&. 
+.PP
+Definition at line 31 of file shaderdebugger\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ShaderDebugger::ShaderDebugger ()"
+
+.PP
+Definition at line 5 of file shaderdebugger\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ShaderDebugger::debugMatrix3x3 (const QMatrix3x3 & m, const QString & caption = \fC'QMatrix3x3'\fP)\fC [static]\fP"
+
+.PP
+debugMatrix3x3 Send debug output to stderr\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP The matrix 
+.br
+\fIcaption\fP 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file shaderdebugger\&.cpp\&.
+.SS "void ShaderDebugger::debugMatrix4x4 (const QMatrix4x4 & m, const QString & caption = \fC'QMatrix4x4'\fP)\fC [static]\fP"
+
+.PP
+debugMatrix4x4 Send debug output to stderr\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP The matrix 
+.br
+\fIcaption\fP 
+.RE
+.PP
+
+.PP
+Definition at line 52 of file shaderdebugger\&.cpp\&.
+.SS "void ShaderDebugger::debugUniforms (int programId)\fC [static]\fP"
+Works on GLES platforms only\&. 
+.PP
+Definition at line 9 of file shaderdebugger\&.cpp\&.
+.SS "void ShaderDebugger::debugVector3D (const QVector3D & v, const QString & caption = \fC'QVector3D'\fP)\fC [static]\fP"
+
+.PP
+debugVector4D Send debug output to stderr\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP The vector 
+.br
+\fIcaption\fP 
+.RE
+.PP
+
+.PP
+Definition at line 112 of file shaderdebugger\&.cpp\&.
+.SS "void ShaderDebugger::debugVector4D (const QVector4D & v, const QString & caption = \fC'QVector4D'\fP)\fC [static]\fP"
+
+.PP
+debugVector4D Send debug output to stderr\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP The vector 
+.br
+\fIcaption\fP 
+.RE
+.PP
+
+.PP
+Definition at line 95 of file shaderdebugger\&.cpp\&.
+.SS "static void ShaderDebugger::setEnabled (bool newVal)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 35 of file shaderdebugger\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 4Gewinnt from the source code\&.
