@@ -2,12 +2,6 @@
 #include "shaderdebugger.h"
 #include "gldisc.h"
 
-
-//#define DEBUG_BOARD
-// dies ist ein testr kommentar
-// zweiter
-// dritter yasin
-// vierter kommentar
 Board::Board()
     :GLBody("Board")
 {
@@ -37,32 +31,26 @@ QVector3D Board::fieldToPosition(QPoint field)
 void Board::makeSurface(QVector<GLPoint> *pointContainer, QVector<IndexType> *indexContainer)
 {
     GLBody::makeSurface(pointContainer, indexContainer);
-    m_firstPoint = m_points->size();
-    m_firstIndex = m_indices->size();
+    m_firstPoint = static_cast<GLushort>(m_points->size());
+    m_firstIndex = static_cast<GLushort>(m_indices->size());
 
     QVector3D *vx = new QVector3D(deltaX, 0.0f, deltaZ);
     QVector3D *vy = new QVector3D(0.0f, deltaY, 0.0f);
-
-    qDebug() << deltaX << deltaY << deltaZ;
-
 
     for(int i = 0; i < 8; i++)
     {
         for(int row = 0; row <7; row++)
         {
             QVector3D rowStart = *b_firstPoint - (row * *vy);
-
             for (int column = 0; column < 2; column++)
             {
                 QVector3D vert = rowStart - (column * *vx);
-                m_indices->append(m_points->size());
+                m_indices->append(static_cast<GLushort>(m_points->size()));
                 m_points->append(GLPoint(vert));
             }
         }
-
         *b_firstPoint = *b_firstPoint - *vx;
     }
-
-    m_nextPoint = m_points->size();
-    m_nextIndex = m_indices->size();
+    m_nextPoint = static_cast<GLushort>(m_points->size());
+    m_nextIndex = static_cast<GLushort>(m_indices->size());
 }

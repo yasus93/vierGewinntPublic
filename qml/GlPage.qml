@@ -4,6 +4,30 @@ import GlComponents 1.0
 
 GlPageForm {
 
+    button.onClicked: {
+        myGlItem.newGame(player1.text, player2.text)
+        playerInput.visible = false
+
+        buttonRow.visible = true
+        player.visible = true
+        startNewGame.enabled = true
+        changePlayerAction.enabled = true
+    }
+
+    back.onClicked: warning.close()
+
+    ok.onClicked: {
+        //warning.visible = false
+        warning.close()
+        changePlayerAction.enabled = false
+        startNewGame.enabled = false
+        buttonRow.visible = false
+        player.visible = false
+        playerInput.visible = true
+        player1.clear()
+        player2.clear()
+    }
+
     roundButton0.onClicked: myGlItem.insertDisc(0);
     roundButton1.onClicked: myGlItem.insertDisc(1);
     roundButton2.onClicked: myGlItem.insertDisc(2);
@@ -13,10 +37,14 @@ GlPageForm {
     roundButton6.onClicked: myGlItem.insertDisc(6);
 
     mouseArea.onClicked:{
-    console.log("X:" + mouse.x + " Y:" + mouse.y)
-    myGlItem.doMouseClick(mouse.x, mouse.y)
-}
-
+        myGlItem.doMouseClick(mouse.x, mouse.y)
+    }
+    myGlItem.onPlayerChanged: {
+        player.text = next
+    }
+    myGlItem.onColorChanged: {
+        player.color = color
+    }
 }
 
 /*##^## Designer {

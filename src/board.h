@@ -20,6 +20,7 @@ public:
       * Returns 3D position of field center. Field coordinates are from 0 to 7
       */
     QVector3D fieldToPosition(QPoint field);
+
     void makeSurface(QVector<GLPoint> * pointContainer = nullptr, QVector<IndexType> * indexContainer = nullptr);
 
 protected:

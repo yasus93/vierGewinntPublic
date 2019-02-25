@@ -147,7 +147,7 @@ void GLItem::initializeRenderer()
 {
     qDebug() <<"GlItem::initializeRenderer called.";
 #ifdef USE_QOPENGL_FUNCTIONS
-    QOpenGLFunctions::initializeOpenGLFunctions();
+    //QOpenGLFunctions::initializeOpenGLFunctions();
 #endif
     //Renderer lives in Render Thread, GLItem lives in GUI Thread,
     // therefore GLItem can not be parent of Renderer and Renderer MUST be created here without a parent

@@ -1,5 +1,7 @@
-QT += quick
-QT += opengl
+#QT += quick
+#QT += opengl
+#QT += core gui quick qml
+QT += qml quick widgets opengl multimedia
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -11,8 +13,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #only run on windows
 win32:{
     LIBS += -lopengl32
+ #   DEFINES += USE_QOPENGL_FUNCTIONS
 }
 
+linux-g++:{
+   LIBS += -lGL -lGLU
+}
+
+
+android{
+
+}
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -35,7 +46,6 @@ HEADERS += \
         src/glbody.h \
     src/gldisc.h \
     src/gldisc.h \
-    src/glmouseray.h \
     src/board.h
 
 
@@ -49,7 +59,6 @@ SOURCES += \
     src/myglitem.cpp \
         src/glbody.cpp \
     src/gldisc.cpp \
-    src/glmouseray.cpp \
     src/board.cpp
 
 
@@ -69,3 +78,20 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    android/AndroidManifest.xml \
+    android/gradle/wrapper/gradle-wrapper.jar \
+    android/gradlew \
+    android/res/values/libs.xml \
+    android/build.gradle \
+    android/gradle/wrapper/gradle-wrapper.properties \
+    android/gradlew.bat \
+    android/res/values/apptheme.xml \
+    android/res/drawable/splash.xml \
+    android/res/drawable/icon.jpg
+
+contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+    ANDROID_PACKAGE_SOURCE_DIR = \
+        $$PWD/android
+}

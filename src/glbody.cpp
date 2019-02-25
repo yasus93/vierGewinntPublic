@@ -126,7 +126,7 @@ GLBody::~GLBody()
 void GLBody::makeSurface(QVector<GLPoint> *pointContainer, QVector<IndexType> * indexContainer)
 {
 #ifdef USE_QOPENGL_FUNCTIONS
-    QOpenGLFunctions::initializeOpenGLFunctions();
+   // QOpenGLFunctions::initializeOpenGLFunctions();
 #endif
     if(pointContainer == nullptr)
     {

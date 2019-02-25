@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QTranslator>
 #include "myglitem.h"
+#include <QQmlContext>
 
 
 int main(int argc, char *argv[])
@@ -17,6 +18,7 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
+
 
 
     qmlRegisterType<MyGlItem>("GlComponents", 1, 0,"MyGlItem" );

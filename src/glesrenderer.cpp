@@ -418,8 +418,8 @@ void GLESRenderer::setPointSize(float newVal)
     m_pointSize = newVal;
     if(m_bound && (m_location_uPointSize != -1))
      m_renderProgram->setUniformValue(m_location_uPointSize, m_pointSize);
-#ifndef USE_QOPENGL_FUNCTIONS
-   glPointSize(m_pointSize); //set point size independent of vertex shader
+#ifdef USE_QOPENGL_FUNCTIONS
+  // glPointSize(m_pointSize); //set point size independent of vertex shader
 #endif
 }
 
@@ -510,7 +510,7 @@ bool GLESRenderer::initialize()
     if(m_initialized)
         return true;
 #ifdef USE_QOPENGL_FUNCTIONS
-    QOpenGLFunctions::initializeOpenGLFunctions();
+    //QOpenGLFunctions::initializeOpenGLFunctions();
 #endif
     //Setup shaders and program
     m_vShader = new QOpenGLShader(QOpenGLShader::Vertex,this); //vertex shader

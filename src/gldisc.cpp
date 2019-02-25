@@ -1,20 +1,21 @@
 #include "gldisc.h"
 #include <math.h>
 
-GLDisc::GLDisc(const QString & name, const QPoint &fieldCoord, float radius, const GLColorRgba &color, const QString textureFile, float height, IndexType slices)
+GLDisc::GLDisc(const QString & name, int steps, const QPoint &fieldCoord, float radius, const GLColorRgba &color, const QString textureFile, float height, IndexType slices)
     :GLBody(name, radius, color, textureFile)
 {
     m_FieldCoord = fieldCoord;
     m_height = height;
     m_slices = slices;
     m_drawingMode = GL_TRIANGLE_STRIP;
-    m_isKing = false;
-
+    m_isFirst = true;
+    m_stepsToPosition = steps;
 }
 
 void GLDisc::makeSurface(QVector<GLPoint> *pointContainer, QVector<GLushort> *indexContainer)
 {
     GLBody::makeSurface(pointContainer, indexContainer);
+
     QVector3D southPole = v_Zero; //unit vector, must be scaled by radius later
     QVector3D northPole = v_Y * m_height;
     QVector3D vertex = v_Z * m_radius;
@@ -107,12 +108,15 @@ void GLDisc::makeSurface(QVector<GLPoint> *pointContainer, QVector<GLushort> *in
 
 void GLDisc::draw(GLESRenderer *renderer, bool useBuffers)
 {
-    float oldPointSize = renderer->pointSize();
-    renderer->setPointSize(2.0);
-    GLBody::draw(renderer, useBuffers);
-    renderer->setPointSize(oldPointSize);
-}
+    if(m_stepsToPosition > 0 && !m_isFirst)
+    {
+        this->move(QVector3D(0.0f, -0.2f, 0.0f));
+        m_stepsToPosition--;
+    }
+    m_isFirst = false;
 
+    GLBody::draw(renderer, useBuffers);
+}
 
 
 QPoint GLDisc::getFieldCoord() const
@@ -125,24 +129,3 @@ void GLDisc::setFieldCoord(const QPoint &FieldCoord)
     m_FieldCoord = FieldCoord;
 }
 
-void GLDisc::becomeKing()
-{
-    m_height = 2* m_height;
-    m_isKing = true;
-    m_surfaceIsValid = false;
-}
-
-bool GLDisc::isColliding(const GLDisc *other)
-{
-    if(this == other)
-        return false;
-
-    if((getCenter() - other->getCenter()).length() > getRadius() + other->getRadius())
-        return false;
-    else
-    {
-        if(fabs(getCenter().y() - other->getCenter().y()) >((m_height + other->m_height) / 2.0))
-            return false;
-        else return true;
-    }
-}

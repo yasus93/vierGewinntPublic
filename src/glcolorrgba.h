@@ -2,6 +2,7 @@
 #define GLCOLORRGBA_H
 
 #include <QVector4D>
+
 /**
  * @brief The GlColorRgba class is a convenience class to replace QVector4D for color variables.
  */
