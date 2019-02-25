@@ -4,6 +4,7 @@
 #include <QVector3D>
 #include <QPropertyAnimation>
 #include <QQuickWindow>
+#include <iostream>
 
 
 MyGlItem::MyGlItem() : GLItem()
@@ -231,9 +232,18 @@ void MyGlItem::insertDisc(int buttonNumber)
 
         totalDiscs++;
 
+        if(redWins()){
+            qDebug() << "red wins" << endl;
+            setNextPlayer(m_player1+" Wins");
+        }
+        if(yellowWins()){
+            qDebug() << "yellow wins" << endl;
+            setNextPlayer(m_player2+" Wins");
+
+        }
         setNextPlayer(m_nextPlayer);
         setNextColor(m_nextColor);
-    }    
+    }
 }
 
 void MyGlItem::doMouseClick(int x, int y)
@@ -252,6 +262,7 @@ void MyGlItem::paintOnTopOfQmlScene()
     yellowDiscs[i]->draw(m_renderer, false);
 
   //field->draw(m_renderer, false);
+
 }
 
 void MyGlItem::paintUnderQmlScene()
@@ -272,3 +283,207 @@ void MyGlItem::setupGeometry()
    field->move(QVector3D(-1.0f, -2.0f, -0.25f));
 
 }
+bool MyGlItem::redWins(){
+    return redHasHorizontal() || redHasVertical() || redHasDiagonal();
+}
+bool MyGlItem::yellowWins(){
+    return yellowHasHorizontal() || yellowHasVertical() || yellowHasDiagonal();
+}
+bool MyGlItem::redHasHorizontal(){
+    int xCoord[7] = {10,10,10,10,10,10,10};
+    int c = 0;
+    for(int hoehe = 0; hoehe<7;hoehe++){
+        for(int i = 0; i<redDiscs.size(); i++){
+            if(redDiscs[i]->getFieldCoord().y() == hoehe){
+                xCoord[c] = redDiscs[i]->getFieldCoord().x();
+                c++;
+            }
+        }
+        c = 0;
+        std::sort(xCoord, xCoord+7);
+        std::cout << "Array:" << std::endl;
+
+        for(int i = 0; i<7; i++){
+            std::cout << xCoord[i] << std::endl;
+        }
+        for(int i = 0; i<=3; i++){
+            if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
+                return true;
+            }
+            if(xCoord[i] == 1 && xCoord[i+1] == 2 && xCoord[i+2] == 3 && xCoord[i+3] == 4){
+                return true;
+            }
+            if(xCoord[i] == 2 && xCoord[i+1] == 3 && xCoord[i+2] == 4 && xCoord[i+3] == 5){
+                return true;
+            }
+            if(xCoord[i] == 3 && xCoord[i+1] == 4 && xCoord[i+2] == 5 && xCoord[i+3] == 6){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool MyGlItem::yellowHasHorizontal(){
+    int xCoord[7] = {10,10,10,10,10,10,10};
+    int c = 0;
+    for(int hoehe = 0; hoehe<7;hoehe++){
+        for(int i = 0; i<yellowDiscs.size(); i++){
+            if(yellowDiscs[i]->getFieldCoord().y() == hoehe){
+                xCoord[c] = yellowDiscs[i]->getFieldCoord().x();
+                c++;
+            }
+        }
+        c = 0;
+        std::sort(xCoord, xCoord+7);
+        std::cout << "Array:" << std::endl;
+
+        for(int i = 0; i<7; i++){
+            std::cout << xCoord[i] << std::endl;
+        }
+        for(int i = 0; i<=3; i++){
+            if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
+                return true;
+            }
+            if(xCoord[i] == 1 && xCoord[i+1] == 2 && xCoord[i+2] == 3 && xCoord[i+3] == 4){
+                return true;
+            }
+            if(xCoord[i] == 2 && xCoord[i+1] == 3 && xCoord[i+2] == 4 && xCoord[i+3] == 5){
+                return true;
+            }
+            if(xCoord[i] == 3 && xCoord[i+1] == 4 && xCoord[i+2] == 5 && xCoord[i+3] == 6){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+bool MyGlItem::redHasVertical(){
+    int yCoord[6] = {10,10,10,10,10,10};
+    int c = 0;
+    for(int breite = 0; breite<6;breite++){
+        for(int i = 0; i<redDiscs.size(); i++){
+            if(redDiscs[i]->getFieldCoord().x() == breite){
+                yCoord[c] = redDiscs[i]->getFieldCoord().y();
+                c++;
+            }
+        }
+        c = 0;
+        std::sort(yCoord, yCoord+6);
+        std::cout << "Array Vert:" << std::endl;
+
+        for(int i = 0; i<7; i++){
+            std::cout << yCoord[i] << std::endl;
+        }
+        for(int i = 0; i<=3; i++){
+            if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){
+                return true;
+            }
+            if(yCoord[i] == 1 && yCoord[i+1] == 2 && yCoord[i+2] == 3 && yCoord[i+3] == 4){
+                return true;
+            }
+            if(yCoord[i] == 2 && yCoord[i+1] == 3 && yCoord[i+2] == 4 && yCoord[i+3] == 5){
+                return true;
+            }
+
+        }
+    }
+    return false;
+}
+bool MyGlItem::yellowHasVertical(){
+    int yCoord[6] = {10,10,10,10,10,10};
+    int c = 0;
+    for(int breite = 0; breite<6;breite++){
+        for(int i = 0; i<yellowDiscs.size(); i++){
+            if(yellowDiscs[i]->getFieldCoord().x() == breite){
+                yCoord[c] = yellowDiscs[i]->getFieldCoord().y();
+                c++;
+            }
+        }
+        c = 0;
+        std::sort(yCoord, yCoord+6);
+        std::cout << "Array Vert:" << std::endl;
+
+        for(int i = 0; i<7; i++){
+            std::cout << yCoord[i] << std::endl;
+        }
+        for(int i = 0; i<=3; i++){
+            if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){
+                return true;
+            }
+            if(yCoord[i] == 1 && yCoord[i+1] == 2 && yCoord[i+2] == 3 && yCoord[i+3] == 4){
+                return true;
+            }
+            if(yCoord[i] == 2 && yCoord[i+1] == 3 && yCoord[i+2] == 4 && yCoord[i+3] == 5){
+                return true;
+            }
+
+        }
+    }
+    return false;
+}
+
+bool MyGlItem::redHasDiagonal(){
+    int xyCoord[7][6];
+    for(int i = 0; i<6;i++){
+        for(int j = 0; j<7;j++){
+            xyCoord[j][i] = 0;
+        }
+    }
+    for(int i = 0; i<redDiscs.size(); i++){
+        int x = redDiscs[i]->getFieldCoord().x();
+        int y = redDiscs[i]->getFieldCoord().y();
+        xyCoord[x][y] = 1;
+    }
+    for(int x = 0; x<4; x++){
+        for(int y = 0; y<3;y++){
+            if(xyCoord[x][y] == 1 && xyCoord[x+1][y+1] == 1 && xyCoord[x+2][y+2] == 1 && xyCoord[x+3][y+3] == 1){
+                return true;
+            }
+        }
+    }
+
+    for(int x = 0; x<4; x++){
+        for(int y = 0; y<3;y++){
+            if(xyCoord[x][y+3] == 1 && xyCoord[x+1][y+2] == 1 && xyCoord[x+2][y+1] == 1 && xyCoord[x+3][y] == 1){
+                return true;
+            }
+        }
+    }
+    return false;
+
+
+}
+bool MyGlItem::yellowHasDiagonal(){
+    int xyCoord[7][6];
+    for(int i = 0; i<6;i++){
+        for(int j = 0; j<7;j++){
+            xyCoord[j][i] = 0;
+        }
+    }
+    for(int i = 0; i<yellowDiscs.size(); i++){
+        int x = yellowDiscs[i]->getFieldCoord().x();
+        int y = yellowDiscs[i]->getFieldCoord().y();
+        xyCoord[x][y] = 1;
+    }
+    for(int x = 0; x<4; x++){
+        for(int y = 0; y<3;y++){
+            if(xyCoord[x][y] == 1 && xyCoord[x+1][y+1] == 1 && xyCoord[x+2][y+2] == 1 && xyCoord[x+3][y+3] == 1){
+                return true;
+            }
+        }
+    }
+    for(int x = 0; x<4; x++){
+        for(int y = 0; y<3;y++){
+            if(xyCoord[x][y+3] == 1 && xyCoord[x+1][y+2] == 1 && xyCoord[x+2][y+1] == 1 && xyCoord[x+3][y] == 1){
+                return true;
+            }
+        }
+    }
+    return false;
+
+
+}
+
+
+

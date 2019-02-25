@@ -46,6 +46,16 @@ private:
     QString m_nextPlayer;
     QString m_nextColor;
 
+    bool redWins();
+    bool redHasHorizontal();
+    bool redHasVertical();
+    bool redHasDiagonal();
+
+    bool yellowWins();
+    bool yellowHasHorizontal();
+    bool yellowHasVertical();
+    bool yellowHasDiagonal();
+
 public:
     MyGlItem();
 
