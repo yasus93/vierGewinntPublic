@@ -37,6 +37,7 @@ MyGlItem::MyGlItem() : GLItem()
     messages->append("Place your Disc ");
     messages->append("You're up next ");
     messages->append("Time for your next move ");
+
 }
 
 void MyGlItem::timerSlot()
@@ -48,6 +49,8 @@ void MyGlItem::timerSlot()
 
 void MyGlItem::newGame(QString player1, QString player2)
 {
+
+
     m_player1 = player1;
     m_player2 = player2;
 
@@ -77,6 +80,7 @@ void MyGlItem::newGame(QString player1, QString player2)
             setNextColor("red");
             break;
     }
+
 }
 
 void MyGlItem::changeTheme(int theme)
@@ -235,14 +239,28 @@ void MyGlItem::insertDisc(int buttonNumber)
         if(redWins()){
             qDebug() << "red wins" << endl;
             setNextPlayer(m_player1+" Wins");
+
+            m_nextOrder.clear();
+            m_nextOrder.insert(0, m_player2);
+            m_nextOrder.insert(1, m_player1);
+
+            setNextOrder(m_nextOrder);
         }
-        if(yellowWins()){
+        else if(yellowWins()){
             qDebug() << "yellow wins" << endl;
             setNextPlayer(m_player2+" Wins");
 
+            m_nextOrder.clear();
+            m_nextOrder.insert(0, m_player1);
+            m_nextOrder.insert(1, m_player2);
+
+            setNextOrder(m_nextOrder);
         }
-        setNextPlayer(m_nextPlayer);
-        setNextColor(m_nextColor);
+        else {
+            setNextPlayer(m_nextPlayer);
+            setNextColor(m_nextColor);
+        }
+
     }
 }
 
@@ -300,11 +318,11 @@ bool MyGlItem::redHasHorizontal(){
             }
         }
         c = 0;
-        std::sort(xCoord, xCoord+7);
-        std::cout << "Array:" << std::endl;
+       std::sort(xCoord, xCoord+7);
+   //     std::cout << "Array:" << std::endl;
 
         for(int i = 0; i<7; i++){
-            std::cout << xCoord[i] << std::endl;
+          //  std::cout << xCoord[i] << std::endl;
         }
         for(int i = 0; i<=3; i++){
             if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
@@ -336,10 +354,10 @@ bool MyGlItem::yellowHasHorizontal(){
         }
         c = 0;
         std::sort(xCoord, xCoord+7);
-        std::cout << "Array:" << std::endl;
+      //  std::cout << "Array:" << std::endl;
 
         for(int i = 0; i<7; i++){
-            std::cout << xCoord[i] << std::endl;
+          //  std::cout << xCoord[i] << std::endl;
         }
         for(int i = 0; i<=3; i++){
             if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
@@ -370,10 +388,10 @@ bool MyGlItem::redHasVertical(){
         }
         c = 0;
         std::sort(yCoord, yCoord+6);
-        std::cout << "Array Vert:" << std::endl;
+      //  std::cout << "Array Vert:" << std::endl;
 
         for(int i = 0; i<7; i++){
-            std::cout << yCoord[i] << std::endl;
+           // std::cout << yCoord[i] << std::endl;
         }
         for(int i = 0; i<=3; i++){
             if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){
@@ -402,10 +420,10 @@ bool MyGlItem::yellowHasVertical(){
         }
         c = 0;
         std::sort(yCoord, yCoord+6);
-        std::cout << "Array Vert:" << std::endl;
+       // std::cout << "Array Vert:" << std::endl;
 
         for(int i = 0; i<7; i++){
-            std::cout << yCoord[i] << std::endl;
+            //std::cout << yCoord[i] << std::endl;
         }
         for(int i = 0; i<=3; i++){
             if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){

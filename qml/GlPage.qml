@@ -45,6 +45,34 @@ GlPageForm {
     myGlItem.onColorChanged: {
         player.color = color
     }
+
+    myGlItem.onOrderChanged: {
+
+        buttonRow.visible = false
+        nextPlayer.y = 50
+        player.text += "\n" + order[0] + " will start next\nNext game starts in 5 seconds ... "
+
+        delay(5000, function (){
+            buttonRow.visible = true
+            nextPlayer.y = 0
+
+            player1.text = order[0]
+            player2.text = order[1]
+
+            console.log(player1.text + player2.text)
+            myGlItem.newGame(player1.text, player2.text)
+        });
+
+
+    }
+
+    function delay(delayTime, cb) {
+        timer.interval = delayTime;
+        timer.repeat = false;
+        timer.triggered.connect(cb);
+        timer.start();
+        return;
+    }
 }
 
 /*##^## Designer {

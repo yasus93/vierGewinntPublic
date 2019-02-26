@@ -13,6 +13,7 @@ class MyGlItem : public GLItem
 
     Q_PROPERTY(QString nextPlayer READ nextPlayer WRITE setNextPlayer NOTIFY playerChanged)
     Q_PROPERTY(QString nextColor READ nextColor WRITE setNextColor NOTIFY colorChanged)
+    Q_PROPERTY(QList<QString> nextOrder READ nextOrder WRITE setNextOrder NOTIFY orderChanged)
 
 private:
 
@@ -23,6 +24,8 @@ private:
     GLBody *m_blender;
     QTimer * m_timer;
     Board *field;
+
+    QList<QString> m_nextOrder = QList<QString>();
 
     QList<QString> *messages;
 
@@ -63,15 +66,18 @@ public:
     void paintUnderQmlScene() override;
     void paintOnTopOfQmlScene() override;
 
-    Q_INVOKABLE QString nextPlayer()const{return m_nextPlayer;}
-    Q_INVOKABLE QString nextColor()const{return m_nextColor;}
+    Q_INVOKABLE QString nextPlayer(){return m_nextPlayer;}
+    Q_INVOKABLE QString nextColor(){return m_nextColor;}
+    Q_INVOKABLE QList<QString> nextOrder() {return m_nextOrder;}
 
-    void setNextPlayer(const QString next){m_nextPlayer = next;  emit playerChanged(next);}
-    void setNextColor(const QString color) {m_nextColor = color; emit colorChanged(color);}
+    void setNextPlayer( QString next){m_nextPlayer = next;  emit playerChanged(next);}
+    void setNextColor( QString color) {m_nextColor = color; emit colorChanged(color);}
+    void setNextOrder (QList<QString> order) {m_nextOrder = order; emit orderChanged(order);}
 
 signals:
     void playerChanged(QString next);
     void colorChanged(QString color);
+    void orderChanged(QList<QString> order);
 
 public slots:
     void insertDisc(int buttonNumber);
@@ -79,7 +85,6 @@ public slots:
     void newGame(QString player1, QString player2);
     void changeTheme(int theme);
     void timerSlot();
-
 };
 
 #endif // MYGLITEM_H

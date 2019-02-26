@@ -24,7 +24,7 @@ Item {
     property alias warning: warning
     property alias ok: ok
     property alias back: back
-
+    property alias nextPlayer: nextPlayer
 
     MyGlItem {
         id: myGlItem
@@ -33,6 +33,8 @@ Item {
         height: applicationWindow.height
         z: -1
         anchors.fill: parent
+
+
 
         Rectangle {
             id: nextPlayer

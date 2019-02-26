@@ -6,6 +6,7 @@ import QtQuick.Window 2.2
 ApplicationWindow {
     property alias changePlayerAction: changePlayerAction
     property alias startNewGame : startNewGame
+    property alias timer: timer
 
     id: applicationWindow
     visible: true
@@ -16,6 +17,10 @@ ApplicationWindow {
     maximumWidth: 1120
 
     title: qsTr("4Gewinnt")
+
+    Timer {
+            id: timer
+        }
 
     LinearGradient {
         anchors.fill: parent
