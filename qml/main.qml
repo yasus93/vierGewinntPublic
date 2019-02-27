@@ -7,6 +7,7 @@ ApplicationWindow {
     property alias changePlayerAction: changePlayerAction
     property alias startNewGame : startNewGame
     property alias timer: timer
+    property alias linGrad: linGrad
 
     id: applicationWindow
     visible: true
@@ -23,6 +24,7 @@ ApplicationWindow {
         }
 
     LinearGradient {
+        id: linGrad
         anchors.fill: parent
         gradient: Gradient {
             GradientStop {
@@ -48,6 +50,8 @@ ApplicationWindow {
                 text: qsTr("&New Game")
                 enabled: false
                 onTriggered: glPage.myGlItem.newGame(glPage.player1.text, glPage.player2.text)
+
+
             }
             Action {
                 id: changePlayerAction

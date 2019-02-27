@@ -12,6 +12,13 @@ GlPageForm {
         player.visible = true
         startNewGame.enabled = true
         changePlayerAction.enabled = true
+
+        player1Label.text = player1.text
+        player2Label.text = player2.text
+        score1.text = qsTr("0")
+        score2.text = qsTr("0")
+
+        myGlItem.staticPlayers(player1.text, player2.text)
     }
 
     back.onClicked: warning.close()
@@ -26,6 +33,11 @@ GlPageForm {
         playerInput.visible = true
         player1.clear()
         player2.clear()
+        player1Label.text = ""
+        player2Label.text = ""
+        myGlItem.resetScore()
+        score1.text = qsTr("")
+        score2.text = qsTr("")
     }
 
     roundButton0.onClicked: myGlItem.insertDisc(0);
@@ -46,15 +58,28 @@ GlPageForm {
         player.color = color
     }
 
+    myGlItem.onResultChanged: {
+        //score1.text++
+
+        score1.text = result[0]
+        score2.text = result[1]
+
+
+    }
+
     myGlItem.onOrderChanged: {
 
         buttonRow.visible = false
         nextPlayer.y = 50
-        player.text += "\n" + order[0] + " will start next\nNext game starts in 5 seconds ... "
+        rectangle.y = -25
+        rectangle2.y = -25
+        player.text += "\n" + order[0] + " will start next\nNext game starts in 3 seconds ... "
 
-        delay(5000, function (){
+        delay(10000, function (){
             buttonRow.visible = true
             nextPlayer.y = 0
+            rectangle.y = 25
+            rectangle2.y = 25
 
             player1.text = order[0]
             player2.text = order[1]

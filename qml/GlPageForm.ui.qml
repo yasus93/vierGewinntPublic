@@ -25,6 +25,12 @@ Item {
     property alias ok: ok
     property alias back: back
     property alias nextPlayer: nextPlayer
+    property alias score1: score1
+    property alias player1Label: player1Label
+    property alias score2: score2
+    property alias player2Label: player2Label
+    property alias rectangle: rectangle
+    property alias rectangle2: rectangle2
 
     MyGlItem {
         id: myGlItem
@@ -42,7 +48,7 @@ Item {
             y: 0
             width: applicationWindow.width
             height:55
-            color: "#000000"
+            color: "transparent"
             z: 2
             Text {
                 id: player
@@ -50,9 +56,81 @@ Item {
                 color: myGlItem.nextColor
                 text: myGlItem.nextPlayer
                 anchors.verticalCenter: parent.verticalCenter
-                font.pointSize: 24
+                font.pointSize: 26
                 visible: false
             }
+
+            Rectangle {
+                id: rectangle
+                x: 0
+                y: 25
+                width: 200
+                height: 85
+                color: "transparent"
+
+                Label {
+                    id: player1Label
+                    x:  5
+                    y: 10
+                    width: contentWidth
+                    height: contentHeight
+                    horizontalAlignment: Text.AlignLeft
+                    color: "white"
+                    font.pointSize: 24
+
+                }
+
+                Label {
+                    id: score1
+                    x: 15
+                    y: 50
+                    width: contentWidth
+                    height: contentHeight
+                    horizontalAlignment: Text.AlignLeft
+
+                    color: "white"
+                    font.pointSize: 30
+                }
+            }
+
+            Rectangle{
+                id:rectangle2
+                x: applicationWindow.width - rectangle2.width
+                y: 25
+
+                width:200
+                height:85
+                color: "transparent"
+
+                Label {
+                    id: player2Label
+                    x: (rectangle2.width - player2Label.width) - 5
+                    y: 10
+                    width: contentWidth
+                    height: contentHeight
+                    color: "white"
+                    font.pointSize: 24
+                    horizontalAlignment: Text.AlignLeft
+                }
+
+                Label {
+                    id: score2
+                    x: (rectangle2.width - score2.width ) - 15
+                    y: 50
+
+                    width: contentWidth
+                    height: contentHeight
+
+                    horizontalAlignment: Text.AlignRight
+
+
+                    color: "white"
+                    font.pointSize: 30
+                }
+
+            }
+
+
         }
         MouseArea {
             id: mouseArea
@@ -174,7 +252,7 @@ Item {
                 x:0
                 y:50
                 anchors.horizontalCenter: parent.horizontalCenter
-                color: "black"
+                color: "transparent"
                 width: 320
                 height: 116
                 z: 2
@@ -190,7 +268,7 @@ Item {
                     activeFocusOnTab: true
                     selectByMouse: true
                     validator: RegExpValidator {
-                        regExp: /[A-Za-z]+/
+                        regExp: /[A-Za-z]{3,15}/
                     }
                 }
 
@@ -216,7 +294,7 @@ Item {
                     activeFocusOnTab: true
                     selectByMouse: true
                     validator: RegExpValidator {
-                        regExp: /[A-Za-z]+/
+                        regExp: /[A-Za-z]{3,20}/
                     }
                 }
 
@@ -240,6 +318,8 @@ Item {
 
             }
         }
+
+
     }
 }
 

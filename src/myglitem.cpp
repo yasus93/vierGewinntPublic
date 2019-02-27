@@ -38,6 +38,11 @@ MyGlItem::MyGlItem() : GLItem()
     messages->append("You're up next ");
     messages->append("Time for your next move ");
 
+    m_nextResult.insert(0, 0);
+    m_nextResult.insert(1, 0);
+
+    //setNextResult(m_nextResult);
+
 }
 
 void MyGlItem::timerSlot()
@@ -45,6 +50,19 @@ void MyGlItem::timerSlot()
     if (window())
         window()->update();
     update();
+}
+
+void MyGlItem::resetScore()
+{
+    m_nextResult[0] = 0;
+    m_nextResult[1] = 0;
+    setNextResult(m_nextResult);
+}
+
+void MyGlItem::staticPlayers(QString p1, QString p2)
+{
+    m_staticPlayer1 = p1;
+    m_staticPlayer2 = p2;
 }
 
 void MyGlItem::newGame(QString player1, QString player2)
@@ -245,6 +263,17 @@ void MyGlItem::insertDisc(int buttonNumber)
             m_nextOrder.insert(1, m_player1);
 
             setNextOrder(m_nextOrder);
+
+            if(m_staticPlayer1 == m_player1)
+            {
+                m_nextResult[0]++;
+            }
+            else{
+                m_nextResult[1]++;
+            }
+
+
+            setNextResult(m_nextResult);
         }
         else if(yellowWins()){
             qDebug() << "yellow wins" << endl;
@@ -255,6 +284,15 @@ void MyGlItem::insertDisc(int buttonNumber)
             m_nextOrder.insert(1, m_player2);
 
             setNextOrder(m_nextOrder);
+
+            if(m_staticPlayer2 == m_player2)
+            {
+                m_nextResult[1]++;
+            }
+            else{
+                m_nextResult[0]++;
+            }
+            setNextResult(m_nextResult);
         }
         else {
             setNextPlayer(m_nextPlayer);
@@ -338,6 +376,10 @@ bool MyGlItem::redHasHorizontal(){
                 return true;
             }
         }
+        for(int i = 0; i<7; i++){
+            xCoord[i] = 10;
+        }
+
     }
     return false;
 }
@@ -356,9 +398,6 @@ bool MyGlItem::yellowHasHorizontal(){
         std::sort(xCoord, xCoord+7);
       //  std::cout << "Array:" << std::endl;
 
-        for(int i = 0; i<7; i++){
-          //  std::cout << xCoord[i] << std::endl;
-        }
         for(int i = 0; i<=3; i++){
             if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
                 return true;
@@ -373,6 +412,9 @@ bool MyGlItem::yellowHasHorizontal(){
                 return true;
             }
         }
+        for(int i = 0; i<7; i++){
+                    xCoord[i] = 10;
+                }
     }
     return false;
 }
@@ -405,6 +447,9 @@ bool MyGlItem::redHasVertical(){
             }
 
         }
+        for(int i = 0; i<6; i++){
+                    yCoord[i] = 10;
+                }
     }
     return false;
 }
@@ -436,6 +481,9 @@ bool MyGlItem::yellowHasVertical(){
                 return true;
             }
 
+        }
+        for(int i = 0; i<6; i++){
+            yCoord[i] = 10;
         }
     }
     return false;
