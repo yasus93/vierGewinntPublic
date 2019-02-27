@@ -321,9 +321,9 @@ bool MyGlItem::redHasHorizontal(){
        std::sort(xCoord, xCoord+7);
    //     std::cout << "Array:" << std::endl;
 
-        for(int i = 0; i<7; i++){
-          //  std::cout << xCoord[i] << std::endl;
-        }
+//        for(int i = 0; i<7; i++){
+//          std::cout << xCoord[i] << std::endl;
+//        }
         for(int i = 0; i<=3; i++){
             if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
                 return true;
@@ -337,6 +337,9 @@ bool MyGlItem::redHasHorizontal(){
             if(xCoord[i] == 3 && xCoord[i+1] == 4 && xCoord[i+2] == 5 && xCoord[i+3] == 6){
                 return true;
             }
+        }
+        for(int i = 0; i<7; i++){
+            xCoord[i] = 10;
         }
     }
     return false;
@@ -356,9 +359,9 @@ bool MyGlItem::yellowHasHorizontal(){
         std::sort(xCoord, xCoord+7);
       //  std::cout << "Array:" << std::endl;
 
-        for(int i = 0; i<7; i++){
-          //  std::cout << xCoord[i] << std::endl;
-        }
+//        for(int i = 0; i<7; i++){
+//          std::cout << xCoord[i] << std::endl;
+//        }
         for(int i = 0; i<=3; i++){
             if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
                 return true;
@@ -372,6 +375,9 @@ bool MyGlItem::yellowHasHorizontal(){
             if(xCoord[i] == 3 && xCoord[i+1] == 4 && xCoord[i+2] == 5 && xCoord[i+3] == 6){
                 return true;
             }
+        }
+        for(int i = 0; i<7; i++){
+            xCoord[i] = 10;
         }
     }
     return false;
@@ -390,9 +396,9 @@ bool MyGlItem::redHasVertical(){
         std::sort(yCoord, yCoord+6);
       //  std::cout << "Array Vert:" << std::endl;
 
-        for(int i = 0; i<7; i++){
-           // std::cout << yCoord[i] << std::endl;
-        }
+//        for(int i = 0; i<7; i++){
+//          std::cout << yCoord[i] << std::endl;
+//        }
         for(int i = 0; i<=3; i++){
             if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){
                 return true;
@@ -404,6 +410,9 @@ bool MyGlItem::redHasVertical(){
                 return true;
             }
 
+        }
+        for(int i = 0; i<6; i++){
+            yCoord[i] = 10;
         }
     }
     return false;
@@ -422,9 +431,9 @@ bool MyGlItem::yellowHasVertical(){
         std::sort(yCoord, yCoord+6);
        // std::cout << "Array Vert:" << std::endl;
 
-        for(int i = 0; i<7; i++){
-            //std::cout << yCoord[i] << std::endl;
-        }
+//        for(int i = 0; i<7; i++){
+//          std::cout << yCoord[i] << std::endl;
+//        }
         for(int i = 0; i<=3; i++){
             if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){
                 return true;
@@ -436,6 +445,9 @@ bool MyGlItem::yellowHasVertical(){
                 return true;
             }
 
+        }
+        for(int i = 0; i<6; i++){
+            yCoord[i] = 10;
         }
     }
     return false;
