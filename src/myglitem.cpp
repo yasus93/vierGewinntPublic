@@ -347,6 +347,7 @@ bool MyGlItem::yellowWins(){
 }
 bool MyGlItem::redHasHorizontal(){
     int xCoord[7] = {10,10,10,10,10,10,10};
+    int yCoord = 10;
     int c = 0;
     for(int hoehe = 0; hoehe<7;hoehe++){
         for(int i = 0; i<redDiscs.size(); i++){
@@ -355,8 +356,9 @@ bool MyGlItem::redHasHorizontal(){
                 c++;
             }
         }
+        yCoord = hoehe;
         c = 0;
-       std::sort(xCoord, xCoord+7);
+        std::sort(xCoord, xCoord+7);
    //     std::cout << "Array:" << std::endl;
 
 //        for(int i = 0; i<7; i++){
@@ -364,15 +366,19 @@ bool MyGlItem::redHasHorizontal(){
 //        }
         for(int i = 0; i<=3; i++){
             if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
+                markWinnerHorizontal(redDiscs, 0, 3, hoehe);
                 return true;
             }
             if(xCoord[i] == 1 && xCoord[i+1] == 2 && xCoord[i+2] == 3 && xCoord[i+3] == 4){
+                markWinnerHorizontal(redDiscs, 1, 4, hoehe);
                 return true;
             }
             if(xCoord[i] == 2 && xCoord[i+1] == 3 && xCoord[i+2] == 4 && xCoord[i+3] == 5){
+                markWinnerHorizontal(redDiscs, 2, 5, hoehe);
                 return true;
             }
             if(xCoord[i] == 3 && xCoord[i+1] == 4 && xCoord[i+2] == 5 && xCoord[i+3] == 6){
+                markWinnerHorizontal(redDiscs, 3, 6, hoehe);
                 return true;
             }
         }
@@ -401,15 +407,19 @@ bool MyGlItem::yellowHasHorizontal(){
 
         for(int i = 0; i<=3; i++){
             if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
+                markWinnerHorizontal(yellowDiscs, 0, 3, hoehe);
                 return true;
             }
             if(xCoord[i] == 1 && xCoord[i+1] == 2 && xCoord[i+2] == 3 && xCoord[i+3] == 4){
+                markWinnerHorizontal(yellowDiscs, 1, 4, hoehe);
                 return true;
             }
             if(xCoord[i] == 2 && xCoord[i+1] == 3 && xCoord[i+2] == 4 && xCoord[i+3] == 5){
+                markWinnerHorizontal(yellowDiscs, 2, 5, hoehe);
                 return true;
             }
             if(xCoord[i] == 3 && xCoord[i+1] == 4 && xCoord[i+2] == 5 && xCoord[i+3] == 6){
+                markWinnerHorizontal(yellowDiscs, 3, 6, hoehe);
                 return true;
             }
         }
@@ -439,12 +449,15 @@ bool MyGlItem::redHasVertical(){
 //        }
         for(int i = 0; i<=3; i++){
             if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){
+                markWinnerVertical(redDiscs, 0,3,breite);
                 return true;
             }
             if(yCoord[i] == 1 && yCoord[i+1] == 2 && yCoord[i+2] == 3 && yCoord[i+3] == 4){
+                markWinnerVertical(redDiscs, 1,4,breite);
                 return true;
             }
             if(yCoord[i] == 2 && yCoord[i+1] == 3 && yCoord[i+2] == 4 && yCoord[i+3] == 5){
+                markWinnerVertical(redDiscs, 2,5,breite);
                 return true;
             }
 
@@ -475,12 +488,15 @@ bool MyGlItem::yellowHasVertical(){
 //        }
         for(int i = 0; i<=3; i++){
             if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){
+                markWinnerVertical(yellowDiscs, 0,3,breite);
                 return true;
             }
             if(yCoord[i] == 1 && yCoord[i+1] == 2 && yCoord[i+2] == 3 && yCoord[i+3] == 4){
+                markWinnerVertical(yellowDiscs, 1,4,breite);
                 return true;
             }
             if(yCoord[i] == 2 && yCoord[i+1] == 3 && yCoord[i+2] == 4 && yCoord[i+3] == 5){
+                markWinnerVertical(yellowDiscs, 2,5,breite);
                 return true;
             }
 
@@ -496,25 +512,68 @@ bool MyGlItem::redHasDiagonal(){
     int xyCoord[7][6];
     for(int i = 0; i<6;i++){
         for(int j = 0; j<7;j++){
-            xyCoord[j][i] = 0;
+            xyCoord[j][i] = -1;
         }
     }
     for(int i = 0; i<redDiscs.size(); i++){
         int x = redDiscs[i]->getFieldCoord().x();
         int y = redDiscs[i]->getFieldCoord().y();
-        xyCoord[x][y] = 1;
+        xyCoord[x][y] = i;
     }
     for(int x = 0; x<4; x++){
         for(int y = 0; y<3;y++){
-            if(xyCoord[x][y] == 1 && xyCoord[x+1][y+1] == 1 && xyCoord[x+2][y+2] == 1 && xyCoord[x+3][y+3] == 1){
+            if(xyCoord[x][y] != -1 && xyCoord[x+1][y+1] != -1 && xyCoord[x+2][y+2] != -1 && xyCoord[x+3][y+3] != -1){
+                redDiscs[xyCoord[x][y]]->setColor(cl_White);
+                redDiscs[xyCoord[x+1][y+1]]->setColor(cl_White);
+                redDiscs[xyCoord[x+2][y+2]]->setColor(cl_White);
+                redDiscs[xyCoord[x+3][y+3]]->setColor(cl_White);
                 return true;
             }
         }
     }
-
     for(int x = 0; x<4; x++){
         for(int y = 0; y<3;y++){
-            if(xyCoord[x][y+3] == 1 && xyCoord[x+1][y+2] == 1 && xyCoord[x+2][y+1] == 1 && xyCoord[x+3][y] == 1){
+            if(xyCoord[x][y+3] != -1 && xyCoord[x+1][y+2] != -1 && xyCoord[x+2][y+1] != -1 && xyCoord[x+3][y] != -1){
+                redDiscs[xyCoord[x][y+3]]->setColor(cl_White);
+                redDiscs[xyCoord[x+1][y+2]]->setColor(cl_White);
+                redDiscs[xyCoord[x+2][y+1]]->setColor(cl_White);
+                redDiscs[xyCoord[x+3][y]]->setColor(cl_White);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+bool MyGlItem::yellowHasDiagonal(){
+    int xyCoord[7][6];
+    for(int i = 0; i<6;i++){
+        for(int j = 0; j<7;j++){
+            xyCoord[j][i] = -1;
+        }
+    }
+    for(int i = 0; i<yellowDiscs.size(); i++){
+        int x = yellowDiscs[i]->getFieldCoord().x();
+        int y = yellowDiscs[i]->getFieldCoord().y();
+        xyCoord[x][y] = i;
+    }
+    for(int x = 0; x<4; x++){
+        for(int y = 0; y<3;y++){
+            if(xyCoord[x][y] != -1 && xyCoord[x+1][y+1] != -1 && xyCoord[x+2][y+2] != -1 && xyCoord[x+3][y+3] != -1){
+                yellowDiscs[xyCoord[x][y]]->setColor(cl_White);
+                yellowDiscs[xyCoord[x+1][y+1]]->setColor(cl_White);
+                yellowDiscs[xyCoord[x+2][y+2]]->setColor(cl_White);
+                yellowDiscs[xyCoord[x+3][y+3]]->setColor(cl_White);
+                return true;
+            }
+        }
+    }
+    for(int x = 0; x<4; x++){
+        for(int y = 0; y<3;y++){
+            if(xyCoord[x][y+3] != -1 && xyCoord[x+1][y+2] != -1 && xyCoord[x+2][y+1] != -1 && xyCoord[x+3][y] != -1){
+                yellowDiscs[xyCoord[x][y+3]]->setColor(cl_White);
+                yellowDiscs[xyCoord[x+1][y+2]]->setColor(cl_White);
+                yellowDiscs[xyCoord[x+2][y+1]]->setColor(cl_White);
+                yellowDiscs[xyCoord[x+3][y]]->setColor(cl_White);
                 return true;
             }
         }
@@ -523,35 +582,23 @@ bool MyGlItem::redHasDiagonal(){
 
 
 }
-bool MyGlItem::yellowHasDiagonal(){
-    int xyCoord[7][6];
-    for(int i = 0; i<6;i++){
-        for(int j = 0; j<7;j++){
-            xyCoord[j][i] = 0;
-        }
-    }
-    for(int i = 0; i<yellowDiscs.size(); i++){
-        int x = yellowDiscs[i]->getFieldCoord().x();
-        int y = yellowDiscs[i]->getFieldCoord().y();
-        xyCoord[x][y] = 1;
-    }
-    for(int x = 0; x<4; x++){
-        for(int y = 0; y<3;y++){
-            if(xyCoord[x][y] == 1 && xyCoord[x+1][y+1] == 1 && xyCoord[x+2][y+2] == 1 && xyCoord[x+3][y+3] == 1){
-                return true;
+void MyGlItem::markWinnerHorizontal(QList<GLDisc *> disc, int minX, int maxX, int currentY){
+    for(int i = 0; i<disc.size(); i++){
+        if(disc[i]->getFieldCoord().y() == currentY){
+            if(disc[i]->getFieldCoord().x() <= maxX && disc[i]->getFieldCoord().x() >= minX){
+                disc[i]->setColor(cl_White);
             }
         }
     }
-    for(int x = 0; x<4; x++){
-        for(int y = 0; y<3;y++){
-            if(xyCoord[x][y+3] == 1 && xyCoord[x+1][y+2] == 1 && xyCoord[x+2][y+1] == 1 && xyCoord[x+3][y] == 1){
-                return true;
+}
+void MyGlItem::markWinnerVertical(QList<GLDisc *> disc, int minY, int maxY, int currentX){
+    for(int i = 0; i<disc.size(); i++){
+        if(disc[i]->getFieldCoord().x() == currentX){
+            if(disc[i]->getFieldCoord().y() <= maxY && disc[i]->getFieldCoord().y() >= minY){
+                disc[i]->setColor(cl_White);
             }
         }
     }
-    return false;
-
-
 }
 
 

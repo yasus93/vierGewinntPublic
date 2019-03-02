@@ -64,6 +64,8 @@ private:
     bool yellowHasVertical();
     bool yellowHasDiagonal();
 
+    void markWinnerHorizontal(QList<GLDisc *> disc, int minX, int maxX, int currentY);
+    void markWinnerVertical(QList<GLDisc *> disc, int minY, int maxY, int currentX);
 public:
     MyGlItem();
 
