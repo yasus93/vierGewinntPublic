@@ -294,8 +294,9 @@ Item {
                     activeFocusOnTab: true
                     selectByMouse: true
                     validator: RegExpValidator {
-                        regExp: /[A-Za-z]{3,20}/
+                        regExp: /[A-Za-z]{3,15}/
                     }
+
                 }
 
                 Label {
@@ -314,6 +315,8 @@ Item {
                     x: 110
                     y: 70
                     text: qsTr("Start Game")
+                    enabled: player1.acceptableInput && player2.acceptableInput
+
                 }
 
             }

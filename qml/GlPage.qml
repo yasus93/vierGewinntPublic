@@ -73,9 +73,9 @@ GlPageForm {
         nextPlayer.y = 50
         rectangle.y = -25
         rectangle2.y = -25
-        player.text += "\n" + order[0] + " will start next\nNext game starts in 3 seconds ... "
+        player.text += "\n" + order[0] + " will start next\nNext game starts in 5 seconds ... "
 
-        delay(10000, function (){
+        delay(5000, function (){
             buttonRow.visible = true
             nextPlayer.y = 0
             rectangle.y = 25

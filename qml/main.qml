@@ -44,10 +44,10 @@ ApplicationWindow {
 
     menuBar: MenuBar {
         Menu {
-            title: qsTr("&File")
+            title: qsTr("&Game")
             Action {
                 id: startNewGame
-                text: qsTr("&New Game")
+                text: qsTr("&Restart")
                 enabled: false
                 onTriggered: glPage.myGlItem.newGame(glPage.player1.text, glPage.player2.text)
 
@@ -65,8 +65,8 @@ ApplicationWindow {
             }
         }
         Menu {
-            title: qsTr("&Change Theme")
-            Action { text: qsTr("Original")
+            title: qsTr("&Theme")
+            Action { text: qsTr("Classic")
                 onTriggered: glPage.myGlItem.changeTheme(2);
             }
             Action { text: qsTr("Stone")

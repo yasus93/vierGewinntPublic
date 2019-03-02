@@ -295,8 +295,13 @@ void MyGlItem::insertDisc(int buttonNumber)
             setNextResult(m_nextResult);
         }
         else {
-            setNextPlayer(m_nextPlayer);
-            setNextColor(m_nextColor);
+
+            if(totalDiscs == 42)
+                setNextPlayer("It's a tie. Restart the game and try again!");
+            else {
+                setNextPlayer(m_nextPlayer);
+                setNextColor(m_nextColor);
+            }
         }
 
     }
