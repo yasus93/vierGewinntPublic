@@ -7,6 +7,7 @@
 #include <iostream>
 
 
+
 MyGlItem::MyGlItem() : GLItem()
 {
     m_backgroundColor = GLColorRgba::clBlack;
@@ -352,7 +353,7 @@ bool MyGlItem::yellowWins(){
 }
 bool MyGlItem::redHasHorizontal(){
     int xCoord[7] = {10,10,10,10,10,10,10};
-    int yCoord = 10;
+    int yCoord = 10; // kann das weg oder ist das Kunst?
     int c = 0;
     for(int hoehe = 0; hoehe<7;hoehe++){
         for(int i = 0; i<redDiscs.size(); i++){

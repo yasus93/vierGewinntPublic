@@ -70,6 +70,8 @@ GlPageForm {
     myGlItem.onOrderChanged: {
 
         buttonRow.visible = false
+        startNewGame.enabled = false
+        changePlayerAction.enabled = false
         nextPlayer.y = 50
         rectangle.y = -25
         rectangle2.y = -25
@@ -84,7 +86,8 @@ GlPageForm {
             player1.text = order[0]
             player2.text = order[1]
 
-            console.log(player1.text + player2.text)
+            startNewGame.enabled = true
+            changePlayerAction.enabled = true
             myGlItem.newGame(player1.text, player2.text)
         });
 

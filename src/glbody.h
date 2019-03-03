@@ -49,8 +49,9 @@ class GLBody
     static constexpr float fTwo = 2.0;
 
 public:
-     /**Constructor does NOT create the surface.
-     */
+     /**
+      * Constructor does NOT create the surface.
+      */
      GLBody(const QString & name, float radius = 1.0, const GLColorRgba & m_color = GLColorRgba::clBlue, const QString m_textureFile = "");
      /**
       * @brief GLBody Constructor does NOT create the surface.
@@ -58,7 +59,8 @@ public:
       */
      GLBody(QString  name, const QVector3D offset);
 
-    /** Destructor will delete created containers.
+    /**
+     * Destructor will delete created containers.
      */
     virtual ~GLBody();
 

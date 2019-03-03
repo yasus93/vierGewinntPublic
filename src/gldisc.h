@@ -19,7 +19,6 @@ public:
     void draw(GLESRenderer *renderer, bool useBuffers)Q_DECL_OVERRIDE;
 
 
-    float getHeight(){ return m_height;}
 
     QPoint getFieldCoord() const;
     void setFieldCoord(const QPoint &FieldCoord);

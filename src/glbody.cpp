@@ -109,7 +109,8 @@ void GLBody::activateAttributeArrays(GLESRenderer *renderer)
 }
 
 
-/** Destructor
+/**
+ * Destructor
  */
 GLBody::~GLBody()
 {
@@ -120,7 +121,8 @@ GLBody::~GLBody()
       delete m_indices;
 }
 
-/** Creates the surface. Should be called, when a GL engine is already running.
+/**
+ * Creates the surface. Should be called, when a GL engine is already running.
   * Is called automatically by draw, if required.
   */
 void GLBody::makeSurface(QVector<GLPoint> *pointContainer, QVector<IndexType> * indexContainer)
