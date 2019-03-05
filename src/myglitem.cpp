@@ -295,17 +295,22 @@ void MyGlItem::insertDisc(int buttonNumber)
             }
             setNextResult(m_nextResult);
         }
-        else {
+        else if(totalDiscs == 42){
+            setNextPlayer("It's a tie.");
+            m_nextOrder.clear();
+            m_nextOrder.insert(0, m_player1);
+            m_nextOrder.insert(1, m_player2);
 
-            if(totalDiscs == 42)
-                setNextPlayer("It's a tie. Restart the game and try again!");
-            else {
-                setNextPlayer(m_nextPlayer);
-                setNextColor(m_nextColor);
-            }
+            setNextOrder(m_nextOrder);
+
+            setNextResult(m_nextResult);
         }
-
+        else {
+            setNextPlayer(m_nextPlayer);
+            setNextColor(m_nextColor);
+        }
     }
+
 }
 
 void MyGlItem::doMouseClick(int x, int y)
