@@ -90,8 +90,6 @@ GlPageForm {
             changePlayerAction.enabled = true
             myGlItem.newGame(player1.text, player2.text)
         });
-
-
     }
 
     function delay(delayTime, cb) {

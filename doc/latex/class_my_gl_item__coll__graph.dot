@@ -1,0 +1,21 @@
+digraph "MyGlItem"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="MyGlItem",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The MyGlItem class."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="GLItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_l_item.html",tooltip="The GlItem class is a 3D-scene item designed for use in QML SceneGraphs. It should be subclassed acco..."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="QQuickItem",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_renderer" ];
+  Node6 [label="GLESRenderer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_l_e_s_renderer.html",tooltip="A render program that can be used as a simple replacement for the OpenGL fixed function pipeline."];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_ambientAndDiffuseColor\nm_specularColor" ];
+  Node8 [label="GLColorRgba",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_l_color_rgba.html",tooltip="The GlColorRgba class is a convenience class to replace QVector4D for color variables."];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="QVector4D",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" clWhite\nclMagenta\nclBlue\nclBlack\nclRed\nclGray\nclCyan\nclGreen\nclYellow" ];
+  Node8 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_backgroundColor" ];
+}

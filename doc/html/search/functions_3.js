@@ -11,7 +11,5 @@ var searchData=
   ['distancetomouseclick',['distanceToMouseClick',['../class_g_l_e_s_renderer.html#a6f31b6893897549f3762a88a8bf135f8',1,'GLESRenderer']]],
   ['domouseclick',['doMouseClick',['../class_my_gl_item.html#a76e20888c579fb444dc071a43a301ced',1,'MyGlItem']]],
   ['dosynchronizethreads',['doSynchronizeThreads',['../class_g_l_item.html#aaec2f87eed24614ebed2268b10b3c342',1,'GLItem']]],
-  ['dotimertimeout',['doTimerTimeout',['../class_g_l_item.html#a5ae087d6d77f470952829beee4346af8',1,'GLItem']]],
-  ['draw',['draw',['../class_g_l_body.html#aaeb47c0a8cfc36caed81fc139c42ddfc',1,'GLBody::draw()'],['../class_g_l_disc.html#a7fca90525cba1fb6099d70730375cc6e',1,'GLDisc::draw()']]],
-  ['drawaxes',['drawAxes',['../class_g_l_item.html#aef70de1482fa71495a178626566f4f3a',1,'GLItem']]]
+  ['draw',['draw',['../class_g_l_body.html#aaeb47c0a8cfc36caed81fc139c42ddfc',1,'GLBody::draw()'],['../class_g_l_disc.html#a7fca90525cba1fb6099d70730375cc6e',1,'GLDisc::draw()']]]
 ];

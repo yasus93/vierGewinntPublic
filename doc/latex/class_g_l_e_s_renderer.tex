@@ -9,29 +9,34 @@ A render program that can be used as a simple replacement for the Open\+GL fixed
 
 {\ttfamily \#include $<$glesrenderer.\+h$>$}
 
-Inheritance diagram for G\+L\+E\+S\+Renderer\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{class_g_l_e_s_renderer}
-\end{center}
-\end{figure}
+
+
+Inheritance diagram for G\+L\+E\+S\+Renderer\+:
+% FIG 0
+
+
+Collaboration diagram for G\+L\+E\+S\+Renderer\+:
+% FIG 1
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} \{ \newline
-\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a01a2d548e2a6b32401c8140d8d2d4edb}{I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}, 
-\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a9a193465ebcf7cb50c52579e5faccfa1}{V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}, 
-\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a5b0069ee1cbe3a7f59c894fea0bb87f4}{N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}, 
-\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a12d6a9758e29fa479c6f2b3fd2204802}{C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}, 
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}} 
+enum {\bfseries Attribute\+Location} \{ \newline
+{\bfseries I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON}, 
+{\bfseries V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON}, 
+{\bfseries N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON}, 
+{\bfseries C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON}, 
 \newline
-\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a664e56a457a0171c04883330689c283f}{T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON}}
+{\bfseries T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON}
  \}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_g_l_e_s_renderer_a0c5bf4702ee731dde0377a08b5e15ae2}{G\+L\+E\+S\+Renderer}} (Q\+Object $\ast$parent, const Q\+String \&v\+Shader\+Filename=\char`\"{}\+:/src/vshader.\+vsh\char`\"{}, const Q\+String \&f\+Shader\+Filename=\char`\"{}\+:/src/fshader.\+fsh\char`\"{})
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0c5bf4702ee731dde0377a08b5e15ae2}\label{class_g_l_e_s_renderer_a0c5bf4702ee731dde0377a08b5e15ae2}} 
+{\bfseries G\+L\+E\+S\+Renderer} (Q\+Object $\ast$parent, const Q\+String \&v\+Shader\+Filename=\char`\"{}\+:/src/vshader.\+vsh\char`\"{}, const Q\+String \&f\+Shader\+Filename=\char`\"{}\+:/src/fshader.\+fsh\char`\"{})
 \item 
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}\label{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}} 
 virtual \mbox{\hyperlink{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}{$\sim$\+G\+L\+E\+S\+Renderer}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}{G\+L\+E\+S\+Renderer\+::$\sim$\+G\+L\+E\+S\+Renderer}} We need to delete the shaders here. They can not be added to the child list, because they live in render thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \begin{Indent}\textbf{ Initialization, binding and releasing}\par
@@ -123,13 +128,15 @@ void \mbox{\hyperlink{class_g_l_e_s_renderer_a93ddfbce8f107b0cbc41b2854855202d}{
 \item 
 void \mbox{\hyperlink{class_g_l_e_s_renderer_a252caaa926c2e86312b219454492ffe0}{translate}} (const Q\+Vector3D \&v)
 \item 
-void \mbox{\hyperlink{class_g_l_e_s_renderer_a45f1e6f0154b7887289fd8a3aa22908f}{translate}} (float x, float y, float z)
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a45f1e6f0154b7887289fd8a3aa22908f}\label{class_g_l_e_s_renderer_a45f1e6f0154b7887289fd8a3aa22908f}} 
+void {\bfseries translate} (float x, float y, float z)
 \item 
 void \mbox{\hyperlink{class_g_l_e_s_renderer_a9e034d2d95eedc35a56f8db1688df163}{rotate}} (G\+Lfloat angle, const Q\+Vector3D \&axis)
 \item 
 void \mbox{\hyperlink{class_g_l_e_s_renderer_a4e51b730376db41ff15b4a976b258c6e}{rotate}} (float angle, float x, float y, float z)
 \item 
-void \mbox{\hyperlink{class_g_l_e_s_renderer_a43e69a0a8c38adf1faae474c33fb7bb8}{zoom}} (float zoom\+Factor)
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a43e69a0a8c38adf1faae474c33fb7bb8}\label{class_g_l_e_s_renderer_a43e69a0a8c38adf1faae474c33fb7bb8}} 
+void {\bfseries zoom} (float zoom\+Factor)
 \item 
 void \mbox{\hyperlink{class_g_l_e_s_renderer_a8d8a2bac71c26f834b7ce7983204e870}{transform}} (const Q\+Matrix4x4 \&transformation)
 \begin{DoxyCompactList}\small\item\em transform Multiplies mv\+Matrix with transformation \end{DoxyCompactList}\item 
@@ -141,13 +148,13 @@ void \mbox{\hyperlink{class_g_l_e_s_renderer_a4bd22f2f738b185f3b6c3e381c58feca}{
 \begin{Indent}\textbf{ Attribute setters}\par
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_a8529c317862c57c027acce876bad17bb}{activate\+Attribute\+Array}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location, const Q\+Vector2D $\ast$values, int stride=0)
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a8529c317862c57c027acce876bad17bb}{activate\+Attribute\+Array}} (Attribute\+Location location, const Q\+Vector2D $\ast$values, int stride=0)
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_a102377bf45b15bb52324214d2e9b6f14}{activate\+Attribute\+Array}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location, const Q\+Vector3D $\ast$values, int stride=0)
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_a102377bf45b15bb52324214d2e9b6f14}{activate\+Attribute\+Array}} (Attribute\+Location location, const Q\+Vector3D $\ast$values, int stride=0)
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_ada229880a48efdbb3daaa375b701ace0}{activate\+Attribute\+Array}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location, const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} $\ast$values, int stride=0)
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_ada229880a48efdbb3daaa375b701ace0}{activate\+Attribute\+Array}} (Attribute\+Location location, const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} $\ast$values, int stride=0)
 \item 
-void \mbox{\hyperlink{class_g_l_e_s_renderer_ad0bc53b13af77050b43f7a6ba5f97ea1}{activate\+Attribute\+Buffer}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location)
+void \mbox{\hyperlink{class_g_l_e_s_renderer_ad0bc53b13af77050b43f7a6ba5f97ea1}{activate\+Attribute\+Buffer}} (Attribute\+Location location)
 \item 
 virtual void \mbox{\hyperlink{class_g_l_e_s_renderer_a0978cd1fe3baab589b7bfbcde6554c15}{disable\+Attribute\+Arrays}} ()
 \end{DoxyCompactItemize}
@@ -163,124 +170,181 @@ Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_a531ca73b72e3a00a667b9f82377
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_ae18e97568cc61118fdcb6f9ca0b6480f}{activate\+Attribute\+Array}} (\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}} location, const float $\ast$values, int tuple\+Size, int stride=0)
+bool \mbox{\hyperlink{class_g_l_e_s_renderer_ae18e97568cc61118fdcb6f9ca0b6480f}{activate\+Attribute\+Array}} (Attribute\+Location location, const float $\ast$values, int tuple\+Size, int stride=0)
 \begin{DoxyCompactList}\small\item\em activate\+Attribute\+Array Enables Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays location may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_a2c936870131300b9ed86cf9073747637}{m\+\_\+initialized}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a2c936870131300b9ed86cf9073747637}\label{class_g_l_e_s_renderer_a2c936870131300b9ed86cf9073747637}} 
+bool {\bfseries m\+\_\+initialized}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_ab4227a6b3394b7392c9a7001fc306ad1}{m\+\_\+bound}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ab4227a6b3394b7392c9a7001fc306ad1}\label{class_g_l_e_s_renderer_ab4227a6b3394b7392c9a7001fc306ad1}} 
+bool {\bfseries m\+\_\+bound}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_a89a023d2cabec874691841f5ff140bc8}{m\+\_\+lighting\+Enabled}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a89a023d2cabec874691841f5ff140bc8}\label{class_g_l_e_s_renderer_a89a023d2cabec874691841f5ff140bc8}} 
+bool {\bfseries m\+\_\+lighting\+Enabled}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_a71b59ce0e9ae03eba0ed065bae8ecff7}{m\+\_\+color\+Array\+Enabled}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a71b59ce0e9ae03eba0ed065bae8ecff7}\label{class_g_l_e_s_renderer_a71b59ce0e9ae03eba0ed065bae8ecff7}} 
+bool {\bfseries m\+\_\+color\+Array\+Enabled}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_a61680a3953bfb6b22e7131a518b1a5e2}{m\+\_\+texture\+Enabled}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a61680a3953bfb6b22e7131a518b1a5e2}\label{class_g_l_e_s_renderer_a61680a3953bfb6b22e7131a518b1a5e2}} 
+bool {\bfseries m\+\_\+texture\+Enabled}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_a9c58c18b9b58fb4f49bb1fd79f4a2f51}{m\+\_\+inverted\+Mvp\+Matrix\+Valid}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a9c58c18b9b58fb4f49bb1fd79f4a2f51}\label{class_g_l_e_s_renderer_a9c58c18b9b58fb4f49bb1fd79f4a2f51}} 
+bool {\bfseries m\+\_\+inverted\+Mvp\+Matrix\+Valid}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_a8e58a3bbfb5ba75c48cc35b06711131c}{m\+\_\+mask\+Active}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8e58a3bbfb5ba75c48cc35b06711131c}\label{class_g_l_e_s_renderer_a8e58a3bbfb5ba75c48cc35b06711131c}} 
+bool {\bfseries m\+\_\+mask\+Active}
 \item 
-Q\+Matrix4x4 \mbox{\hyperlink{class_g_l_e_s_renderer_a878a3ee8fe04d1a56659c78ba5e95f4b}{m\+\_\+mvp\+Matrix}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a878a3ee8fe04d1a56659c78ba5e95f4b}\label{class_g_l_e_s_renderer_a878a3ee8fe04d1a56659c78ba5e95f4b}} 
+Q\+Matrix4x4 {\bfseries m\+\_\+mvp\+Matrix}
 \item 
-Q\+Matrix4x4 \mbox{\hyperlink{class_g_l_e_s_renderer_af08d271c05f553df400b67685435cb0c}{m\+\_\+inverted\+Mvp\+Matrix}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af08d271c05f553df400b67685435cb0c}\label{class_g_l_e_s_renderer_af08d271c05f553df400b67685435cb0c}} 
+Q\+Matrix4x4 {\bfseries m\+\_\+inverted\+Mvp\+Matrix}
 \item 
-Q\+Stack$<$ Q\+Matrix4x4 $>$ \mbox{\hyperlink{class_g_l_e_s_renderer_a5675ffb62f73dc7ebff3e4aea59db56e}{m\+\_\+mv\+Matrix\+Stack}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a5675ffb62f73dc7ebff3e4aea59db56e}\label{class_g_l_e_s_renderer_a5675ffb62f73dc7ebff3e4aea59db56e}} 
+Q\+Stack$<$ Q\+Matrix4x4 $>$ {\bfseries m\+\_\+mv\+Matrix\+Stack}
 \item 
-Q\+Matrix4x4 \mbox{\hyperlink{class_g_l_e_s_renderer_a2f8a5b98999a5ee14551a39e5f005389}{m\+\_\+mv\+Matrix}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a2f8a5b98999a5ee14551a39e5f005389}\label{class_g_l_e_s_renderer_a2f8a5b98999a5ee14551a39e5f005389}} 
+Q\+Matrix4x4 {\bfseries m\+\_\+mv\+Matrix}
 \item 
-Q\+Matrix4x4 \mbox{\hyperlink{class_g_l_e_s_renderer_a2fe2ba5157fa87a9eca8eb15f8097fb5}{m\+\_\+p\+Matrix}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a2fe2ba5157fa87a9eca8eb15f8097fb5}\label{class_g_l_e_s_renderer_a2fe2ba5157fa87a9eca8eb15f8097fb5}} 
+Q\+Matrix4x4 {\bfseries m\+\_\+p\+Matrix}
 \item 
-float \mbox{\hyperlink{class_g_l_e_s_renderer_abd7cabc787ad5c787b54ed2d47412df8}{m\+\_\+fovy}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_abd7cabc787ad5c787b54ed2d47412df8}\label{class_g_l_e_s_renderer_abd7cabc787ad5c787b54ed2d47412df8}} 
+float {\bfseries m\+\_\+fovy}
 \item 
-float \mbox{\hyperlink{class_g_l_e_s_renderer_a719e99de6bb7e5af3a5fcae041fdefda}{m\+\_\+aspect}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a719e99de6bb7e5af3a5fcae041fdefda}\label{class_g_l_e_s_renderer_a719e99de6bb7e5af3a5fcae041fdefda}} 
+float {\bfseries m\+\_\+aspect}
 \item 
-float \mbox{\hyperlink{class_g_l_e_s_renderer_ab29bf2e72c2d91883b1ad3f3e8351940}{m\+\_\+near\+Clip}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ab29bf2e72c2d91883b1ad3f3e8351940}\label{class_g_l_e_s_renderer_ab29bf2e72c2d91883b1ad3f3e8351940}} 
+float {\bfseries m\+\_\+near\+Clip}
 \item 
-float \mbox{\hyperlink{class_g_l_e_s_renderer_a6ecd1dee12a4592f35d097e14f90933b}{m\+\_\+far\+Clip}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a6ecd1dee12a4592f35d097e14f90933b}\label{class_g_l_e_s_renderer_a6ecd1dee12a4592f35d097e14f90933b}} 
+float {\bfseries m\+\_\+far\+Clip}
 \item 
-bool \mbox{\hyperlink{class_g_l_e_s_renderer_a78662dcb0fedf7710a57345d3d684b85}{m\+\_\+\+Ortho\+Mode}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a78662dcb0fedf7710a57345d3d684b85}\label{class_g_l_e_s_renderer_a78662dcb0fedf7710a57345d3d684b85}} 
+bool {\bfseries m\+\_\+\+Ortho\+Mode}
 \item 
-Q\+Matrix3x3 \mbox{\hyperlink{class_g_l_e_s_renderer_a76ff9b2803ac2a897d9df0cf587601ed}{m\+\_\+normal\+Matrix}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a76ff9b2803ac2a897d9df0cf587601ed}\label{class_g_l_e_s_renderer_a76ff9b2803ac2a897d9df0cf587601ed}} 
+Q\+Matrix3x3 {\bfseries m\+\_\+normal\+Matrix}
 \item 
-Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_a7347241a0f6482d69479d10848c70238}{m\+\_\+light\+Direction}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a7347241a0f6482d69479d10848c70238}\label{class_g_l_e_s_renderer_a7347241a0f6482d69479d10848c70238}} 
+Q\+Vector3D {\bfseries m\+\_\+light\+Direction}
 \item 
-Q\+Vector3D \mbox{\hyperlink{class_g_l_e_s_renderer_ae3feaa98657e57bbc795a845dfafe1fe}{m\+\_\+half\+Plane\+Vector}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ae3feaa98657e57bbc795a845dfafe1fe}\label{class_g_l_e_s_renderer_ae3feaa98657e57bbc795a845dfafe1fe}} 
+Q\+Vector3D {\bfseries m\+\_\+half\+Plane\+Vector}
 \item 
-\mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} \mbox{\hyperlink{class_g_l_e_s_renderer_af4b3fcfa029b28bfdd9d2b7bb9202796}{m\+\_\+ambient\+And\+Diffuse\+Color}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af4b3fcfa029b28bfdd9d2b7bb9202796}\label{class_g_l_e_s_renderer_af4b3fcfa029b28bfdd9d2b7bb9202796}} 
+\mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} {\bfseries m\+\_\+ambient\+And\+Diffuse\+Color}
 \item 
-float \mbox{\hyperlink{class_g_l_e_s_renderer_ad40448fd0cbb01b078a759e5f8d9debc}{m\+\_\+ambient\+Light\+Brightness}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ad40448fd0cbb01b078a759e5f8d9debc}\label{class_g_l_e_s_renderer_ad40448fd0cbb01b078a759e5f8d9debc}} 
+float {\bfseries m\+\_\+ambient\+Light\+Brightness}
 \item 
-\mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} \mbox{\hyperlink{class_g_l_e_s_renderer_a58ff6c2e940d9cb7fb8bdf9e676f69cd}{m\+\_\+specular\+Color}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a58ff6c2e940d9cb7fb8bdf9e676f69cd}\label{class_g_l_e_s_renderer_a58ff6c2e940d9cb7fb8bdf9e676f69cd}} 
+\mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} {\bfseries m\+\_\+specular\+Color}
 \item 
-float \mbox{\hyperlink{class_g_l_e_s_renderer_a5cb19e8d00b558a84f3776d51f0aca9c}{m\+\_\+shininess}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a5cb19e8d00b558a84f3776d51f0aca9c}\label{class_g_l_e_s_renderer_a5cb19e8d00b558a84f3776d51f0aca9c}} 
+float {\bfseries m\+\_\+shininess}
 \item 
-float \mbox{\hyperlink{class_g_l_e_s_renderer_a8571248c1e8858ccd260d91497e13354}{m\+\_\+point\+Size}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8571248c1e8858ccd260d91497e13354}\label{class_g_l_e_s_renderer_a8571248c1e8858ccd260d91497e13354}} 
+float {\bfseries m\+\_\+point\+Size}
 \item 
-float \mbox{\hyperlink{class_g_l_e_s_renderer_a8657f5ff8c5f663cd043731e9753e70a}{m\+\_\+mask\+Diameter}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8657f5ff8c5f663cd043731e9753e70a}\label{class_g_l_e_s_renderer_a8657f5ff8c5f663cd043731e9753e70a}} 
+float {\bfseries m\+\_\+mask\+Diameter}
 \item 
-Q\+Point \mbox{\hyperlink{class_g_l_e_s_renderer_a4251b608f7c887b2bcfcb421b4a793c5}{m\+\_\+mask\+Center}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a4251b608f7c887b2bcfcb421b4a793c5}\label{class_g_l_e_s_renderer_a4251b608f7c887b2bcfcb421b4a793c5}} 
+Q\+Point {\bfseries m\+\_\+mask\+Center}
 \item 
-Q\+String \mbox{\hyperlink{class_g_l_e_s_renderer_a9f9222c1a54ff9b01edb609bb570151a}{m\+\_\+v\+Shader\+File\+Name}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a9f9222c1a54ff9b01edb609bb570151a}\label{class_g_l_e_s_renderer_a9f9222c1a54ff9b01edb609bb570151a}} 
+Q\+String {\bfseries m\+\_\+v\+Shader\+File\+Name}
 \item 
-Q\+String \mbox{\hyperlink{class_g_l_e_s_renderer_ac876ef67f2795f17e0f1d1e43cb686b4}{m\+\_\+f\+Shader\+File\+Name}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ac876ef67f2795f17e0f1d1e43cb686b4}\label{class_g_l_e_s_renderer_ac876ef67f2795f17e0f1d1e43cb686b4}} 
+Q\+String {\bfseries m\+\_\+f\+Shader\+File\+Name}
 \item 
-Q\+Open\+G\+L\+Shader $\ast$ \mbox{\hyperlink{class_g_l_e_s_renderer_a41916fc04d753007a9340065ab08762e}{m\+\_\+v\+Shader}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a41916fc04d753007a9340065ab08762e}\label{class_g_l_e_s_renderer_a41916fc04d753007a9340065ab08762e}} 
+Q\+Open\+G\+L\+Shader $\ast$ {\bfseries m\+\_\+v\+Shader}
 \item 
-Q\+Open\+G\+L\+Shader $\ast$ \mbox{\hyperlink{class_g_l_e_s_renderer_a63dd17ddf099e24a26a9d7cdeab664fa}{m\+\_\+f\+Shader}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a63dd17ddf099e24a26a9d7cdeab664fa}\label{class_g_l_e_s_renderer_a63dd17ddf099e24a26a9d7cdeab664fa}} 
+Q\+Open\+G\+L\+Shader $\ast$ {\bfseries m\+\_\+f\+Shader}
 \item 
-Q\+Open\+G\+L\+Shader\+Program $\ast$ \mbox{\hyperlink{class_g_l_e_s_renderer_a49b1f32fad69d86fb7522d1a3f1e8d4f}{m\+\_\+render\+Program}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a49b1f32fad69d86fb7522d1a3f1e8d4f}\label{class_g_l_e_s_renderer_a49b1f32fad69d86fb7522d1a3f1e8d4f}} 
+Q\+Open\+G\+L\+Shader\+Program $\ast$ {\bfseries m\+\_\+render\+Program}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_ab03a79822dd105e1a0e5eecb65ee492b}{m\+\_\+location\+\_\+a\+Vertex}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ab03a79822dd105e1a0e5eecb65ee492b}\label{class_g_l_e_s_renderer_ab03a79822dd105e1a0e5eecb65ee492b}} 
+int {\bfseries m\+\_\+location\+\_\+a\+Vertex}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a5bf9f36f33237a7fe2706f60c341dec9}{m\+\_\+location\+\_\+a\+Color}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a5bf9f36f33237a7fe2706f60c341dec9}\label{class_g_l_e_s_renderer_a5bf9f36f33237a7fe2706f60c341dec9}} 
+int {\bfseries m\+\_\+location\+\_\+a\+Color}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_adca575c93185a1beb32bf54235a7766f}{m\+\_\+location\+\_\+a\+Normal}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_adca575c93185a1beb32bf54235a7766f}\label{class_g_l_e_s_renderer_adca575c93185a1beb32bf54235a7766f}} 
+int {\bfseries m\+\_\+location\+\_\+a\+Normal}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_af5b18a94719f0b93d32be7cd9262fcfb}{m\+\_\+location\+\_\+a\+Tex\+Coord}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af5b18a94719f0b93d32be7cd9262fcfb}\label{class_g_l_e_s_renderer_af5b18a94719f0b93d32be7cd9262fcfb}} 
+int {\bfseries m\+\_\+location\+\_\+a\+Tex\+Coord}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_aafa0944ec42f35eb2ebf08fe0e850ad7}{m\+\_\+location\+\_\+u\+Color\+Array\+Enabled}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aafa0944ec42f35eb2ebf08fe0e850ad7}\label{class_g_l_e_s_renderer_aafa0944ec42f35eb2ebf08fe0e850ad7}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Color\+Array\+Enabled}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a8d61c896b68041ae2439d21ed6981f28}{m\+\_\+location\+\_\+u\+Lighting\+Enabled}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8d61c896b68041ae2439d21ed6981f28}\label{class_g_l_e_s_renderer_a8d61c896b68041ae2439d21ed6981f28}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Lighting\+Enabled}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_aec01e0adb9416c451d958f925a64d329}{m\+\_\+location\+\_\+u\+Normal\+Matrix}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aec01e0adb9416c451d958f925a64d329}\label{class_g_l_e_s_renderer_aec01e0adb9416c451d958f925a64d329}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Normal\+Matrix}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a51a95f6a35efdde4a6e103ecae334322}{m\+\_\+location\+\_\+u\+Mvp\+Matrix}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a51a95f6a35efdde4a6e103ecae334322}\label{class_g_l_e_s_renderer_a51a95f6a35efdde4a6e103ecae334322}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Mvp\+Matrix}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a4125a33e9cea4fbc0e7e23edb4b4de43}{m\+\_\+location\+\_\+u\+Ambient\+And\+Diffuse\+Color}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a4125a33e9cea4fbc0e7e23edb4b4de43}\label{class_g_l_e_s_renderer_a4125a33e9cea4fbc0e7e23edb4b4de43}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Ambient\+And\+Diffuse\+Color}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a0dc79f50f3eea91e32316a6ecd8a9754}{m\+\_\+location\+\_\+u\+Ambient\+Light\+Brightness}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0dc79f50f3eea91e32316a6ecd8a9754}\label{class_g_l_e_s_renderer_a0dc79f50f3eea91e32316a6ecd8a9754}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Ambient\+Light\+Brightness}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a0945edb3cd12c3228e405519d9cebe08}{m\+\_\+location\+\_\+u\+Specular\+Color}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0945edb3cd12c3228e405519d9cebe08}\label{class_g_l_e_s_renderer_a0945edb3cd12c3228e405519d9cebe08}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Specular\+Color}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_af1152640d14a616c9930161402da5eb3}{m\+\_\+location\+\_\+u\+Shininess}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af1152640d14a616c9930161402da5eb3}\label{class_g_l_e_s_renderer_af1152640d14a616c9930161402da5eb3}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Shininess}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_aba8a7f233b51b258542adce7114a93da}{m\+\_\+location\+\_\+u\+Light\+Direction}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aba8a7f233b51b258542adce7114a93da}\label{class_g_l_e_s_renderer_aba8a7f233b51b258542adce7114a93da}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Light\+Direction}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a8a4088b65277a3efa4810454c00e6a16}{m\+\_\+location\+\_\+u\+Half\+Plane\+Vector}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a8a4088b65277a3efa4810454c00e6a16}\label{class_g_l_e_s_renderer_a8a4088b65277a3efa4810454c00e6a16}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Half\+Plane\+Vector}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a3cab0140a32534203dc8070058647d02}{m\+\_\+location\+\_\+u\+Point\+Size}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a3cab0140a32534203dc8070058647d02}\label{class_g_l_e_s_renderer_a3cab0140a32534203dc8070058647d02}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Point\+Size}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_ac2f2a0039e1b58fbd7d5abd3c43640bc}{m\+\_\+location\+\_\+u\+Texture\+Sampler}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ac2f2a0039e1b58fbd7d5abd3c43640bc}\label{class_g_l_e_s_renderer_ac2f2a0039e1b58fbd7d5abd3c43640bc}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Texture\+Sampler}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a82f6728d7361a42c33f0e88be7a329a2}{m\+\_\+location\+\_\+u\+Texture\+Enabled}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a82f6728d7361a42c33f0e88be7a329a2}\label{class_g_l_e_s_renderer_a82f6728d7361a42c33f0e88be7a329a2}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Texture\+Enabled}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a60785985120438561f095a5d0bb0a0e6}{m\+\_\+location\+\_\+u\+Mask\+Diameter}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a60785985120438561f095a5d0bb0a0e6}\label{class_g_l_e_s_renderer_a60785985120438561f095a5d0bb0a0e6}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Mask\+Diameter}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_aa5865237289b4b166ccdcee4fafeefa7}{m\+\_\+location\+\_\+u\+Mask\+Center}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_aa5865237289b4b166ccdcee4fafeefa7}\label{class_g_l_e_s_renderer_aa5865237289b4b166ccdcee4fafeefa7}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Mask\+Center}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_ac7d1efb2e83cebe39608a9816856da64}{m\+\_\+location\+\_\+u\+Mask\+Active}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_ac7d1efb2e83cebe39608a9816856da64}\label{class_g_l_e_s_renderer_ac7d1efb2e83cebe39608a9816856da64}} 
+int {\bfseries m\+\_\+location\+\_\+u\+Mask\+Active}
 \item 
-Q\+List$<$ int $>$ \mbox{\hyperlink{class_g_l_e_s_renderer_a923229687ee02d0364a7e472fa1ed578}{m\+\_\+active\+Attribute\+Locations}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a923229687ee02d0364a7e472fa1ed578}\label{class_g_l_e_s_renderer_a923229687ee02d0364a7e472fa1ed578}} 
+Q\+List$<$ int $>$ {\bfseries m\+\_\+active\+Attribute\+Locations}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a437c4d81da1b944458b4abde903c23ce}{m\+\_\+viewportX}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a437c4d81da1b944458b4abde903c23ce}\label{class_g_l_e_s_renderer_a437c4d81da1b944458b4abde903c23ce}} 
+int {\bfseries m\+\_\+viewportX}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a0e81b88aa0c613e99dc6be1737d83c93}{m\+\_\+viewportY}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a0e81b88aa0c613e99dc6be1737d83c93}\label{class_g_l_e_s_renderer_a0e81b88aa0c613e99dc6be1737d83c93}} 
+int {\bfseries m\+\_\+viewportY}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_af839e0f722a97a026d7517de19acd352}{m\+\_\+viewportW}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_af839e0f722a97a026d7517de19acd352}\label{class_g_l_e_s_renderer_af839e0f722a97a026d7517de19acd352}} 
+int {\bfseries m\+\_\+viewportW}
 \item 
-int \mbox{\hyperlink{class_g_l_e_s_renderer_a07da628f9769b11914946d71b71a4665}{m\+\_\+viewportH}}
+\mbox{\Hypertarget{class_g_l_e_s_renderer_a07da628f9769b11914946d71b71a4665}\label{class_g_l_e_s_renderer_a07da628f9769b11914946d71b71a4665}} 
+int {\bfseries m\+\_\+viewportH}
 \end{DoxyCompactItemize}
 
 
@@ -310,74 +374,12 @@ Definition at line 81 of file glesrenderer.\+h.
 
 
 
-\subsection{Member Enumeration Documentation}
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}} 
-\index{GLESRenderer@{GLESRenderer}!AttributeLocation@{AttributeLocation}}
-\index{AttributeLocation@{AttributeLocation}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{AttributeLocation}{AttributeLocation}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{G\+L\+E\+S\+Renderer\+::\+Attribute\+Location}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_LOCATION@{INVALID\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!INVALID\_LOCATION@{INVALID\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a01a2d548e2a6b32401c8140d8d2d4edb}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a01a2d548e2a6b32401c8140d8d2d4edb}} 
-I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VERTEX\_LOCATION@{VERTEX\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!VERTEX\_LOCATION@{VERTEX\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a9a193465ebcf7cb50c52579e5faccfa1}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a9a193465ebcf7cb50c52579e5faccfa1}} 
-V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NORMAL\_LOCATION@{NORMAL\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!NORMAL\_LOCATION@{NORMAL\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a5b0069ee1cbe3a7f59c894fea0bb87f4}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a5b0069ee1cbe3a7f59c894fea0bb87f4}} 
-N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{COLOR\_LOCATION@{COLOR\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!COLOR\_LOCATION@{COLOR\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a12d6a9758e29fa479c6f2b3fd2204802}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a12d6a9758e29fa479c6f2b3fd2204802}} 
-C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TEXCOORD\_LOCATION@{TEXCOORD\_LOCATION}!GLESRenderer@{GLESRenderer}}\index{GLESRenderer@{GLESRenderer}!TEXCOORD\_LOCATION@{TEXCOORD\_LOCATION}}}\mbox{\Hypertarget{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a664e56a457a0171c04883330689c283f}\label{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4a664e56a457a0171c04883330689c283f}} 
-T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Definition at line 88 of file glesrenderer.\+h.
-
-
-
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a0c5bf4702ee731dde0377a08b5e15ae2}\label{class_g_l_e_s_renderer_a0c5bf4702ee731dde0377a08b5e15ae2}} 
-\index{GLESRenderer@{GLESRenderer}!GLESRenderer@{GLESRenderer}}
-\index{GLESRenderer@{GLESRenderer}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{GLESRenderer()}{GLESRenderer()}}
-{\footnotesize\ttfamily G\+L\+E\+S\+Renderer\+::\+G\+L\+E\+S\+Renderer (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent,  }\item[{const Q\+String \&}]{v\+Shader\+Filename = {\ttfamily \char`\"{}\+:/src/vshader.vsh\char`\"{}},  }\item[{const Q\+String \&}]{f\+Shader\+Filename = {\ttfamily \char`\"{}\+:/src/fshader.fsh\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Definition at line 37 of file glesrenderer.\+cpp.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}\label{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}} 
-\index{GLESRenderer@{GLESRenderer}!````~GLESRenderer@{$\sim$GLESRenderer}}
-\index{````~GLESRenderer@{$\sim$GLESRenderer}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{$\sim$GLESRenderer()}{~GLESRenderer()}}
-{\footnotesize\ttfamily G\+L\+E\+S\+Renderer\+::$\sim$\+G\+L\+E\+S\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-\mbox{\hyperlink{class_g_l_e_s_renderer_aa828ddb16aa0f76409d24369735baa63}{G\+L\+E\+S\+Renderer\+::$\sim$\+G\+L\+E\+S\+Renderer}} We need to delete the shaders here. They can not be added to the child list, because they live in render thread. 
-
-
-
-Definition at line 108 of file glesrenderer.\+cpp.
-
-
-
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_g_l_e_s_renderer_a8529c317862c57c027acce876bad17bb}\label{class_g_l_e_s_renderer_a8529c317862c57c027acce876bad17bb}} 
 \index{GLESRenderer@{GLESRenderer}!activateAttributeArray@{activateAttributeArray}}
 \index{activateAttributeArray@{activateAttributeArray}!GLESRenderer@{GLESRenderer}}
 \subsubsection{\texorpdfstring{activateAttributeArray()}{activateAttributeArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}}}]{array\+Location,  }\item[{const Q\+Vector2D $\ast$}]{values,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{Attribute\+Location}]{array\+Location,  }\item[{const Q\+Vector2D $\ast$}]{values,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 Enables 2D Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays Type may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON
 
@@ -389,7 +391,7 @@ Definition at line 654 of file glesrenderer.\+cpp.
 \index{GLESRenderer@{GLESRenderer}!activateAttributeArray@{activateAttributeArray}}
 \index{activateAttributeArray@{activateAttributeArray}!GLESRenderer@{GLESRenderer}}
 \subsubsection{\texorpdfstring{activateAttributeArray()}{activateAttributeArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}}}]{array\+Location,  }\item[{const Q\+Vector3D $\ast$}]{values,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{Attribute\+Location}]{array\+Location,  }\item[{const Q\+Vector3D $\ast$}]{values,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 Enables 3D Vertex, normal, color or tex\+Coord arrays and sets start adresses of arrays Type may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON
 
@@ -401,7 +403,7 @@ Definition at line 662 of file glesrenderer.\+cpp.
 \index{GLESRenderer@{GLESRenderer}!activateAttributeArray@{activateAttributeArray}}
 \index{activateAttributeArray@{activateAttributeArray}!GLESRenderer@{GLESRenderer}}
 \subsubsection{\texorpdfstring{activateAttributeArray()}{activateAttributeArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}}}]{array\+Location,  }\item[{const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} $\ast$}]{values,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{Attribute\+Location}]{array\+Location,  }\item[{const \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} $\ast$}]{values,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 Enables 4D Vertex or color arrays and sets start adresses of arrays Type may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON
 
@@ -413,7 +415,7 @@ Definition at line 670 of file glesrenderer.\+cpp.
 \index{GLESRenderer@{GLESRenderer}!activateAttributeArray@{activateAttributeArray}}
 \index{activateAttributeArray@{activateAttributeArray}!GLESRenderer@{GLESRenderer}}
 \subsubsection{\texorpdfstring{activateAttributeArray()}{activateAttributeArray()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{Attribute\+Location}}}]{array\+Location,  }\item[{const float $\ast$}]{values,  }\item[{int}]{tuple\+Size,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Array (\begin{DoxyParamCaption}\item[{Attribute\+Location}]{array\+Location,  }\item[{const float $\ast$}]{values,  }\item[{int}]{tuple\+Size,  }\item[{int}]{stride = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -441,7 +443,7 @@ Definition at line 679 of file glesrenderer.\+cpp.
 \index{GLESRenderer@{GLESRenderer}!activateAttributeBuffer@{activateAttributeBuffer}}
 \index{activateAttributeBuffer@{activateAttributeBuffer}!GLESRenderer@{GLESRenderer}}
 \subsubsection{\texorpdfstring{activateAttributeBuffer()}{activateAttributeBuffer()}}
-{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_e_s_renderer_a05f4cf233d5cf60f4d6ea50ddc06a2c4}{G\+L\+E\+S\+Renderer\+::\+Attribute\+Location}}}]{buffer\+Location }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::activate\+Attribute\+Buffer (\begin{DoxyParamCaption}\item[{G\+L\+E\+S\+Renderer\+::\+Attribute\+Location}]{buffer\+Location }\end{DoxyParamCaption})}
 
 To be used with arrays (e.\+g. Q\+Vector$<$\+G\+L\+Point$>$) of \mbox{\hyperlink{class_g_l_point}{G\+L\+Point}} objects. Enables 3D Vertex, normal, color or tex\+Coord buffer location may be\+: V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON tuple\+Size is set to 3 for V\+E\+R\+T\+E\+X\+\_\+\+L\+O\+C\+A\+T\+I\+ON, N\+O\+R\+M\+A\+L\+\_\+\+L\+O\+C\+A\+T\+I\+ON, T\+E\+X\+C\+O\+O\+R\+D\+\_\+\+L\+O\+C\+A\+T\+I\+ON, to 4 for C\+O\+L\+O\+R\+\_\+\+L\+O\+C\+A\+T\+I\+ON 
 
@@ -991,22 +993,12 @@ Definition at line 493 of file glesrenderer.\+cpp.
 \mbox{\Hypertarget{class_g_l_e_s_renderer_a252caaa926c2e86312b219454492ffe0}\label{class_g_l_e_s_renderer_a252caaa926c2e86312b219454492ffe0}} 
 \index{GLESRenderer@{GLESRenderer}!translate@{translate}}
 \index{translate@{translate}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
 {\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::translate (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{v }\end{DoxyParamCaption})}
 
 Translates mv\+Matrix by v 
 
 Definition at line 451 of file glesrenderer.\+cpp.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a45f1e6f0154b7887289fd8a3aa22908f}\label{class_g_l_e_s_renderer_a45f1e6f0154b7887289fd8a3aa22908f}} 
-\index{GLESRenderer@{GLESRenderer}!translate@{translate}}
-\index{translate@{translate}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::translate (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
-
-
-
-Definition at line 498 of file glesrenderer.\+cpp.
 
 \mbox{\Hypertarget{class_g_l_e_s_renderer_a8be3d2a634d0fe1e13fb7b97673eefab}\label{class_g_l_e_s_renderer_a8be3d2a634d0fe1e13fb7b97673eefab}} 
 \index{GLESRenderer@{GLESRenderer}!unProjectViewportPoint@{unProjectViewportPoint}}
@@ -1030,592 +1022,9 @@ Performs inverse viewport transform.
 
 Definition at line 235 of file glesrenderer.\+cpp.
 
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a43e69a0a8c38adf1faae474c33fb7bb8}\label{class_g_l_e_s_renderer_a43e69a0a8c38adf1faae474c33fb7bb8}} 
-\index{GLESRenderer@{GLESRenderer}!zoom@{zoom}}
-\index{zoom@{zoom}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{zoom()}{zoom()}}
-{\footnotesize\ttfamily void G\+L\+E\+S\+Renderer\+::zoom (\begin{DoxyParamCaption}\item[{float}]{zoom\+Factor }\end{DoxyParamCaption})}
-
-
-
-Definition at line 485 of file glesrenderer.\+cpp.
-
-
-
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a923229687ee02d0364a7e472fa1ed578}\label{class_g_l_e_s_renderer_a923229687ee02d0364a7e472fa1ed578}} 
-\index{GLESRenderer@{GLESRenderer}!m\_activeAttributeLocations@{m\_activeAttributeLocations}}
-\index{m\_activeAttributeLocations@{m\_activeAttributeLocations}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_activeAttributeLocations}{m\_activeAttributeLocations}}
-{\footnotesize\ttfamily Q\+List$<$int$>$ G\+L\+E\+S\+Renderer\+::m\+\_\+active\+Attribute\+Locations\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 505 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_af4b3fcfa029b28bfdd9d2b7bb9202796}\label{class_g_l_e_s_renderer_af4b3fcfa029b28bfdd9d2b7bb9202796}} 
-\index{GLESRenderer@{GLESRenderer}!m\_ambientAndDiffuseColor@{m\_ambientAndDiffuseColor}}
-\index{m\_ambientAndDiffuseColor@{m\_ambientAndDiffuseColor}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_ambientAndDiffuseColor}{m\_ambientAndDiffuseColor}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} G\+L\+E\+S\+Renderer\+::m\+\_\+ambient\+And\+Diffuse\+Color\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 464 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_ad40448fd0cbb01b078a759e5f8d9debc}\label{class_g_l_e_s_renderer_ad40448fd0cbb01b078a759e5f8d9debc}} 
-\index{GLESRenderer@{GLESRenderer}!m\_ambientLightBrightness@{m\_ambientLightBrightness}}
-\index{m\_ambientLightBrightness@{m\_ambientLightBrightness}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_ambientLightBrightness}{m\_ambientLightBrightness}}
-{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+ambient\+Light\+Brightness\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 465 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a719e99de6bb7e5af3a5fcae041fdefda}\label{class_g_l_e_s_renderer_a719e99de6bb7e5af3a5fcae041fdefda}} 
-\index{GLESRenderer@{GLESRenderer}!m\_aspect@{m\_aspect}}
-\index{m\_aspect@{m\_aspect}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_aspect}{m\_aspect}}
-{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+aspect\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 455 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_ab4227a6b3394b7392c9a7001fc306ad1}\label{class_g_l_e_s_renderer_ab4227a6b3394b7392c9a7001fc306ad1}} 
-\index{GLESRenderer@{GLESRenderer}!m\_bound@{m\_bound}}
-\index{m\_bound@{m\_bound}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_bound}{m\_bound}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+bound\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 436 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a71b59ce0e9ae03eba0ed065bae8ecff7}\label{class_g_l_e_s_renderer_a71b59ce0e9ae03eba0ed065bae8ecff7}} 
-\index{GLESRenderer@{GLESRenderer}!m\_colorArrayEnabled@{m\_colorArrayEnabled}}
-\index{m\_colorArrayEnabled@{m\_colorArrayEnabled}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_colorArrayEnabled}{m\_colorArrayEnabled}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+color\+Array\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 441 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a6ecd1dee12a4592f35d097e14f90933b}\label{class_g_l_e_s_renderer_a6ecd1dee12a4592f35d097e14f90933b}} 
-\index{GLESRenderer@{GLESRenderer}!m\_farClip@{m\_farClip}}
-\index{m\_farClip@{m\_farClip}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_farClip}{m\_farClip}}
-{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+far\+Clip\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 457 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_abd7cabc787ad5c787b54ed2d47412df8}\label{class_g_l_e_s_renderer_abd7cabc787ad5c787b54ed2d47412df8}} 
-\index{GLESRenderer@{GLESRenderer}!m\_fovy@{m\_fovy}}
-\index{m\_fovy@{m\_fovy}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_fovy}{m\_fovy}}
-{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+fovy\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 454 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a63dd17ddf099e24a26a9d7cdeab664fa}\label{class_g_l_e_s_renderer_a63dd17ddf099e24a26a9d7cdeab664fa}} 
-\index{GLESRenderer@{GLESRenderer}!m\_fShader@{m\_fShader}}
-\index{m\_fShader@{m\_fShader}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_fShader}{m\_fShader}}
-{\footnotesize\ttfamily Q\+Open\+G\+L\+Shader$\ast$ G\+L\+E\+S\+Renderer\+::m\+\_\+f\+Shader\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 479 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_ac876ef67f2795f17e0f1d1e43cb686b4}\label{class_g_l_e_s_renderer_ac876ef67f2795f17e0f1d1e43cb686b4}} 
-\index{GLESRenderer@{GLESRenderer}!m\_fShaderFileName@{m\_fShaderFileName}}
-\index{m\_fShaderFileName@{m\_fShaderFileName}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_fShaderFileName}{m\_fShaderFileName}}
-{\footnotesize\ttfamily Q\+String G\+L\+E\+S\+Renderer\+::m\+\_\+f\+Shader\+File\+Name\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 477 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_ae3feaa98657e57bbc795a845dfafe1fe}\label{class_g_l_e_s_renderer_ae3feaa98657e57bbc795a845dfafe1fe}} 
-\index{GLESRenderer@{GLESRenderer}!m\_halfPlaneVector@{m\_halfPlaneVector}}
-\index{m\_halfPlaneVector@{m\_halfPlaneVector}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_halfPlaneVector}{m\_halfPlaneVector}}
-{\footnotesize\ttfamily Q\+Vector3D G\+L\+E\+S\+Renderer\+::m\+\_\+half\+Plane\+Vector\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 463 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a2c936870131300b9ed86cf9073747637}\label{class_g_l_e_s_renderer_a2c936870131300b9ed86cf9073747637}} 
-\index{GLESRenderer@{GLESRenderer}!m\_initialized@{m\_initialized}}
-\index{m\_initialized@{m\_initialized}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_initialized}{m\_initialized}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+initialized\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 435 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_af08d271c05f553df400b67685435cb0c}\label{class_g_l_e_s_renderer_af08d271c05f553df400b67685435cb0c}} 
-\index{GLESRenderer@{GLESRenderer}!m\_invertedMvpMatrix@{m\_invertedMvpMatrix}}
-\index{m\_invertedMvpMatrix@{m\_invertedMvpMatrix}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_invertedMvpMatrix}{m\_invertedMvpMatrix}}
-{\footnotesize\ttfamily Q\+Matrix4x4 G\+L\+E\+S\+Renderer\+::m\+\_\+inverted\+Mvp\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 450 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a9c58c18b9b58fb4f49bb1fd79f4a2f51}\label{class_g_l_e_s_renderer_a9c58c18b9b58fb4f49bb1fd79f4a2f51}} 
-\index{GLESRenderer@{GLESRenderer}!m\_invertedMvpMatrixValid@{m\_invertedMvpMatrixValid}}
-\index{m\_invertedMvpMatrixValid@{m\_invertedMvpMatrixValid}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_invertedMvpMatrixValid}{m\_invertedMvpMatrixValid}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+inverted\+Mvp\+Matrix\+Valid\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 443 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a7347241a0f6482d69479d10848c70238}\label{class_g_l_e_s_renderer_a7347241a0f6482d69479d10848c70238}} 
-\index{GLESRenderer@{GLESRenderer}!m\_lightDirection@{m\_lightDirection}}
-\index{m\_lightDirection@{m\_lightDirection}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_lightDirection}{m\_lightDirection}}
-{\footnotesize\ttfamily Q\+Vector3D G\+L\+E\+S\+Renderer\+::m\+\_\+light\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 462 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a89a023d2cabec874691841f5ff140bc8}\label{class_g_l_e_s_renderer_a89a023d2cabec874691841f5ff140bc8}} 
-\index{GLESRenderer@{GLESRenderer}!m\_lightingEnabled@{m\_lightingEnabled}}
-\index{m\_lightingEnabled@{m\_lightingEnabled}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_lightingEnabled}{m\_lightingEnabled}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+lighting\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 440 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a5bf9f36f33237a7fe2706f60c341dec9}\label{class_g_l_e_s_renderer_a5bf9f36f33237a7fe2706f60c341dec9}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_aColor@{m\_location\_aColor}}
-\index{m\_location\_aColor@{m\_location\_aColor}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_aColor}{m\_location\_aColor}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+a\+Color\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 484 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_adca575c93185a1beb32bf54235a7766f}\label{class_g_l_e_s_renderer_adca575c93185a1beb32bf54235a7766f}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_aNormal@{m\_location\_aNormal}}
-\index{m\_location\_aNormal@{m\_location\_aNormal}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_aNormal}{m\_location\_aNormal}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+a\+Normal\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 485 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_af5b18a94719f0b93d32be7cd9262fcfb}\label{class_g_l_e_s_renderer_af5b18a94719f0b93d32be7cd9262fcfb}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_aTexCoord@{m\_location\_aTexCoord}}
-\index{m\_location\_aTexCoord@{m\_location\_aTexCoord}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_aTexCoord}{m\_location\_aTexCoord}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+a\+Tex\+Coord\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 486 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_ab03a79822dd105e1a0e5eecb65ee492b}\label{class_g_l_e_s_renderer_ab03a79822dd105e1a0e5eecb65ee492b}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_aVertex@{m\_location\_aVertex}}
-\index{m\_location\_aVertex@{m\_location\_aVertex}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_aVertex}{m\_location\_aVertex}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+a\+Vertex\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 483 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a4125a33e9cea4fbc0e7e23edb4b4de43}\label{class_g_l_e_s_renderer_a4125a33e9cea4fbc0e7e23edb4b4de43}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uAmbientAndDiffuseColor@{m\_location\_uAmbientAndDiffuseColor}}
-\index{m\_location\_uAmbientAndDiffuseColor@{m\_location\_uAmbientAndDiffuseColor}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uAmbientAndDiffuseColor}{m\_location\_uAmbientAndDiffuseColor}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Ambient\+And\+Diffuse\+Color\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 491 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a0dc79f50f3eea91e32316a6ecd8a9754}\label{class_g_l_e_s_renderer_a0dc79f50f3eea91e32316a6ecd8a9754}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uAmbientLightBrightness@{m\_location\_uAmbientLightBrightness}}
-\index{m\_location\_uAmbientLightBrightness@{m\_location\_uAmbientLightBrightness}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uAmbientLightBrightness}{m\_location\_uAmbientLightBrightness}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Ambient\+Light\+Brightness\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 492 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_aafa0944ec42f35eb2ebf08fe0e850ad7}\label{class_g_l_e_s_renderer_aafa0944ec42f35eb2ebf08fe0e850ad7}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uColorArrayEnabled@{m\_location\_uColorArrayEnabled}}
-\index{m\_location\_uColorArrayEnabled@{m\_location\_uColorArrayEnabled}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uColorArrayEnabled}{m\_location\_uColorArrayEnabled}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Color\+Array\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 487 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a8a4088b65277a3efa4810454c00e6a16}\label{class_g_l_e_s_renderer_a8a4088b65277a3efa4810454c00e6a16}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uHalfPlaneVector@{m\_location\_uHalfPlaneVector}}
-\index{m\_location\_uHalfPlaneVector@{m\_location\_uHalfPlaneVector}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uHalfPlaneVector}{m\_location\_uHalfPlaneVector}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Half\+Plane\+Vector\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 496 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_aba8a7f233b51b258542adce7114a93da}\label{class_g_l_e_s_renderer_aba8a7f233b51b258542adce7114a93da}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uLightDirection@{m\_location\_uLightDirection}}
-\index{m\_location\_uLightDirection@{m\_location\_uLightDirection}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uLightDirection}{m\_location\_uLightDirection}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Light\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 495 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a8d61c896b68041ae2439d21ed6981f28}\label{class_g_l_e_s_renderer_a8d61c896b68041ae2439d21ed6981f28}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uLightingEnabled@{m\_location\_uLightingEnabled}}
-\index{m\_location\_uLightingEnabled@{m\_location\_uLightingEnabled}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uLightingEnabled}{m\_location\_uLightingEnabled}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Lighting\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 488 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_ac7d1efb2e83cebe39608a9816856da64}\label{class_g_l_e_s_renderer_ac7d1efb2e83cebe39608a9816856da64}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uMaskActive@{m\_location\_uMaskActive}}
-\index{m\_location\_uMaskActive@{m\_location\_uMaskActive}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uMaskActive}{m\_location\_uMaskActive}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Mask\+Active\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 502 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_aa5865237289b4b166ccdcee4fafeefa7}\label{class_g_l_e_s_renderer_aa5865237289b4b166ccdcee4fafeefa7}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uMaskCenter@{m\_location\_uMaskCenter}}
-\index{m\_location\_uMaskCenter@{m\_location\_uMaskCenter}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uMaskCenter}{m\_location\_uMaskCenter}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Mask\+Center\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 501 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a60785985120438561f095a5d0bb0a0e6}\label{class_g_l_e_s_renderer_a60785985120438561f095a5d0bb0a0e6}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uMaskDiameter@{m\_location\_uMaskDiameter}}
-\index{m\_location\_uMaskDiameter@{m\_location\_uMaskDiameter}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uMaskDiameter}{m\_location\_uMaskDiameter}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Mask\+Diameter\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 500 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a51a95f6a35efdde4a6e103ecae334322}\label{class_g_l_e_s_renderer_a51a95f6a35efdde4a6e103ecae334322}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uMvpMatrix@{m\_location\_uMvpMatrix}}
-\index{m\_location\_uMvpMatrix@{m\_location\_uMvpMatrix}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uMvpMatrix}{m\_location\_uMvpMatrix}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Mvp\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 490 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_aec01e0adb9416c451d958f925a64d329}\label{class_g_l_e_s_renderer_aec01e0adb9416c451d958f925a64d329}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uNormalMatrix@{m\_location\_uNormalMatrix}}
-\index{m\_location\_uNormalMatrix@{m\_location\_uNormalMatrix}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uNormalMatrix}{m\_location\_uNormalMatrix}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Normal\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 489 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a3cab0140a32534203dc8070058647d02}\label{class_g_l_e_s_renderer_a3cab0140a32534203dc8070058647d02}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uPointSize@{m\_location\_uPointSize}}
-\index{m\_location\_uPointSize@{m\_location\_uPointSize}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uPointSize}{m\_location\_uPointSize}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Point\+Size\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 497 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_af1152640d14a616c9930161402da5eb3}\label{class_g_l_e_s_renderer_af1152640d14a616c9930161402da5eb3}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uShininess@{m\_location\_uShininess}}
-\index{m\_location\_uShininess@{m\_location\_uShininess}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uShininess}{m\_location\_uShininess}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Shininess\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 494 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a0945edb3cd12c3228e405519d9cebe08}\label{class_g_l_e_s_renderer_a0945edb3cd12c3228e405519d9cebe08}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uSpecularColor@{m\_location\_uSpecularColor}}
-\index{m\_location\_uSpecularColor@{m\_location\_uSpecularColor}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uSpecularColor}{m\_location\_uSpecularColor}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Specular\+Color\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 493 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a82f6728d7361a42c33f0e88be7a329a2}\label{class_g_l_e_s_renderer_a82f6728d7361a42c33f0e88be7a329a2}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uTextureEnabled@{m\_location\_uTextureEnabled}}
-\index{m\_location\_uTextureEnabled@{m\_location\_uTextureEnabled}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uTextureEnabled}{m\_location\_uTextureEnabled}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Texture\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 499 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_ac2f2a0039e1b58fbd7d5abd3c43640bc}\label{class_g_l_e_s_renderer_ac2f2a0039e1b58fbd7d5abd3c43640bc}} 
-\index{GLESRenderer@{GLESRenderer}!m\_location\_uTextureSampler@{m\_location\_uTextureSampler}}
-\index{m\_location\_uTextureSampler@{m\_location\_uTextureSampler}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_location\_uTextureSampler}{m\_location\_uTextureSampler}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+location\+\_\+u\+Texture\+Sampler\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 498 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a8e58a3bbfb5ba75c48cc35b06711131c}\label{class_g_l_e_s_renderer_a8e58a3bbfb5ba75c48cc35b06711131c}} 
-\index{GLESRenderer@{GLESRenderer}!m\_maskActive@{m\_maskActive}}
-\index{m\_maskActive@{m\_maskActive}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_maskActive}{m\_maskActive}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+mask\+Active\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 444 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a4251b608f7c887b2bcfcb421b4a793c5}\label{class_g_l_e_s_renderer_a4251b608f7c887b2bcfcb421b4a793c5}} 
-\index{GLESRenderer@{GLESRenderer}!m\_maskCenter@{m\_maskCenter}}
-\index{m\_maskCenter@{m\_maskCenter}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_maskCenter}{m\_maskCenter}}
-{\footnotesize\ttfamily Q\+Point G\+L\+E\+S\+Renderer\+::m\+\_\+mask\+Center\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 473 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a8657f5ff8c5f663cd043731e9753e70a}\label{class_g_l_e_s_renderer_a8657f5ff8c5f663cd043731e9753e70a}} 
-\index{GLESRenderer@{GLESRenderer}!m\_maskDiameter@{m\_maskDiameter}}
-\index{m\_maskDiameter@{m\_maskDiameter}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_maskDiameter}{m\_maskDiameter}}
-{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+mask\+Diameter\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 472 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a2f8a5b98999a5ee14551a39e5f005389}\label{class_g_l_e_s_renderer_a2f8a5b98999a5ee14551a39e5f005389}} 
-\index{GLESRenderer@{GLESRenderer}!m\_mvMatrix@{m\_mvMatrix}}
-\index{m\_mvMatrix@{m\_mvMatrix}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_mvMatrix}{m\_mvMatrix}}
-{\footnotesize\ttfamily Q\+Matrix4x4 G\+L\+E\+S\+Renderer\+::m\+\_\+mv\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 452 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a5675ffb62f73dc7ebff3e4aea59db56e}\label{class_g_l_e_s_renderer_a5675ffb62f73dc7ebff3e4aea59db56e}} 
-\index{GLESRenderer@{GLESRenderer}!m\_mvMatrixStack@{m\_mvMatrixStack}}
-\index{m\_mvMatrixStack@{m\_mvMatrixStack}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_mvMatrixStack}{m\_mvMatrixStack}}
-{\footnotesize\ttfamily Q\+Stack$<$Q\+Matrix4x4$>$ G\+L\+E\+S\+Renderer\+::m\+\_\+mv\+Matrix\+Stack\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 451 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a878a3ee8fe04d1a56659c78ba5e95f4b}\label{class_g_l_e_s_renderer_a878a3ee8fe04d1a56659c78ba5e95f4b}} 
-\index{GLESRenderer@{GLESRenderer}!m\_mvpMatrix@{m\_mvpMatrix}}
-\index{m\_mvpMatrix@{m\_mvpMatrix}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_mvpMatrix}{m\_mvpMatrix}}
-{\footnotesize\ttfamily Q\+Matrix4x4 G\+L\+E\+S\+Renderer\+::m\+\_\+mvp\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 447 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_ab29bf2e72c2d91883b1ad3f3e8351940}\label{class_g_l_e_s_renderer_ab29bf2e72c2d91883b1ad3f3e8351940}} 
-\index{GLESRenderer@{GLESRenderer}!m\_nearClip@{m\_nearClip}}
-\index{m\_nearClip@{m\_nearClip}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_nearClip}{m\_nearClip}}
-{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+near\+Clip\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 456 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a76ff9b2803ac2a897d9df0cf587601ed}\label{class_g_l_e_s_renderer_a76ff9b2803ac2a897d9df0cf587601ed}} 
-\index{GLESRenderer@{GLESRenderer}!m\_normalMatrix@{m\_normalMatrix}}
-\index{m\_normalMatrix@{m\_normalMatrix}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_normalMatrix}{m\_normalMatrix}}
-{\footnotesize\ttfamily Q\+Matrix3x3 G\+L\+E\+S\+Renderer\+::m\+\_\+normal\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 459 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a78662dcb0fedf7710a57345d3d684b85}\label{class_g_l_e_s_renderer_a78662dcb0fedf7710a57345d3d684b85}} 
-\index{GLESRenderer@{GLESRenderer}!m\_OrthoMode@{m\_OrthoMode}}
-\index{m\_OrthoMode@{m\_OrthoMode}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_OrthoMode}{m\_OrthoMode}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+\+Ortho\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 458 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a2fe2ba5157fa87a9eca8eb15f8097fb5}\label{class_g_l_e_s_renderer_a2fe2ba5157fa87a9eca8eb15f8097fb5}} 
-\index{GLESRenderer@{GLESRenderer}!m\_pMatrix@{m\_pMatrix}}
-\index{m\_pMatrix@{m\_pMatrix}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_pMatrix}{m\_pMatrix}}
-{\footnotesize\ttfamily Q\+Matrix4x4 G\+L\+E\+S\+Renderer\+::m\+\_\+p\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 453 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a8571248c1e8858ccd260d91497e13354}\label{class_g_l_e_s_renderer_a8571248c1e8858ccd260d91497e13354}} 
-\index{GLESRenderer@{GLESRenderer}!m\_pointSize@{m\_pointSize}}
-\index{m\_pointSize@{m\_pointSize}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_pointSize}{m\_pointSize}}
-{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+point\+Size\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 470 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a49b1f32fad69d86fb7522d1a3f1e8d4f}\label{class_g_l_e_s_renderer_a49b1f32fad69d86fb7522d1a3f1e8d4f}} 
-\index{GLESRenderer@{GLESRenderer}!m\_renderProgram@{m\_renderProgram}}
-\index{m\_renderProgram@{m\_renderProgram}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_renderProgram}{m\_renderProgram}}
-{\footnotesize\ttfamily Q\+Open\+G\+L\+Shader\+Program$\ast$ G\+L\+E\+S\+Renderer\+::m\+\_\+render\+Program\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 480 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a5cb19e8d00b558a84f3776d51f0aca9c}\label{class_g_l_e_s_renderer_a5cb19e8d00b558a84f3776d51f0aca9c}} 
-\index{GLESRenderer@{GLESRenderer}!m\_shininess@{m\_shininess}}
-\index{m\_shininess@{m\_shininess}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_shininess}{m\_shininess}}
-{\footnotesize\ttfamily float G\+L\+E\+S\+Renderer\+::m\+\_\+shininess\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 467 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a58ff6c2e940d9cb7fb8bdf9e676f69cd}\label{class_g_l_e_s_renderer_a58ff6c2e940d9cb7fb8bdf9e676f69cd}} 
-\index{GLESRenderer@{GLESRenderer}!m\_specularColor@{m\_specularColor}}
-\index{m\_specularColor@{m\_specularColor}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_specularColor}{m\_specularColor}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_g_l_color_rgba}{G\+L\+Color\+Rgba}} G\+L\+E\+S\+Renderer\+::m\+\_\+specular\+Color\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 466 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a61680a3953bfb6b22e7131a518b1a5e2}\label{class_g_l_e_s_renderer_a61680a3953bfb6b22e7131a518b1a5e2}} 
-\index{GLESRenderer@{GLESRenderer}!m\_textureEnabled@{m\_textureEnabled}}
-\index{m\_textureEnabled@{m\_textureEnabled}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_textureEnabled}{m\_textureEnabled}}
-{\footnotesize\ttfamily bool G\+L\+E\+S\+Renderer\+::m\+\_\+texture\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 442 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a07da628f9769b11914946d71b71a4665}\label{class_g_l_e_s_renderer_a07da628f9769b11914946d71b71a4665}} 
-\index{GLESRenderer@{GLESRenderer}!m\_viewportH@{m\_viewportH}}
-\index{m\_viewportH@{m\_viewportH}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_viewportH}{m\_viewportH}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+viewportH\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 510 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_af839e0f722a97a026d7517de19acd352}\label{class_g_l_e_s_renderer_af839e0f722a97a026d7517de19acd352}} 
-\index{GLESRenderer@{GLESRenderer}!m\_viewportW@{m\_viewportW}}
-\index{m\_viewportW@{m\_viewportW}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_viewportW}{m\_viewportW}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+viewportW\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 509 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a437c4d81da1b944458b4abde903c23ce}\label{class_g_l_e_s_renderer_a437c4d81da1b944458b4abde903c23ce}} 
-\index{GLESRenderer@{GLESRenderer}!m\_viewportX@{m\_viewportX}}
-\index{m\_viewportX@{m\_viewportX}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_viewportX}{m\_viewportX}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+viewportX\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 507 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a0e81b88aa0c613e99dc6be1737d83c93}\label{class_g_l_e_s_renderer_a0e81b88aa0c613e99dc6be1737d83c93}} 
-\index{GLESRenderer@{GLESRenderer}!m\_viewportY@{m\_viewportY}}
-\index{m\_viewportY@{m\_viewportY}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_viewportY}{m\_viewportY}}
-{\footnotesize\ttfamily int G\+L\+E\+S\+Renderer\+::m\+\_\+viewportY\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 508 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a41916fc04d753007a9340065ab08762e}\label{class_g_l_e_s_renderer_a41916fc04d753007a9340065ab08762e}} 
-\index{GLESRenderer@{GLESRenderer}!m\_vShader@{m\_vShader}}
-\index{m\_vShader@{m\_vShader}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_vShader}{m\_vShader}}
-{\footnotesize\ttfamily Q\+Open\+G\+L\+Shader$\ast$ G\+L\+E\+S\+Renderer\+::m\+\_\+v\+Shader\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 478 of file glesrenderer.\+h.
-
-\mbox{\Hypertarget{class_g_l_e_s_renderer_a9f9222c1a54ff9b01edb609bb570151a}\label{class_g_l_e_s_renderer_a9f9222c1a54ff9b01edb609bb570151a}} 
-\index{GLESRenderer@{GLESRenderer}!m\_vShaderFileName@{m\_vShaderFileName}}
-\index{m\_vShaderFileName@{m\_vShaderFileName}!GLESRenderer@{GLESRenderer}}
-\subsubsection{\texorpdfstring{m\_vShaderFileName}{m\_vShaderFileName}}
-{\footnotesize\ttfamily Q\+String G\+L\+E\+S\+Renderer\+::m\+\_\+v\+Shader\+File\+Name\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 476 of file glesrenderer.\+h.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/svwei/\+Documents/workspace\+\_\+qt/4gewinnt/src/\mbox{\hyperlink{glesrenderer_8h}{glesrenderer.\+h}}\item 
-C\+:/\+Users/svwei/\+Documents/workspace\+\_\+qt/4gewinnt/src/\mbox{\hyperlink{glesrenderer_8cpp}{glesrenderer.\+cpp}}\end{DoxyCompactItemize}
+src/glesrenderer.\+h\item 
+src/glesrenderer.\+cpp\end{DoxyCompactItemize}

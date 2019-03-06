@@ -1,0 +1,13 @@
+digraph "src/gldefines.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="src/gldefines.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Convenience objects for building OpenGL surfaces."];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 [label="QVector3D",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="glcolorrgba.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$glcolorrgba_8h_source.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="QVector4D",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

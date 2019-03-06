@@ -2,80 +2,102 @@
 \label{class_my_gl_item}\index{MyGlItem@{MyGlItem}}
 
 
+The \mbox{\hyperlink{class_my_gl_item}{My\+Gl\+Item}} class.  
+
+
+
+
 {\ttfamily \#include $<$myglitem.\+h$>$}
 
-Inheritance diagram for My\+Gl\+Item\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=3.000000cm]{class_my_gl_item}
-\end{center}
-\end{figure}
+
+
+Inheritance diagram for My\+Gl\+Item\+:
+% FIG 0
+
+
+Collaboration diagram for My\+Gl\+Item\+:
+% FIG 1
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_my_gl_item_aede114472dca4859706ee76de910e7bf}{insert\+Disc}} (int button\+Number)
-\item 
+\begin{DoxyCompactList}\small\item\em insert\+Disc \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_gl_item_a76e20888c579fb444dc071a43a301ced}{do\+Mouse\+Click}} (int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em do\+Mouse\+Click \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_gl_item_ad6a0178cad3d36add83687a4f95ca668}{new\+Game}} (Q\+String player1, Q\+String player2)
-\item 
+\begin{DoxyCompactList}\small\item\em new\+Game \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_my_gl_item_a16c0d5b7d71480dc2b09a678afcd1290}\label{class_my_gl_item_a16c0d5b7d71480dc2b09a678afcd1290}} 
+void \mbox{\hyperlink{class_my_gl_item_a16c0d5b7d71480dc2b09a678afcd1290}{reset\+Score}} ()
+\begin{DoxyCompactList}\small\item\em reset\+Score simple slot for resetting current score \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_gl_item_a613c4a856e605fffbcf0968f821e8823}{change\+Theme}} (int theme)
-\item 
+\begin{DoxyCompactList}\small\item\em change\+Theme \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_gl_item_adbaf81ef21b3437d37571fa897594550}{timer\+Slot}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em timer\+Slot \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_gl_item_a169c0e508ce57d77a941feafd46245ed}{static\+Players}} (Q\+String p1, Q\+String p2)
+\begin{DoxyCompactList}\small\item\em static\+Players \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_my_gl_item_a93137c1e883f74e699e3dd164cd1cd43}{player\+Changed}} (Q\+String next)
-\item 
+\begin{DoxyCompactList}\small\item\em player\+Changed \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_gl_item_a7bab02e6f11d653e97b328a953d81c82}{color\+Changed}} (Q\+String color)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em color\+Changed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_gl_item_a84b6d3045448453a2aaa40703448e132}{order\+Changed}} (Q\+List$<$ Q\+String $>$ order)
+\begin{DoxyCompactList}\small\item\em order\+Changed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_gl_item_a5b6e041f52d5d97782584b099596b5f5}{result\+Changed}} (Q\+List$<$ int $>$ result)
+\begin{DoxyCompactList}\small\item\em result\+Changed \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_my_gl_item_a6d3e3403cb04102489d3be0deddbc1ff}{My\+Gl\+Item}} ()
-\item 
 virtual void \mbox{\hyperlink{class_my_gl_item_a27704a445b6915b4f365193bf0cab618}{setup\+Geometry}} () override
-\begin{DoxyCompactList}\small\item\em setup\+Geometry Put the geometric data into the points array and set m\+\_\+geometry\+Is\+Valid flag. M\+U\+ST be overridden in subclasses. Gl\+Item\+::setup\+Geometry() does nothing. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em setup\+Geometry \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_gl_item_a46ffc33e9892262f9d1d88c14fa0e092}{paint\+Under\+Qml\+Scene}} () override
-\begin{DoxyCompactList}\small\item\em paint\+Under\+Qml\+Scene Virtual function for painting under a Q\+ML scene. This function is called by paint\+Before after calling create\+Geometries and initializing and binding the renderer. Overwrite in subclasses for painting geometries in m\+\_\+points with the renderer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em paint\+Under\+Qml\+Scene \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_my_gl_item_ad9f060b5a805367e0fbf065e9318c0b1}{paint\+On\+Top\+Of\+Qml\+Scene}} () override
-\begin{DoxyCompactList}\small\item\em paint\+Under\+Qml\+Scene Virtual function for painting on top of a Q\+ML scene. This function is called by paint\+After after calling create\+Geometries and initializing and binding the renderer. Overwrite in subclasses for painting geometries in m\+\_\+points with the renderer. \end{DoxyCompactList}\item 
-Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+String \mbox{\hyperlink{class_my_gl_item_a32e2b4ee36ad4c6e350e6faaa3f785ec}{next\+Player}} () const
+\begin{DoxyCompactList}\small\item\em paint\+On\+Top\+Of\+Qml\+Scene \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+String \mbox{\hyperlink{class_my_gl_item_a52e7f492f9ddbbd17868c059282ca397}{next\+Player}} ()
 \item 
-Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+String \mbox{\hyperlink{class_my_gl_item_a4ab53ef3f231b8d77afb50fe2dbf227f}{next\+Color}} () const
+\mbox{\Hypertarget{class_my_gl_item_abb8dd90d60abac1e9a0773231831f84f}\label{class_my_gl_item_abb8dd90d60abac1e9a0773231831f84f}} 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+String {\bfseries next\+Color} ()
 \item 
-void \mbox{\hyperlink{class_my_gl_item_a846c52113dee3039823114ace76ad670}{set\+Next\+Player}} (const Q\+String next)
+\mbox{\Hypertarget{class_my_gl_item_ae10ea67700065435027f137885ce0774}\label{class_my_gl_item_ae10ea67700065435027f137885ce0774}} 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+List$<$ Q\+String $>$ {\bfseries next\+Order} ()
 \item 
-void \mbox{\hyperlink{class_my_gl_item_a775133f2d5f5fee4b90f4816ac00d57e}{set\+Next\+Color}} (const Q\+String color)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_my_gl_item_aed7a1092db78fdcfbd839105b700fbc3}\label{class_my_gl_item_aed7a1092db78fdcfbd839105b700fbc3}} 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+List$<$ int $>$ {\bfseries next\+Result} ()
+\item 
+void \mbox{\hyperlink{class_my_gl_item_a17b24c5af31fe0fed3ca7253c59fd7ee}{set\+Next\+Player}} (Q\+String next)
+\begin{DoxyCompactList}\small\item\em set\+Next\+Player \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_gl_item_a1d7b760e5da84802e97825c34be7b354}{set\+Next\+Color}} (Q\+String color)
+\begin{DoxyCompactList}\small\item\em set\+Next\+Color \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_gl_item_a4bacae91dba178b2cebfdde56cea364c}{set\+Next\+Order}} (Q\+List$<$ Q\+String $>$ order)
+\begin{DoxyCompactList}\small\item\em set\+Next\+Order \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_gl_item_ae876b4b064add1a66a8a7dca732ac282}{set\+Next\+Result}} (Q\+List$<$ int $>$ result)
+\begin{DoxyCompactList}\small\item\em set\+Next\+Result \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-Q\+String \mbox{\hyperlink{class_my_gl_item_abc171f46578b349ef427434969ae2220}{next\+Player}}
+\mbox{\Hypertarget{class_my_gl_item_abc171f46578b349ef427434969ae2220}\label{class_my_gl_item_abc171f46578b349ef427434969ae2220}} 
+Q\+String {\bfseries next\+Player}
 \item 
-Q\+String \mbox{\hyperlink{class_my_gl_item_a0231b71bc8a4bd91b69b498c8f4a9483}{next\+Color}}
+\mbox{\Hypertarget{class_my_gl_item_a0231b71bc8a4bd91b69b498c8f4a9483}\label{class_my_gl_item_a0231b71bc8a4bd91b69b498c8f4a9483}} 
+Q\+String {\bfseries next\+Color}
+\item 
+\mbox{\Hypertarget{class_my_gl_item_a30a8dddc13241d8a04a6fcfb095c7886}\label{class_my_gl_item_a30a8dddc13241d8a04a6fcfb095c7886}} 
+Q\+List$<$ Q\+String $>$ {\bfseries next\+Order}
+\item 
+\mbox{\Hypertarget{class_my_gl_item_a88bcf9b5549634a7d2d19cecbc81e72d}\label{class_my_gl_item_a88bcf9b5549634a7d2d19cecbc81e72d}} 
+Q\+List$<$ int $>$ {\bfseries next\+Result}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
+The \mbox{\hyperlink{class_my_gl_item}{My\+Gl\+Item}} class. 
 
+This class is used for representing the game process. Q\+\_\+\+Properties are used to bind values targeting attributes of qml components. It contains wincondition for horizontal, vertical and diagonal. 
 
-Definition at line 10 of file myglitem.\+h.
-
-
-
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_my_gl_item_a6d3e3403cb04102489d3be0deddbc1ff}\label{class_my_gl_item_a6d3e3403cb04102489d3be0deddbc1ff}} 
-\index{MyGlItem@{MyGlItem}!MyGlItem@{MyGlItem}}
-\index{MyGlItem@{MyGlItem}!MyGlItem@{MyGlItem}}
-\subsubsection{\texorpdfstring{MyGlItem()}{MyGlItem()}}
-{\footnotesize\ttfamily My\+Gl\+Item\+::\+My\+Gl\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 9 of file myglitem.\+cpp.
+Definition at line 18 of file myglitem.\+h.
 
 
 
@@ -88,7 +110,16 @@ Definition at line 9 of file myglitem.\+cpp.
 
 
 
-Definition at line 81 of file myglitem.\+cpp.
+change\+Theme 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theme} & = flag in form of an integer\\
+\hline
+\end{DoxyParams}
+selects the corresponding theme to the id 
+
+Definition at line 105 of file myglitem.\+cpp.
 
 \mbox{\Hypertarget{class_my_gl_item_a7bab02e6f11d653e97b328a953d81c82}\label{class_my_gl_item_a7bab02e6f11d653e97b328a953d81c82}} 
 \index{MyGlItem@{MyGlItem}!colorChanged@{colorChanged}}
@@ -96,7 +127,16 @@ Definition at line 81 of file myglitem.\+cpp.
 \subsubsection{\texorpdfstring{colorChanged}{colorChanged}}
 {\footnotesize\ttfamily void My\+Gl\+Item\+::color\+Changed (\begin{DoxyParamCaption}\item[{Q\+String}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-\mbox{\Hypertarget{class_my_gl_item_a76e20888c579fb444dc071a43a301ced}\label{class_my_gl_item_a76e20888c579fb444dc071a43a301ced}} 
+
+
+color\+Changed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & = next color\\
+\hline
+\end{DoxyParams}
+signal emitted when color is changed \mbox{\Hypertarget{class_my_gl_item_a76e20888c579fb444dc071a43a301ced}\label{class_my_gl_item_a76e20888c579fb444dc071a43a301ced}} 
 \index{MyGlItem@{MyGlItem}!doMouseClick@{doMouseClick}}
 \index{doMouseClick@{doMouseClick}!MyGlItem@{MyGlItem}}
 \subsubsection{\texorpdfstring{doMouseClick}{doMouseClick}}
@@ -104,7 +144,18 @@ Definition at line 81 of file myglitem.\+cpp.
 
 
 
-Definition at line 239 of file myglitem.\+cpp.
+do\+Mouse\+Click 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & simple function for debugging qml scene \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 311 of file myglitem.\+cpp.
 
 \mbox{\Hypertarget{class_my_gl_item_aede114472dca4859706ee76de910e7bf}\label{class_my_gl_item_aede114472dca4859706ee76de910e7bf}} 
 \index{MyGlItem@{MyGlItem}!insertDisc@{insertDisc}}
@@ -114,7 +165,16 @@ Definition at line 239 of file myglitem.\+cpp.
 
 
 
-Definition at line 136 of file myglitem.\+cpp.
+insert\+Disc 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button\+Number} & = id of the clicked button representing the column\\
+\hline
+\end{DoxyParams}
+inserts disc and checks if it is a winning disc 
+
+Definition at line 160 of file myglitem.\+cpp.
 
 \mbox{\Hypertarget{class_my_gl_item_ad6a0178cad3d36add83687a4f95ca668}\label{class_my_gl_item_ad6a0178cad3d36add83687a4f95ca668}} 
 \index{MyGlItem@{MyGlItem}!newGame@{newGame}}
@@ -124,29 +184,45 @@ Definition at line 136 of file myglitem.\+cpp.
 
 
 
-Definition at line 48 of file myglitem.\+cpp.
-
-\mbox{\Hypertarget{class_my_gl_item_a4ab53ef3f231b8d77afb50fe2dbf227f}\label{class_my_gl_item_a4ab53ef3f231b8d77afb50fe2dbf227f}} 
-\index{MyGlItem@{MyGlItem}!nextColor@{nextColor}}
-\index{nextColor@{nextColor}!MyGlItem@{MyGlItem}}
-\subsubsection{\texorpdfstring{nextColor()}{nextColor()}}
-{\footnotesize\ttfamily Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+String My\+Gl\+Item\+::next\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+new\+Game 
 
 
+\begin{DoxyParams}{Parameters}
+{\em player1} & = name of first player \\
+\hline
+{\em player2} & = name of second player\\
+\hline
+\end{DoxyParams}
+sets the name of the players for the next round 
 
-Definition at line 57 of file myglitem.\+h.
+Definition at line 69 of file myglitem.\+cpp.
 
-\mbox{\Hypertarget{class_my_gl_item_a32e2b4ee36ad4c6e350e6faaa3f785ec}\label{class_my_gl_item_a32e2b4ee36ad4c6e350e6faaa3f785ec}} 
+\mbox{\Hypertarget{class_my_gl_item_a52e7f492f9ddbbd17868c059282ca397}\label{class_my_gl_item_a52e7f492f9ddbbd17868c059282ca397}} 
 \index{MyGlItem@{MyGlItem}!nextPlayer@{nextPlayer}}
 \index{nextPlayer@{nextPlayer}!MyGlItem@{MyGlItem}}
 \subsubsection{\texorpdfstring{nextPlayer()}{nextPlayer()}}
-{\footnotesize\ttfamily Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+String My\+Gl\+Item\+::next\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+String My\+Gl\+Item\+::next\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Invokable Methods for qml meta object system 
+
+Definition at line 221 of file myglitem.\+h.
+
+\mbox{\Hypertarget{class_my_gl_item_a84b6d3045448453a2aaa40703448e132}\label{class_my_gl_item_a84b6d3045448453a2aaa40703448e132}} 
+\index{MyGlItem@{MyGlItem}!orderChanged@{orderChanged}}
+\index{orderChanged@{orderChanged}!MyGlItem@{MyGlItem}}
+\subsubsection{\texorpdfstring{orderChanged}{orderChanged}}
+{\footnotesize\ttfamily void My\+Gl\+Item\+::order\+Changed (\begin{DoxyParamCaption}\item[{Q\+List$<$ Q\+String $>$}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
 
 
-Definition at line 56 of file myglitem.\+h.
+order\+Changed 
 
-\mbox{\Hypertarget{class_my_gl_item_ad9f060b5a805367e0fbf065e9318c0b1}\label{class_my_gl_item_ad9f060b5a805367e0fbf065e9318c0b1}} 
+
+\begin{DoxyParams}{Parameters}
+{\em order} & = next order\\
+\hline
+\end{DoxyParams}
+signal emitted when order is changed \mbox{\Hypertarget{class_my_gl_item_ad9f060b5a805367e0fbf065e9318c0b1}\label{class_my_gl_item_ad9f060b5a805367e0fbf065e9318c0b1}} 
 \index{MyGlItem@{MyGlItem}!paintOnTopOfQmlScene@{paintOnTopOfQmlScene}}
 \index{paintOnTopOfQmlScene@{paintOnTopOfQmlScene}!MyGlItem@{MyGlItem}}
 \subsubsection{\texorpdfstring{paintOnTopOfQmlScene()}{paintOnTopOfQmlScene()}}
@@ -154,15 +230,15 @@ Definition at line 56 of file myglitem.\+h.
 
 
 
-paint\+Under\+Qml\+Scene Virtual function for painting on top of a Q\+ML scene. This function is called by paint\+After after calling create\+Geometries and initializing and binding the renderer. Overwrite in subclasses for painting geometries in m\+\_\+points with the renderer. 
+paint\+On\+Top\+Of\+Qml\+Scene 
 
-
+object will be painted on top of qml scene 
 
 Reimplemented from \mbox{\hyperlink{class_g_l_item_a595830cf6ae5434a253c68366275b65d}{G\+L\+Item}}.
 
 
 
-Definition at line 244 of file myglitem.\+cpp.
+Definition at line 316 of file myglitem.\+cpp.
 
 \mbox{\Hypertarget{class_my_gl_item_a46ffc33e9892262f9d1d88c14fa0e092}\label{class_my_gl_item_a46ffc33e9892262f9d1d88c14fa0e092}} 
 \index{MyGlItem@{MyGlItem}!paintUnderQmlScene@{paintUnderQmlScene}}
@@ -172,15 +248,15 @@ Definition at line 244 of file myglitem.\+cpp.
 
 
 
-paint\+Under\+Qml\+Scene Virtual function for painting under a Q\+ML scene. This function is called by paint\+Before after calling create\+Geometries and initializing and binding the renderer. Overwrite in subclasses for painting geometries in m\+\_\+points with the renderer. 
+paint\+Under\+Qml\+Scene 
 
-
+paint under\+Q\+ML is not used 
 
 Reimplemented from \mbox{\hyperlink{class_g_l_item_a6e779fa84599e999b6e299d5aac92fa2}{G\+L\+Item}}.
 
 
 
-Definition at line 257 of file myglitem.\+cpp.
+Definition at line 330 of file myglitem.\+cpp.
 
 \mbox{\Hypertarget{class_my_gl_item_a93137c1e883f74e699e3dd164cd1cd43}\label{class_my_gl_item_a93137c1e883f74e699e3dd164cd1cd43}} 
 \index{MyGlItem@{MyGlItem}!playerChanged@{playerChanged}}
@@ -188,25 +264,105 @@ Definition at line 257 of file myglitem.\+cpp.
 \subsubsection{\texorpdfstring{playerChanged}{playerChanged}}
 {\footnotesize\ttfamily void My\+Gl\+Item\+::player\+Changed (\begin{DoxyParamCaption}\item[{Q\+String}]{next }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-\mbox{\Hypertarget{class_my_gl_item_a775133f2d5f5fee4b90f4816ac00d57e}\label{class_my_gl_item_a775133f2d5f5fee4b90f4816ac00d57e}} 
+
+
+player\+Changed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next} & = next Player\\
+\hline
+\end{DoxyParams}
+signal emitted when player is changed \mbox{\Hypertarget{class_my_gl_item_a5b6e041f52d5d97782584b099596b5f5}\label{class_my_gl_item_a5b6e041f52d5d97782584b099596b5f5}} 
+\index{MyGlItem@{MyGlItem}!resultChanged@{resultChanged}}
+\index{resultChanged@{resultChanged}!MyGlItem@{MyGlItem}}
+\subsubsection{\texorpdfstring{resultChanged}{resultChanged}}
+{\footnotesize\ttfamily void My\+Gl\+Item\+::result\+Changed (\begin{DoxyParamCaption}\item[{Q\+List$<$ int $>$}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+result\+Changed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & = next result\\
+\hline
+\end{DoxyParams}
+signal emitted when result is changed \mbox{\Hypertarget{class_my_gl_item_a1d7b760e5da84802e97825c34be7b354}\label{class_my_gl_item_a1d7b760e5da84802e97825c34be7b354}} 
 \index{MyGlItem@{MyGlItem}!setNextColor@{setNextColor}}
 \index{setNextColor@{setNextColor}!MyGlItem@{MyGlItem}}
 \subsubsection{\texorpdfstring{setNextColor()}{setNextColor()}}
-{\footnotesize\ttfamily void My\+Gl\+Item\+::set\+Next\+Color (\begin{DoxyParamCaption}\item[{const Q\+String}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void My\+Gl\+Item\+::set\+Next\+Color (\begin{DoxyParamCaption}\item[{Q\+String}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 60 of file myglitem.\+h.
+set\+Next\+Color 
 
-\mbox{\Hypertarget{class_my_gl_item_a846c52113dee3039823114ace76ad670}\label{class_my_gl_item_a846c52113dee3039823114ace76ad670}} 
+
+\begin{DoxyParams}{Parameters}
+{\em color} & simple setter which also emits color\+Changed Signal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 239 of file myglitem.\+h.
+
+\mbox{\Hypertarget{class_my_gl_item_a4bacae91dba178b2cebfdde56cea364c}\label{class_my_gl_item_a4bacae91dba178b2cebfdde56cea364c}} 
+\index{MyGlItem@{MyGlItem}!setNextOrder@{setNextOrder}}
+\index{setNextOrder@{setNextOrder}!MyGlItem@{MyGlItem}}
+\subsubsection{\texorpdfstring{setNextOrder()}{setNextOrder()}}
+{\footnotesize\ttfamily void My\+Gl\+Item\+::set\+Next\+Order (\begin{DoxyParamCaption}\item[{Q\+List$<$ Q\+String $>$}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Next\+Order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & simple setter which also emits order\+Changed Signal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 246 of file myglitem.\+h.
+
+\mbox{\Hypertarget{class_my_gl_item_a17b24c5af31fe0fed3ca7253c59fd7ee}\label{class_my_gl_item_a17b24c5af31fe0fed3ca7253c59fd7ee}} 
 \index{MyGlItem@{MyGlItem}!setNextPlayer@{setNextPlayer}}
 \index{setNextPlayer@{setNextPlayer}!MyGlItem@{MyGlItem}}
 \subsubsection{\texorpdfstring{setNextPlayer()}{setNextPlayer()}}
-{\footnotesize\ttfamily void My\+Gl\+Item\+::set\+Next\+Player (\begin{DoxyParamCaption}\item[{const Q\+String}]{next }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void My\+Gl\+Item\+::set\+Next\+Player (\begin{DoxyParamCaption}\item[{Q\+String}]{next }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 59 of file myglitem.\+h.
+set\+Next\+Player 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next} & simple setter which also emits player\+Changed Signal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file myglitem.\+h.
+
+\mbox{\Hypertarget{class_my_gl_item_ae876b4b064add1a66a8a7dca732ac282}\label{class_my_gl_item_ae876b4b064add1a66a8a7dca732ac282}} 
+\index{MyGlItem@{MyGlItem}!setNextResult@{setNextResult}}
+\index{setNextResult@{setNextResult}!MyGlItem@{MyGlItem}}
+\subsubsection{\texorpdfstring{setNextResult()}{setNextResult()}}
+{\footnotesize\ttfamily void My\+Gl\+Item\+::set\+Next\+Result (\begin{DoxyParamCaption}\item[{Q\+List$<$ int $>$}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Next\+Result 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & simple setter which also emits result\+Changed Signal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 253 of file myglitem.\+h.
 
 \mbox{\Hypertarget{class_my_gl_item_a27704a445b6915b4f365193bf0cab618}\label{class_my_gl_item_a27704a445b6915b4f365193bf0cab618}} 
 \index{MyGlItem@{MyGlItem}!setupGeometry@{setupGeometry}}
@@ -216,15 +372,36 @@ Definition at line 59 of file myglitem.\+h.
 
 
 
-setup\+Geometry Put the geometric data into the points array and set m\+\_\+geometry\+Is\+Valid flag. M\+U\+ST be overridden in subclasses. Gl\+Item\+::setup\+Geometry() does nothing. 
+setup\+Geometry 
 
-
+setup blendermodel and field 
 
 Reimplemented from \mbox{\hyperlink{class_g_l_item_a74269f515d4d025149cc8a603d8c66f1}{G\+L\+Item}}.
 
 
 
-Definition at line 262 of file myglitem.\+cpp.
+Definition at line 335 of file myglitem.\+cpp.
+
+\mbox{\Hypertarget{class_my_gl_item_a169c0e508ce57d77a941feafd46245ed}\label{class_my_gl_item_a169c0e508ce57d77a941feafd46245ed}} 
+\index{MyGlItem@{MyGlItem}!staticPlayers@{staticPlayers}}
+\index{staticPlayers@{staticPlayers}!MyGlItem@{MyGlItem}}
+\subsubsection{\texorpdfstring{staticPlayers}{staticPlayers}}
+{\footnotesize\ttfamily void My\+Gl\+Item\+::static\+Players (\begin{DoxyParamCaption}\item[{Q\+String}]{p1,  }\item[{Q\+String}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+static\+Players 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & = name of first player \\
+\hline
+{\em p2} & = name of second player\\
+\hline
+\end{DoxyParams}
+sets the name of the players for the game 
+
+Definition at line 63 of file myglitem.\+cpp.
 
 \mbox{\Hypertarget{class_my_gl_item_adbaf81ef21b3437d37571fa897594550}\label{class_my_gl_item_adbaf81ef21b3437d37571fa897594550}} 
 \index{MyGlItem@{MyGlItem}!timerSlot@{timerSlot}}
@@ -234,34 +411,15 @@ Definition at line 262 of file myglitem.\+cpp.
 
 
 
-Definition at line 41 of file myglitem.\+cpp.
+timer\+Slot 
 
+slot for updating the window 
 
-
-\subsection{Property Documentation}
-\mbox{\Hypertarget{class_my_gl_item_a0231b71bc8a4bd91b69b498c8f4a9483}\label{class_my_gl_item_a0231b71bc8a4bd91b69b498c8f4a9483}} 
-\index{MyGlItem@{MyGlItem}!nextColor@{nextColor}}
-\index{nextColor@{nextColor}!MyGlItem@{MyGlItem}}
-\subsubsection{\texorpdfstring{nextColor}{nextColor}}
-{\footnotesize\ttfamily Q\+String My\+Gl\+Item\+::next\+Color\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
-
-
-
-Definition at line 15 of file myglitem.\+h.
-
-\mbox{\Hypertarget{class_my_gl_item_abc171f46578b349ef427434969ae2220}\label{class_my_gl_item_abc171f46578b349ef427434969ae2220}} 
-\index{MyGlItem@{MyGlItem}!nextPlayer@{nextPlayer}}
-\index{nextPlayer@{nextPlayer}!MyGlItem@{MyGlItem}}
-\subsubsection{\texorpdfstring{nextPlayer}{nextPlayer}}
-{\footnotesize\ttfamily Q\+String My\+Gl\+Item\+::next\+Player\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
-
-
-
-Definition at line 14 of file myglitem.\+h.
+Definition at line 49 of file myglitem.\+cpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/svwei/\+Documents/workspace\+\_\+qt/4gewinnt/src/\mbox{\hyperlink{myglitem_8h}{myglitem.\+h}}\item 
-C\+:/\+Users/svwei/\+Documents/workspace\+\_\+qt/4gewinnt/src/\mbox{\hyperlink{myglitem_8cpp}{myglitem.\+cpp}}\end{DoxyCompactItemize}
+src/myglitem.\+h\item 
+src/myglitem.\+cpp\end{DoxyCompactItemize}

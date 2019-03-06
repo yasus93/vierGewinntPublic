@@ -1,0 +1,25 @@
+\hypertarget{gldefines_8h}{}\section{src/gldefines.h File Reference}
+\label{gldefines_8h}\index{src/gldefines.h@{src/gldefines.h}}
+
+
+Convenience objects for building Open\+GL surfaces.  
+
+
+{\ttfamily \#include $<$Q\+Vector3D$>$}\newline
+{\ttfamily \#include \char`\"{}glcolorrgba.\+h\char`\"{}}\newline
+Include dependency graph for gldefines.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{gldefines_8h_af3c748960f29c42e5b7f1dc449ab66ff}\label{gldefines_8h_af3c748960f29c42e5b7f1dc449ab66ff}} 
+\#define {\bfseries Index\+Type}~G\+Lushort
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Convenience objects for building Open\+GL surfaces. 
+
+Predefined 3D-\/vectors and colors that are frequently used. 
