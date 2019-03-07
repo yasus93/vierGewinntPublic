@@ -110,8 +110,8 @@ void GLDisc::draw(GLESRenderer *renderer, bool useBuffers)
 {
     if(m_stepsToPosition > 0 && !m_isFirst)
     {
-        this->move(QVector3D(0.0f, -0.2f, 0.0f));
-        m_stepsToPosition--;
+        this->move(QVector3D(0.0f, -0.8f, 0.0f));
+        m_stepsToPosition -= 4;
     }
     m_isFirst = false;
 

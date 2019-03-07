@@ -358,7 +358,6 @@ bool MyGlItem::yellowWins(){
 }
 bool MyGlItem::redHasHorizontal(){
     int xCoord[7] = {10,10,10,10,10,10,10};
-    int yCoord = 10; // kann das weg oder ist das Kunst?
     int c = 0;
     for(int hoehe = 0; hoehe<7;hoehe++){
         for(int i = 0; i<redDiscs.size(); i++){
@@ -367,14 +366,9 @@ bool MyGlItem::redHasHorizontal(){
                 c++;
             }
         }
-        yCoord = hoehe;
         c = 0;
         std::sort(xCoord, xCoord+7);
-   //     std::cout << "Array:" << std::endl;
 
-//        for(int i = 0; i<7; i++){
-//          std::cout << xCoord[i] << std::endl;
-//        }
         for(int i = 0; i<=3; i++){
             if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
                 markWinnerHorizontal(redDiscs, 0, 3, hoehe);
@@ -413,9 +407,6 @@ bool MyGlItem::yellowHasHorizontal(){
         }
         c = 0;
         std::sort(xCoord, xCoord+7);
-      //  std::cout << "Array:" << std::endl;
-
-
         for(int i = 0; i<=3; i++){
             if(xCoord[i] == 0 && xCoord[i+1] == 1 && xCoord[i+2] == 2 && xCoord[i+3] == 3){
                 markWinnerHorizontal(yellowDiscs, 0, 3, hoehe);
@@ -453,11 +444,6 @@ bool MyGlItem::redHasVertical(){
         }
         c = 0;
         std::sort(yCoord, yCoord+6);
-      //  std::cout << "Array Vert:" << std::endl;
-
-//        for(int i = 0; i<7; i++){
-//          std::cout << yCoord[i] << std::endl;
-//        }
         for(int i = 0; i<=3; i++){
             if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){
                 markWinnerVertical(redDiscs, 0,3,breite);
@@ -492,11 +478,7 @@ bool MyGlItem::yellowHasVertical(){
         }
         c = 0;
         std::sort(yCoord, yCoord+6);
-       // std::cout << "Array Vert:" << std::endl;
 
-//        for(int i = 0; i<7; i++){
-//          std::cout << yCoord[i] << std::endl;
-//        }
         for(int i = 0; i<=3; i++){
             if(yCoord[i] == 0 && yCoord[i+1] == 1 && yCoord[i+2] == 2 && yCoord[i+3] == 3){
                 markWinnerVertical(yellowDiscs, 0,3,breite);
