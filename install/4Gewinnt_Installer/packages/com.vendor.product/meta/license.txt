@@ -1,0 +1,3 @@
+4Gewinnt ist ein Testprojekt welches als Pruefungsleistung fuer das Modul Multimediaprogrammierung im Studiengang Informatik B.Sc 
+an der FH-SWF angefertigt wurde.
+Es gelten die Lizenzbestimmungen der LGPL.

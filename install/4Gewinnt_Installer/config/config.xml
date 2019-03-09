@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+<Name>4Gewinnt</Name>
+<Version>1.0.0</Version>
+<Title>Setup 4Gewinnt</Title>
+<Publisher>ProkrastinationGamer</Publisher>
+<StartMenuDir>ProGamer</StartMenuDir>
+<TargetDir>@HomeDir@/4Gewinnt</TargetDir>
+</Installer>

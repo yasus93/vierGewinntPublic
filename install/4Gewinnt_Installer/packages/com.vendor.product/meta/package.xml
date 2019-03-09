@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>4Gewinnt</DisplayName>
+    <Description>Installiere 4Gewinnt.</Description>
+    <Version>1.0</Version>
+    <ReleaseDate>2019-03-18</ReleaseDate>
+    <Licenses>
+        <License name="4Gewinnt Lizenz" file="license.txt" />
+    </Licenses>
+    <Default>script</Default>
+    <Script>installscript.qs</Script>
+    <UserInterfaces>
+        <UserInterface>page.ui</UserInterface>
+    </UserInterfaces>
+</Package>
