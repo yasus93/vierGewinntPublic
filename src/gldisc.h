@@ -3,6 +3,9 @@
 
 #include "glbody.h"
 #include "board.h"
+/**
+ * @brief class for creating discs.
+ */
 class GLDisc : public GLBody
 {
 public:
@@ -16,11 +19,22 @@ public:
     */
     void makeSurface(QVector<GLPoint> * pointContainer = nullptr, QVector<GLushort> *indexContainer = nullptr)Q_DECL_OVERRIDE;
 
+    /**
+     * @brief draw
+     * @param renderer
+     * @param useBuffers
+     */
     void draw(GLESRenderer *renderer, bool useBuffers)Q_DECL_OVERRIDE;
 
-
-
+    /**
+     * @brief getFieldCoord
+     * @return fieldPosition of Disc as x and y
+     */
     QPoint getFieldCoord() const;
+    /**
+     * @brief setFieldCoord
+     * @param FieldCoord = the fieldPosition of the Disc as x and y
+     */
     void setFieldCoord(const QPoint &FieldCoord);
 
 private:
