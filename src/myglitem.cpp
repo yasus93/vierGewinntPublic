@@ -52,7 +52,37 @@ void MyGlItem::timerSlot()
         window()->update();
     update();
 }
-
+void MyGlItem::keyPressEvent(QKeyEvent *ev)
+{
+    if(!gameRunning){
+        return;
+    }
+    switch (ev->text().toInt()) {
+    case 1:
+        insertDisc(0);
+        break;
+    case 2:
+        insertDisc(1);
+        break;
+    case 3:
+        insertDisc(2);
+        break;
+    case 4:
+        insertDisc(3);
+        break;
+    case 5:
+        insertDisc(4);
+        break;
+    case 6:
+        insertDisc(5);
+        break;
+    case 7:
+        insertDisc(6);
+        break;
+    default:
+        break;
+    }
+}
 void MyGlItem::resetScore()
 {
     m_nextResult[0] = 0;
@@ -99,7 +129,7 @@ void MyGlItem::newGame(QString player1, QString player2)
             setNextColor("red");
             break;
     }
-
+    gameRunning = true;
 }
 
 void MyGlItem::changeTheme(int theme)
@@ -256,6 +286,7 @@ void MyGlItem::insertDisc(int buttonNumber)
         totalDiscs++;
 
         if(redWins()){
+            gameRunning = false;
             qDebug() << "red wins" << endl;
             setNextPlayer(m_player1+" Wins");
 
@@ -277,6 +308,7 @@ void MyGlItem::insertDisc(int buttonNumber)
             setNextResult(m_nextResult);
         }
         else if(yellowWins()){
+            gameRunning = false;
             qDebug() << "yellow wins" << endl;
             setNextPlayer(m_player2+" Wins");
 

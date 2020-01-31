@@ -192,6 +192,7 @@ private:
      * Sets color of vertical winning disc to white
      */
     void markWinnerVertical(QList<GLDisc *> disc, int minY, int maxY, int currentX);
+    bool gameRunning;
 public:
     MyGlItem();
 
@@ -213,6 +214,7 @@ public:
      * object will be painted on top of qml scene
      */
     void paintOnTopOfQmlScene() override;
+    void keyPressEvent(QKeyEvent *ev) override;
 
     /**
      * Invokable Methods for qml meta object system
