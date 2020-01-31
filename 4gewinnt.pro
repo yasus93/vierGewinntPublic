@@ -1,7 +1,4 @@
-#QT += quick
-#QT += opengl
-#QT += core gui quick qml
-QT += qml quick widgets opengl multimedia
+QT += core gui quick qml
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -10,10 +7,11 @@ CONFIG += c++11
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+RC_FILE = windows/myicon.rc
+
 #only run on windows
 win32:{
     LIBS += -lopengl32
- #   DEFINES += USE_QOPENGL_FUNCTIONS
 }
 
 linux-g++:{
@@ -22,7 +20,8 @@ linux-g++:{
 
 
 android{
-
+   DEFINES += GLES
+   RESOURCEDIR = /assets
 }
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -89,7 +88,10 @@ DISTFILES += \
     android/gradlew.bat \
     android/res/values/apptheme.xml \
     android/res/drawable/splash.xml \
-    android/res/drawable/icon.jpg
+    windows/icons8_number_4_96_jnD_icon.ico \
+    windows/myicon.rc \
+    android/res/drawable/icons8_number_4_96.jpg \
+    android/res/drawable/splashimage.jpg
 
 contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
     ANDROID_PACKAGE_SOURCE_DIR = \

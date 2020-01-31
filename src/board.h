@@ -6,7 +6,8 @@
 
 class GLDisc;
 /**
-  * A chess board with 7X6 fields.
+  * \brief A chess board with 7X6 fields.
+  *
   * This Board is created for the positioning of discs.
   * It should not be drawn in final use.
   * The fieldToPosition function returns the 3D-coordinates of the field in model space.

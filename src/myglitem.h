@@ -8,9 +8,8 @@
 #include <QTimer>
 
 /**
- * @brief The MyGlItem class
+ * @brief This class is used for representing the game process.
  *
- * This class is used for representing the game process.
  * Q_Properties are used to bind values targeting attributes of qml components.
  * It contains wincondition for horizontal, vertical and diagonal.
  *

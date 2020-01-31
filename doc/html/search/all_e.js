@@ -20,8 +20,10 @@ var searchData=
   ['setmaskdiameter',['setMaskDiameter',['../class_g_l_e_s_renderer.html#a07c9bfdc4f16745e9b09529e21184910',1,'GLESRenderer']]],
   ['setmodeloffset',['setModelOffset',['../class_g_l_body.html#a44b1012b09a4b74e4edce7542091b97d',1,'GLBody']]],
   ['setmvmatrix',['setMvMatrix',['../class_g_l_e_s_renderer.html#a8242d0b241a14c5850867ec00819c014',1,'GLESRenderer']]],
-  ['setnextcolor',['setNextColor',['../class_my_gl_item.html#a775133f2d5f5fee4b90f4816ac00d57e',1,'MyGlItem']]],
-  ['setnextplayer',['setNextPlayer',['../class_my_gl_item.html#a846c52113dee3039823114ace76ad670',1,'MyGlItem']]],
+  ['setnextcolor',['setNextColor',['../class_my_gl_item.html#a1d7b760e5da84802e97825c34be7b354',1,'MyGlItem']]],
+  ['setnextorder',['setNextOrder',['../class_my_gl_item.html#a4bacae91dba178b2cebfdde56cea364c',1,'MyGlItem']]],
+  ['setnextplayer',['setNextPlayer',['../class_my_gl_item.html#a17b24c5af31fe0fed3ca7253c59fd7ee',1,'MyGlItem']]],
+  ['setnextresult',['setNextResult',['../class_my_gl_item.html#ae876b4b064add1a66a8a7dca732ac282',1,'MyGlItem']]],
   ['setortho',['setOrtho',['../class_g_l_e_s_renderer.html#a7f0488a9867d384110718ca6ef9a70af',1,'GLESRenderer']]],
   ['setperspective',['setPerspective',['../class_g_l_e_s_renderer.html#afff0eca251e49d50c83277a2fe3ad5af',1,'GLESRenderer']]],
   ['setpmatrix',['setPMatrix',['../class_g_l_e_s_renderer.html#ad439b83c368872dfd4439136d9af4d6d',1,'GLESRenderer']]],
@@ -48,5 +50,6 @@ var searchData=
   ['shownormals',['showNormals',['../class_g_l_body.html#acbf8e07de7e749a6e579ecfb683dbc56',1,'GLBody']]],
   ['spheresarecolliding',['spheresAreColliding',['../class_g_l_body.html#ab34746fd9ba6a8a0ba0a8e2b04e0fad3',1,'GLBody']]],
   ['startanimation',['startAnimation',['../class_g_l_body.html#a5620eb1389c1aeb5694e4e7fc8a9e88c',1,'GLBody']]],
+  ['staticplayers',['staticPlayers',['../class_my_gl_item.html#a169c0e508ce57d77a941feafd46245ed',1,'MyGlItem']]],
   ['synchronizethreads',['synchronizeThreads',['../class_g_l_item.html#a790da330a5b53f0156c144b68eff20c2',1,'GLItem']]]
 ];

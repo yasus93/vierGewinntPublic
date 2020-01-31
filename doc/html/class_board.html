@@ -28,8 +28,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="icons8_number_4_96.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">4Gewinnt
+   &#160;<span id="projectnumber">v1.0.0</span>
    </div>
   </td>
  </tr>
@@ -87,31 +89,28 @@ $(document).ready(function(){initNavTree('class_board.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_board-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Board Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>A chess board with 7X6 fields.  
+ <a href="class_board.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="board_8h_source.html">board.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for Board:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_board.png" usemap="#Board_map" alt=""/>
-  <map id="Board_map" name="Board_map">
-<area href="class_g_l_body.html" title="A 3D body that uses a GLESRenderer for drawing and GLPoint objects for defining its surface." alt="GLBody" shape="rect" coords="0,0,57,24"/>
-  </map>
-</div></div>
+
+<p>Inherits <a class="el" href="class_g_l_body.html">GLBody</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ee491d4fea680cf69b033374a9fdfcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a9ee491d4fea680cf69b033374a9fdfcb">Board</a> ()</td></tr>
 <tr class="separator:a9ee491d4fea680cf69b033374a9fdfcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15ff6efe6bd967a60f6b12ce59e5c27a"><td class="memItemLeft" align="right" valign="top">QVector3D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a15ff6efe6bd967a60f6b12ce59e5c27a">fieldToPosition</a> (QPoint field)</td></tr>
+<tr class="memdesc:a15ff6efe6bd967a60f6b12ce59e5c27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">fieldToPosition  <a href="#a15ff6efe6bd967a60f6b12ce59e5c27a">More...</a><br /></td></tr>
 <tr class="separator:a15ff6efe6bd967a60f6b12ce59e5c27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a8568ce7d13db61b01e6bf14e7b12fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a4a8568ce7d13db61b01e6bf14e7b12fd">makeSurface</a> (QVector&lt; <a class="el" href="class_g_l_point.html">GLPoint</a> &gt; *pointContainer=nullptr, QVector&lt; <a class="el" href="gldefines_8h.html#af3c748960f29c42e5b7f1dc449ab66ff">IndexType</a> &gt; *indexContainer=nullptr)</td></tr>
+<tr class="memdesc:a4a8568ce7d13db61b01e6bf14e7b12fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">makeSurface  <a href="#a4a8568ce7d13db61b01e6bf14e7b12fd">More...</a><br /></td></tr>
 <tr class="separator:a4a8568ce7d13db61b01e6bf14e7b12fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_g_l_body"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_g_l_body')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_g_l_body.html">GLBody</a></td></tr>
 <tr class="memitem:a86dd61f116bfd01d8f4d8656cfe1ddc9 inherit pub_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a86dd61f116bfd01d8f4d8656cfe1ddc9">GLBody</a> (const QString &amp;<a class="el" href="class_g_l_body.html#af9f19479127cf12562fa0a2f9b5276f4">name</a>, float radius=1.0, const <a class="el" href="class_g_l_color_rgba.html">GLColorRgba</a> &amp;<a class="el" href="class_g_l_body.html#a267b5c0fbe5752370197012975663dca">m_color</a>=<a class="el" href="class_g_l_color_rgba.html#abf246bb4f542851d17ba84b5143a9214">GLColorRgba::clBlue</a>, const QString m_textureFile=&quot;&quot;)</td></tr>
@@ -219,24 +218,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acbf8e07de7e749a6e579ecfb683dbc56 inherit pub_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#acbf8e07de7e749a6e579ecfb683dbc56">showNormals</a> (bool show)</td></tr>
 <tr class="separator:acbf8e07de7e749a6e579ecfb683dbc56 inherit pub_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:ae13a36a59b726081033e3ffc158bb82a"><td class="memItemLeft" align="right" valign="top">QVector3D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ae13a36a59b726081033e3ffc158bb82a">m_normal</a></td></tr>
-<tr class="separator:ae13a36a59b726081033e3ffc158bb82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2bd12894ff7340b865a463d600a2a49"><td class="memItemLeft" align="right" valign="top">QVector3D *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ae2bd12894ff7340b865a463d600a2a49">b_firstPoint</a></td></tr>
-<tr class="separator:ae2bd12894ff7340b865a463d600a2a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c40fa17f5e2e5ea5ffff433630c874"><td class="memItemLeft" align="right" valign="top">QVector3D *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a24c40fa17f5e2e5ea5ffff433630c874">b_secondPoint</a></td></tr>
-<tr class="separator:a24c40fa17f5e2e5ea5ffff433630c874"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72cd2eef896165b445acfb5ea6c28de7"><td class="memItemLeft" align="right" valign="top">QVector3D *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a72cd2eef896165b445acfb5ea6c28de7">b_thirdPoint</a></td></tr>
-<tr class="separator:a72cd2eef896165b445acfb5ea6c28de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2d91193b052d9d05af44e62648cff41"><td class="memItemLeft" align="right" valign="top">QList&lt; QVector3D &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ab2d91193b052d9d05af44e62648cff41">columnPoints</a></td></tr>
-<tr class="separator:ab2d91193b052d9d05af44e62648cff41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc78f2a614333d03e59d3008b841f164"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#acc78f2a614333d03e59d3008b841f164">deltaX</a></td></tr>
-<tr class="separator:acc78f2a614333d03e59d3008b841f164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44ba33a6896a37b3c18175b20fd6f3f6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a44ba33a6896a37b3c18175b20fd6f3f6">deltaY</a></td></tr>
-<tr class="separator:a44ba33a6896a37b3c18175b20fd6f3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86cfe659af51a4619e2b73bdbc1a9d1f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a86cfe659af51a4619e2b73bdbc1a9d1f">deltaZ</a></td></tr>
-<tr class="separator:a86cfe659af51a4619e2b73bdbc1a9d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_g_l_body"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_g_l_body')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_g_l_body.html">GLBody</a></td></tr>
+<tr class="memitem:aa06402c02671771961bf5dc5223fcd9d inherit pub_static_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#aa06402c02671771961bf5dc5223fcd9d">isTriangleHit</a> (const QVector3D &amp;p1, const QVector3D &amp;p2, const QVector3D &amp;p3, const QVector3D &amp;pLine, const QVector3D &amp;lineDirection, QVector3D *intersection=nullptr)</td></tr>
+<tr class="memdesc:aa06402c02671771961bf5dc5223fcd9d inherit pub_static_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">isTriangleHit  <a href="class_g_l_body.html#aa06402c02671771961bf5dc5223fcd9d">More...</a><br /></td></tr>
+<tr class="separator:aa06402c02671771961bf5dc5223fcd9d inherit pub_static_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0bd28b058f386bb326cbabcbf62be4 inherit pub_static_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#ade0bd28b058f386bb326cbabcbf62be4">isParallelogramHit</a> (const QVector3D &amp;p1, const QVector3D &amp;p2, const QVector3D &amp;p3, const QVector3D &amp;pLine, const QVector3D &amp;lineDirection, QVector3D *intersection=nullptr)</td></tr>
+<tr class="memdesc:ade0bd28b058f386bb326cbabcbf62be4 inherit pub_static_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">isParallelogramHit  <a href="class_g_l_body.html#ade0bd28b058f386bb326cbabcbf62be4">More...</a><br /></td></tr>
+<tr class="separator:ade0bd28b058f386bb326cbabcbf62be4 inherit pub_static_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_g_l_body"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_g_l_body')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_g_l_body.html">GLBody</a></td></tr>
+<tr class="memitem:ae306a6519ac1ad0903386ce9b9c511c5 inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#ae306a6519ac1ad0903386ce9b9c511c5">createNormals</a> ()</td></tr>
+<tr class="separator:ae306a6519ac1ad0903386ce9b9c511c5 inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac288828b1d2eb46f1e6750a696d557f inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#aac288828b1d2eb46f1e6750a696d557f">createFrame</a> ()</td></tr>
+<tr class="separator:aac288828b1d2eb46f1e6750a696d557f inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b789838bb2c60008ba7878eb6bb28e inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a02b789838bb2c60008ba7878eb6bb28e">init</a> ()</td></tr>
+<tr class="memdesc:a02b789838bb2c60008ba7878eb6bb28e inherit pro_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">init Initialize <a class="el" href="class_g_l_body.html" title="A 3D body that uses a GLESRenderer for drawing and GLPoint objects for defining its surface.">GLBody</a> with defaults.  <a href="class_g_l_body.html#a02b789838bb2c60008ba7878eb6bb28e">More...</a><br /></td></tr>
+<tr class="separator:a02b789838bb2c60008ba7878eb6bb28e inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f619d585501cb1ac0945586afb9fa1 inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a35f619d585501cb1ac0945586afb9fa1">activateAttributeBuffers</a> (<a class="el" href="class_g_l_e_s_renderer.html">GLESRenderer</a> *renderer)</td></tr>
+<tr class="separator:a35f619d585501cb1ac0945586afb9fa1 inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d1dcd40bdc2d1d50b70f2807a67f9a3 inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a2d1dcd40bdc2d1d50b70f2807a67f9a3">activateAttributeArrays</a> (<a class="el" href="class_g_l_e_s_renderer.html">GLESRenderer</a> *renderer)</td></tr>
+<tr class="separator:a2d1dcd40bdc2d1d50b70f2807a67f9a3 inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a780c5f3232c0c106dc81708ebe2c6228 inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a780c5f3232c0c106dc81708ebe2c6228">findMinMaxCoordinates</a> ()</td></tr>
+<tr class="memdesc:a780c5f3232c0c106dc81708ebe2c6228 inherit pro_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">findMinMaxCoordinates Calculate m_minCoordinate an m_maxCoordinate from vertex data. Create frame if m_showFrame is set. Create normals if m_showNormals is set.  <a href="class_g_l_body.html#a780c5f3232c0c106dc81708ebe2c6228">More...</a><br /></td></tr>
+<tr class="separator:a780c5f3232c0c106dc81708ebe2c6228 inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_methods_class_g_l_body"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_class_g_l_body')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="class_g_l_body.html">GLBody</a></td></tr>
+<tr class="memitem:a4a0a876d516652e66c2269c18d4032bc inherit pro_static_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a4a0a876d516652e66c2269c18d4032bc">calculateIntersection</a> (const QVector3D &amp;p1, const QVector3D &amp;p2, const QVector3D &amp;p3, const QVector3D &amp;pLine, const QVector3D &amp;lineDirection, float *a, float *b, QVector3D *intersection=nullptr)</td></tr>
+<tr class="memdesc:a4a0a876d516652e66c2269c18d4032bc inherit pro_static_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculateIntersection Calculate intersection of line with plane defined by p1,p2,p3 Calculates factors a and b. Resulting coordinates are p1 + a * p12 + b * p13. Intersection is inside parallelogram p12, p13 when a and b are &gt; 0 and &lt; 1.0  <a href="class_g_l_body.html#a4a0a876d516652e66c2269c18d4032bc">More...</a><br /></td></tr>
+<tr class="separator:a4a0a876d516652e66c2269c18d4032bc inherit pro_static_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_g_l_body"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_g_l_body')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_g_l_body.html">GLBody</a></td></tr>
 <tr class="memitem:a348178ac24c376d6ebfe280ce30ff9c4 inherit pro_attribs_class_g_l_body"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a348178ac24c376d6ebfe280ce30ff9c4">m_name</a></td></tr>
 <tr class="separator:a348178ac24c376d6ebfe280ce30ff9c4 inherit pro_attribs_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -336,40 +345,12 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a4707235e9ca92fd90399fb785759d946 inherit pro_attribs_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6486869505b4269277a13734acc9bcd inherit pro_attribs_class_g_l_body"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#af6486869505b4269277a13734acc9bcd">m_showFrame</a></td></tr>
 <tr class="separator:af6486869505b4269277a13734acc9bcd inherit pro_attribs_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_static_methods_class_g_l_body"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_g_l_body')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_g_l_body.html">GLBody</a></td></tr>
-<tr class="memitem:aa06402c02671771961bf5dc5223fcd9d inherit pub_static_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#aa06402c02671771961bf5dc5223fcd9d">isTriangleHit</a> (const QVector3D &amp;p1, const QVector3D &amp;p2, const QVector3D &amp;p3, const QVector3D &amp;pLine, const QVector3D &amp;lineDirection, QVector3D *intersection=nullptr)</td></tr>
-<tr class="memdesc:aa06402c02671771961bf5dc5223fcd9d inherit pub_static_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">isTriangleHit  <a href="class_g_l_body.html#aa06402c02671771961bf5dc5223fcd9d">More...</a><br /></td></tr>
-<tr class="separator:aa06402c02671771961bf5dc5223fcd9d inherit pub_static_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade0bd28b058f386bb326cbabcbf62be4 inherit pub_static_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#ade0bd28b058f386bb326cbabcbf62be4">isParallelogramHit</a> (const QVector3D &amp;p1, const QVector3D &amp;p2, const QVector3D &amp;p3, const QVector3D &amp;pLine, const QVector3D &amp;lineDirection, QVector3D *intersection=nullptr)</td></tr>
-<tr class="memdesc:ade0bd28b058f386bb326cbabcbf62be4 inherit pub_static_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">isParallelogramHit  <a href="class_g_l_body.html#ade0bd28b058f386bb326cbabcbf62be4">More...</a><br /></td></tr>
-<tr class="separator:ade0bd28b058f386bb326cbabcbf62be4 inherit pub_static_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_class_g_l_body"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_g_l_body')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_g_l_body.html">GLBody</a></td></tr>
-<tr class="memitem:ae306a6519ac1ad0903386ce9b9c511c5 inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#ae306a6519ac1ad0903386ce9b9c511c5">createNormals</a> ()</td></tr>
-<tr class="separator:ae306a6519ac1ad0903386ce9b9c511c5 inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac288828b1d2eb46f1e6750a696d557f inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#aac288828b1d2eb46f1e6750a696d557f">createFrame</a> ()</td></tr>
-<tr class="separator:aac288828b1d2eb46f1e6750a696d557f inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02b789838bb2c60008ba7878eb6bb28e inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a02b789838bb2c60008ba7878eb6bb28e">init</a> ()</td></tr>
-<tr class="memdesc:a02b789838bb2c60008ba7878eb6bb28e inherit pro_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">init Initialize <a class="el" href="class_g_l_body.html" title="A 3D body that uses a GLESRenderer for drawing and GLPoint objects for defining its surface.">GLBody</a> with defaults.  <a href="class_g_l_body.html#a02b789838bb2c60008ba7878eb6bb28e">More...</a><br /></td></tr>
-<tr class="separator:a02b789838bb2c60008ba7878eb6bb28e inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35f619d585501cb1ac0945586afb9fa1 inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a35f619d585501cb1ac0945586afb9fa1">activateAttributeBuffers</a> (<a class="el" href="class_g_l_e_s_renderer.html">GLESRenderer</a> *renderer)</td></tr>
-<tr class="separator:a35f619d585501cb1ac0945586afb9fa1 inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d1dcd40bdc2d1d50b70f2807a67f9a3 inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a2d1dcd40bdc2d1d50b70f2807a67f9a3">activateAttributeArrays</a> (<a class="el" href="class_g_l_e_s_renderer.html">GLESRenderer</a> *renderer)</td></tr>
-<tr class="separator:a2d1dcd40bdc2d1d50b70f2807a67f9a3 inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a780c5f3232c0c106dc81708ebe2c6228 inherit pro_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a780c5f3232c0c106dc81708ebe2c6228">findMinMaxCoordinates</a> ()</td></tr>
-<tr class="memdesc:a780c5f3232c0c106dc81708ebe2c6228 inherit pro_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">findMinMaxCoordinates Calculate m_minCoordinate an m_maxCoordinate from vertex data. Create frame if m_showFrame is set. Create normals if m_showNormals is set.  <a href="class_g_l_body.html#a780c5f3232c0c106dc81708ebe2c6228">More...</a><br /></td></tr>
-<tr class="separator:a780c5f3232c0c106dc81708ebe2c6228 inherit pro_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_static_methods_class_g_l_body"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_class_g_l_body')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="class_g_l_body.html">GLBody</a></td></tr>
-<tr class="memitem:a4a0a876d516652e66c2269c18d4032bc inherit pro_static_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a4a0a876d516652e66c2269c18d4032bc">calculateIntersection</a> (const QVector3D &amp;p1, const QVector3D &amp;p2, const QVector3D &amp;p3, const QVector3D &amp;pLine, const QVector3D &amp;lineDirection, float *a, float *b, QVector3D *intersection=nullptr)</td></tr>
-<tr class="memdesc:a4a0a876d516652e66c2269c18d4032bc inherit pro_static_methods_class_g_l_body"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculateIntersection Calculate intersection of line with plane defined by p1,p2,p3 Calculates factors a and b. Resulting coordinates are p1 + a * p12 + b * p13. Intersection is inside parallelogram p12, p13 when a and b are &gt; 0 and &lt; 1.0  <a href="class_g_l_body.html#a4a0a876d516652e66c2269c18d4032bc">More...</a><br /></td></tr>
-<tr class="separator:a4a0a876d516652e66c2269c18d4032bc inherit pro_static_methods_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A chess board with 8X8 fields in the x-z plane. Only the white fields are drawn, black fields are transparent. The raiseDisc function makes a disc "jump" over the respective field. The fieldToPosition function returns the 3D-coordinates of the field in model space. isOnBoard returns true, when position is "on" the board. </p>
+<div class="textblock"><p>A chess board with 7X6 fields. </p>
+<p>This <a class="el" href="class_board.html" title="A chess board with 7X6 fields.">Board</a> is created for the positioning of discs. It should not be drawn in final use. The fieldToPosition function returns the 3D-coordinates of the field in model space. Three points are used to define starting position. Deltas are used to norm vertices. </p>
 
-<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00015">15</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00016">16</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9ee491d4fea680cf69b033374a9fdfcb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ee491d4fea680cf69b033374a9fdfcb">&#9670;&nbsp;</a></span>Board()</h2>
@@ -406,6 +387,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>fieldToPosition </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>3D position of field center. Field coordinates are from 0 to 7</dd></dl>
 <p>Returns 3D position of field center. Field coordinates are from 0 to 7 </p>
 
 <p class="definition">Definition at line <a class="el" href="board_8cpp_source.html#l00024">24</a> of file <a class="el" href="board_8cpp_source.html">board.cpp</a>.</p>
@@ -445,15 +435,16 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Creates the surface. Should be called, when a GL engine is already running. To be overwritten by subclasses. GLESBody::createSurface should be called at the beginning of overriding functions. It will create the pointContainer, if none is supplied Is called automatically by draw, if required. MUST NOT be called without a working GL engine.</p>
+
+<p>makeSurface </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pointContainer</td><td>The container for the geometry data. If nullptr, a new one is created. </td></tr>
-    <tr><td class="paramname">indexContainer</td><td>The container for the index data. If nullptr, a new one is created. Created containers will be deleted by destructor.</td></tr>
+    <tr><td class="paramname">pointContainer</td><td>The container for the geometry data. If NULL, a new one is created. </td></tr>
+    <tr><td class="paramname">indexContainer</td><td>The container for the index data. If NULL, a new one is created.</td></tr>
   </table>
   </dd>
 </dl>
-<p>Creates the surface. Should be called, when a GL engine is already running. Is called automatically by draw, if required. </p>
+<p>Created containers will be deleted by destructor. </p>
 
 <p>Reimplemented from <a class="el" href="class_g_l_body.html#a73e51b159f343d0bda87f50df382b7db">GLBody</a>.</p>
 
@@ -461,203 +452,9 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae2bd12894ff7340b865a463d600a2a49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2bd12894ff7340b865a463d600a2a49">&#9670;&nbsp;</a></span>b_firstPoint</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector3D* Board::b_firstPoint</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00032">32</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
-
-</div>
-</div>
-<a id="a24c40fa17f5e2e5ea5ffff433630c874"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24c40fa17f5e2e5ea5ffff433630c874">&#9670;&nbsp;</a></span>b_secondPoint</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector3D* Board::b_secondPoint</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00033">33</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
-
-</div>
-</div>
-<a id="a72cd2eef896165b445acfb5ea6c28de7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72cd2eef896165b445acfb5ea6c28de7">&#9670;&nbsp;</a></span>b_thirdPoint</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector3D* Board::b_thirdPoint</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00034">34</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
-
-</div>
-</div>
-<a id="ab2d91193b052d9d05af44e62648cff41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2d91193b052d9d05af44e62648cff41">&#9670;&nbsp;</a></span>columnPoints</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QList&lt;QVector3D&gt; Board::columnPoints</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00036">36</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
-
-</div>
-</div>
-<a id="acc78f2a614333d03e59d3008b841f164"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc78f2a614333d03e59d3008b841f164">&#9670;&nbsp;</a></span>deltaX</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Board::deltaX</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00038">38</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
-
-</div>
-</div>
-<a id="a44ba33a6896a37b3c18175b20fd6f3f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44ba33a6896a37b3c18175b20fd6f3f6">&#9670;&nbsp;</a></span>deltaY</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Board::deltaY</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00039">39</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
-
-</div>
-</div>
-<a id="a86cfe659af51a4619e2b73bdbc1a9d1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86cfe659af51a4619e2b73bdbc1a9d1f">&#9670;&nbsp;</a></span>deltaZ</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Board::deltaZ</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00040">40</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
-
-</div>
-</div>
-<a id="ae13a36a59b726081033e3ffc158bb82a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae13a36a59b726081033e3ffc158bb82a">&#9670;&nbsp;</a></span>m_normal</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector3D Board::m_normal</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The normal on the chessboard plane </p>
-
-<p class="definition">Definition at line <a class="el" href="board_8h_source.html#l00030">30</a> of file <a class="el" href="board_8h_source.html">board.h</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/svwei/Documents/workspace_qt/4gewinnt/src/<a class="el" href="board_8h_source.html">board.h</a></li>
-<li>C:/Users/svwei/Documents/workspace_qt/4gewinnt/src/<a class="el" href="board_8cpp_source.html">board.cpp</a></li>
+<li>src/<a class="el" href="board_8h_source.html">board.h</a></li>
+<li>src/<a class="el" href="board_8cpp_source.html">board.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

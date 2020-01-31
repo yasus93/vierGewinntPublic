@@ -28,8 +28,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="icons8_number_4_96.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">4Gewinnt
+   &#160;<span id="projectnumber">v1.0.0</span>
    </div>
   </td>
  </tr>
@@ -93,16 +95,12 @@ $(document).ready(function(){initNavTree('class_g_l_disc.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>class for creating discs.  
+ <a href="class_g_l_disc.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="gldisc_8h_source.html">gldisc.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for GLDisc:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_g_l_disc.png" usemap="#GLDisc_map" alt=""/>
-  <map id="GLDisc_map" name="GLDisc_map">
-<area href="class_g_l_body.html" title="A 3D body that uses a GLESRenderer for drawing and GLPoint objects for defining its surface." alt="GLBody" shape="rect" coords="0,0,57,24"/>
-  </map>
-</div></div>
+
+<p>Inherits <a class="el" href="class_g_l_body.html">GLBody</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -111,12 +109,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b74533be5d65c44f7f5493163b94eb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_disc.html#a5b74533be5d65c44f7f5493163b94eb4">makeSurface</a> (QVector&lt; <a class="el" href="class_g_l_point.html">GLPoint</a> &gt; *pointContainer=nullptr, QVector&lt; GLushort &gt; *indexContainer=nullptr) Q_DECL_OVERRIDE</td></tr>
 <tr class="separator:a5b74533be5d65c44f7f5493163b94eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fca90525cba1fb6099d70730375cc6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_disc.html#a7fca90525cba1fb6099d70730375cc6e">draw</a> (<a class="el" href="class_g_l_e_s_renderer.html">GLESRenderer</a> *renderer, bool useBuffers) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a7fca90525cba1fb6099d70730375cc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">draw  <a href="#a7fca90525cba1fb6099d70730375cc6e">More...</a><br /></td></tr>
 <tr class="separator:a7fca90525cba1fb6099d70730375cc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cc6514312b042f1af87a5ce92bf1f71"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_disc.html#a4cc6514312b042f1af87a5ce92bf1f71">getHeight</a> ()</td></tr>
-<tr class="separator:a4cc6514312b042f1af87a5ce92bf1f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa26416ba9591aa2d86b30b663e67a1a8"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_disc.html#aa26416ba9591aa2d86b30b663e67a1a8">getFieldCoord</a> () const</td></tr>
+<tr class="memdesc:aa26416ba9591aa2d86b30b663e67a1a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">getFieldCoord  <a href="#aa26416ba9591aa2d86b30b663e67a1a8">More...</a><br /></td></tr>
 <tr class="separator:aa26416ba9591aa2d86b30b663e67a1a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f73b9821e996ecdc909a743b79925dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_disc.html#a5f73b9821e996ecdc909a743b79925dd">setFieldCoord</a> (const QPoint &amp;FieldCoord)</td></tr>
+<tr class="memdesc:a5f73b9821e996ecdc909a743b79925dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">setFieldCoord  <a href="#a5f73b9821e996ecdc909a743b79925dd">More...</a><br /></td></tr>
 <tr class="separator:a5f73b9821e996ecdc909a743b79925dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_g_l_body"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_g_l_body')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_g_l_body.html">GLBody</a></td></tr>
 <tr class="memitem:a86dd61f116bfd01d8f4d8656cfe1ddc9 inherit pub_methods_class_g_l_body"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_l_body.html#a86dd61f116bfd01d8f4d8656cfe1ddc9">GLBody</a> (const QString &amp;<a class="el" href="class_g_l_body.html#af9f19479127cf12562fa0a2f9b5276f4">name</a>, float radius=1.0, const <a class="el" href="class_g_l_color_rgba.html">GLColorRgba</a> &amp;<a class="el" href="class_g_l_body.html#a267b5c0fbe5752370197012975663dca">m_color</a>=<a class="el" href="class_g_l_color_rgba.html#abf246bb4f542851d17ba84b5143a9214">GLColorRgba::clBlue</a>, const QString m_textureFile=&quot;&quot;)</td></tr>
@@ -353,8 +352,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:af6486869505b4269277a13734acc9bcd inherit pro_attribs_class_g_l_body"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="gldisc_8h_source.html#l00006">6</a> of file <a class="el" href="gldisc_8h_source.html">gldisc.h</a>.</p>
+<div class="textblock"><p>class for creating discs. </p>
+
+<p class="definition">Definition at line <a class="el" href="gldisc_8h_source.html#l00009">9</a> of file <a class="el" href="gldisc_8h_source.html">gldisc.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0964e31d88f1b4915b536b9943e0e2f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0964e31d88f1b4915b536b9943e0e2f8">&#9670;&nbsp;</a></span>GLDisc()</h2>
@@ -456,7 +456,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draws the surface and calls makeSurface if required. Needs an active (made current) GL-Context. </p>
+
+<p>draw </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">renderer</td><td></td></tr>
+    <tr><td class="paramname">useBuffers</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="class_g_l_body.html#aaeb47c0a8cfc36caed81fc139c42ddfc">GLBody</a>.</p>
 
@@ -479,34 +487,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>getFieldCoord </p>
+<dl class="section return"><dt>Returns</dt><dd>fieldPosition of Disc as x and y </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="gldisc_8cpp_source.html#l00122">122</a> of file <a class="el" href="gldisc_8cpp_source.html">gldisc.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a4cc6514312b042f1af87a5ce92bf1f71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cc6514312b042f1af87a5ce92bf1f71">&#9670;&nbsp;</a></span>getHeight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float GLDisc::getHeight </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="gldisc_8h_source.html#l00022">22</a> of file <a class="el" href="gldisc_8h_source.html">gldisc.h</a>.</p>
 
 </div>
 </div>
@@ -563,13 +547,21 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>setFieldCoord </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FieldCoord</td><td>= the fieldPosition of the Disc as x and y </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="gldisc_8cpp_source.html#l00127">127</a> of file <a class="el" href="gldisc_8cpp_source.html">gldisc.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/svwei/Documents/workspace_qt/4gewinnt/src/<a class="el" href="gldisc_8h_source.html">gldisc.h</a></li>
-<li>C:/Users/svwei/Documents/workspace_qt/4gewinnt/src/<a class="el" href="gldisc_8cpp_source.html">gldisc.cpp</a></li>
+<li>src/<a class="el" href="gldisc_8h_source.html">gldisc.h</a></li>
+<li>src/<a class="el" href="gldisc_8cpp_source.html">gldisc.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

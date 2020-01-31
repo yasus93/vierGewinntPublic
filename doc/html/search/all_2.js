@@ -19,7 +19,6 @@ var searchData=
   ['colorchanged',['colorChanged',['../class_my_gl_item.html#a7bab02e6f11d653e97b328a953d81c82',1,'MyGlItem']]],
   ['coloroffset',['colorOffset',['../class_g_l_point.html#a91ba1c6cd816cb5e1e11a233ea0d1328',1,'GLPoint']]],
   ['colorpointer',['colorPointer',['../class_g_l_point.html#a86adf137055461d018700894c4c5f377',1,'GLPoint']]],
-  ['columnpoints',['columnPoints',['../class_board.html#ab2d91193b052d9d05af44e62648cff41',1,'Board']]],
   ['createaxes',['createAxes',['../class_g_l_item.html#acbf456bdbaf38bc941029bddab6a69a9',1,'GLItem']]],
   ['createaxis',['createAxis',['../class_g_l_item.html#a2153cac833846fcd3b8b507bff244406',1,'GLItem']]],
   ['createframe',['createFrame',['../class_g_l_body.html#aac288828b1d2eb46f1e6750a696d557f',1,'GLBody']]],

@@ -3,7 +3,6 @@ var searchData=
   ['getcenter',['getCenter',['../class_g_l_body.html#a80879471b9a5e1fd66dd7191c161d92c',1,'GLBody']]],
   ['getcolor',['getColor',['../class_g_l_body.html#aee8dcce60e8a36f49572e83bf0600ee2',1,'GLBody']]],
   ['getfieldcoord',['getFieldCoord',['../class_g_l_disc.html#aa26416ba9591aa2d86b30b663e67a1a8',1,'GLDisc']]],
-  ['getheight',['getHeight',['../class_g_l_disc.html#a4cc6514312b042f1af87a5ce92bf1f71',1,'GLDisc']]],
   ['getmvmatrix',['getMvMatrix',['../class_g_l_e_s_renderer.html#af6f079ccbe2e37b90018dde13ad36b94',1,'GLESRenderer']]],
   ['getnormalmatrix',['getNormalMatrix',['../class_g_l_e_s_renderer.html#a0dfc680c7a7b2aea8439f88a892858fe',1,'GLESRenderer']]],
   ['getpmatrix',['getPMatrix',['../class_g_l_e_s_renderer.html#a57700c29516d33449e65e7243eaf2aac',1,'GLESRenderer']]],

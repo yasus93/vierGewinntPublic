@@ -84,7 +84,6 @@ var searchData=
   ['m_5fnextnormalindex',['m_nextNormalIndex',['../class_g_l_body.html#af69d3ddae94f6a09446970f97ded2cc5',1,'GLBody']]],
   ['m_5fnextnormalpoint',['m_nextNormalPoint',['../class_g_l_body.html#a43978300a750a5c67e474a576ac3ad3c',1,'GLBody']]],
   ['m_5fnextpoint',['m_nextPoint',['../class_g_l_body.html#ad23169cadd57fa23a035c50749974eaa',1,'GLBody']]],
-  ['m_5fnormal',['m_normal',['../class_board.html#ae13a36a59b726081033e3ffc158bb82a',1,'Board']]],
   ['m_5fnormalmatrix',['m_normalMatrix',['../class_g_l_e_s_renderer.html#a76ff9b2803ac2a897d9df0cf587601ed',1,'GLESRenderer']]],
   ['m_5fnormals',['m_normals',['../class_g_l_item.html#ab36af5032ab015c92a55fbed02c40c4d',1,'GLItem']]],
   ['m_5forthomode',['m_orthoMode',['../class_g_l_item.html#a7ff6af05a375bac0cc2cc9333595de43',1,'GLItem::m_orthoMode()'],['../class_g_l_e_s_renderer.html#a78662dcb0fedf7710a57345d3d684b85',1,'GLESRenderer::m_OrthoMode()']]],
